@@ -4,6 +4,8 @@ title: "Stress-Triggered Relapse"
 content_type: pattern
 observed_pattern: "Periods of high stress appear frequently in relapse reports, with members describing use as an automatic response to feeling overwhelmed."
 supporting_experiences:
+  - cm-001
+  - cm-006
   - synthetic-002
 possible_explanations:
   - "Using pornography as an escape from uncomfortable feelings"

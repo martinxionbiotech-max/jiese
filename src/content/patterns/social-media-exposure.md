@@ -4,6 +4,7 @@ title: "Social Media Exposure"
 content_type: pattern
 observed_pattern: "Exposure to suggestive or sexualized content on social media appears repeatedly in reports as a step that precedes pornography use."
 supporting_experiences:
+  - cm-014
   - synthetic-004
 possible_explanations:
   - "Content acting as a cue that activates an urge"

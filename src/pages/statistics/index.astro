@@ -1,0 +1,67 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import { getCollection } from 'astro:content';
+import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../shared/config/config";
+
+// 只统计真实记录（排除 synthetic）
+const experiences = (await getCollection('experiences'))
+  .filter((e) => e.data.privacy_status !== "synthetic");
+const realCount = experiences.length;
+
+const count = (arr: string[]) => {
+  const map = new Map<string, number>();
+  arr.forEach((x) => map.set(x, (map.get(x) ?? 0) + 1));
+  return [...map.entries()].map(([key, n]) => ({ key, n })).sort((a, b) => b.n - a.n);
+};
+
+const triggerCounts = count(experiences.flatMap((e) => e.data.triggers ?? []));
+const strategyCounts = count(experiences.flatMap((e) => e.data.strategies ?? []));
+const stageCounts = count(experiences.map((e) => e.data.recovery_stage).filter((x): x is string => !!x));
+const relapseCount = experiences.filter((e) => e.data.relapse === true).length;
+---
+<BaseLayout
+  siteTitle="Porn Recovery Knowledge Platform"
+  siteUrl={MAIN_SITE_URL}
+  title="Community Statistics — Recovery Experience Data"
+  description="Aggregated statistics from de-identified community recovery experiences. Community sample — not representative of any general population."
+  canonical="/statistics/"
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Statistics", url: "/statistics/" }]}
+>
+  <h1>Community Statistics</h1>
+  <p class="note"><strong>Sample size: {realCount} real community experience record{realCount === 1 ? "" : "s"}.</strong>
+  This is a <strong>community sample</strong> — self-selected people sharing recovery experiences.
+  It is <strong>not</strong> a representative population sample and cannot support statistical
+  generalization or medical inference.</p>
+
+  {realCount === 0 ? (
+    <p>No real community experience records have been ingested yet.</p>
+  ) : (
+    <>
+      <h2>Most frequently reported triggers</h2>
+      {triggerCounts.length > 0 ? (
+        <ul>{triggerCounts.map((t) => <li>{t.key.replaceAll("-", " ")} — {t.n} record{t.n === 1 ? "" : "s"}</li>)}</ul>
+      ) : <p>No trigger data yet.</p>}
+
+      <h2>Most common recovery strategies</h2>
+      {strategyCounts.length > 0 ? (
+        <ul>{strategyCounts.map((s) => <li>{s.key.replaceAll("-", " ")} — {s.n} record{s.n === 1 ? "" : "s"}</li>)}</ul>
+      ) : <p>No strategy data yet.</p>}
+
+      <h2>Recovery stage distribution</h2>
+      {stageCounts.length > 0 ? (
+        <ul>{stageCounts.map((s) => <li>{s.key} — {s.n} record{s.n === 1 ? "" : "s"}</li>)}</ul>
+      ) : <p>No stage data yet.</p>}
+
+      <h2>Relapse reports</h2>
+      <p>{relapseCount} of {realCount} records describe a relapse ({Math.round(relapseCount / realCount * 100)}%).</p>
+    </>
+  )}
+
+  <h2>Method</h2>
+  <p>Statistics are computed from structured, de-identified experience records only.
+  Synthetic demonstration records are always excluded. Counts reflect the number of records
+  mentioning each item — one record may mention several triggers or strategies.</p>
+  <p><a href="/experiences/">Browse experiences</a> ·
+  <a href={DATA_SITE_URL + "/claims/"}>Claims database</a> ·
+  <a href={DATA_SITE_URL + "/references/"}>References</a></p>
+</BaseLayout>

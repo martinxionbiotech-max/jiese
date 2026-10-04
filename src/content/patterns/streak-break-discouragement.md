@@ -4,6 +4,9 @@ title: "Discouragement After Breaking a Streak"
 content_type: pattern
 observed_pattern: "Breaking a long streak is frequently followed by discouragement, and sometimes by reduced motivation to continue."
 supporting_experiences:
+  - cm-001
+  - cm-004
+  - cm-006
   - synthetic-005
 possible_explanations:
   - "Interpreting a slip as losing all progress"

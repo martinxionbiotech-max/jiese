@@ -4,6 +4,9 @@ title: "Post-Relapse Binge"
 content_type: pattern
 observed_pattern: "A single relapse is frequently followed by a period of heavier use, which members often describe as a 'binge' before a renewed attempt to stop."
 supporting_experiences:
+  - cm-003
+  - cm-008
+  - cm-009
   - synthetic-005
 possible_explanations:
   - "Feelings of failure lowering motivation to stop"

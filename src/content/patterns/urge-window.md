@@ -4,6 +4,7 @@ title: "The Short Urge Window"
 content_type: pattern
 observed_pattern: "Community members often describe urges as intense but short-lived, passing within minutes if not acted upon."
 supporting_experiences:
+  - cm-005
   - synthetic-001
 possible_explanations:
   - "Urges rising and falling like other momentary states"

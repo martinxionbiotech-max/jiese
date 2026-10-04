@@ -4,6 +4,7 @@ title: "Isolation and Increased Use"
 content_type: pattern
 observed_pattern: "Periods of isolation, especially living or spending long hours alone, appear repeatedly in reports of increased use."
 supporting_experiences:
+  - cm-007
   - synthetic-002
 possible_explanations:
   - "Privacy removing barriers to use"
