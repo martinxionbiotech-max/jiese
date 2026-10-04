@@ -12,6 +12,7 @@ supporting_experiences:
   - cm-072
   - cm-078
   - cm-083
+  - cm-095
 possible_explanations:
   - "Habit loops still being strong before new routines form"
   - "Cues and triggers still present in daily life"

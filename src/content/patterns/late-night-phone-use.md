@@ -12,6 +12,7 @@ supporting_experiences:
   - synthetic-004
   - cm-033
   - cm-085
+  - cm-098
 possible_explanations:
   - "Reduced structure and supervision late at night"
   - "Tiredness lowering deliberate decision-making"
