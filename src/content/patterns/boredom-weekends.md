@@ -7,6 +7,8 @@ supporting_experiences:
   - synthetic-003
   - cm-026
   - cm-070
+  - cm-105
+  - cm-111
 possible_explanations:
   - "Less structure and supervision on days off"
   - "Boredom leaving attention with nowhere to go"

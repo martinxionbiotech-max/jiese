@@ -9,6 +9,7 @@ supporting_experiences:
   - cm-033
   - cm-050
   - cm-076
+  - cm-109
 possible_explanations:
   - "Urges rising and falling like other momentary states"
   - "Attention moving on when not fed"
