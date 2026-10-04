@@ -1,0 +1,87 @@
+---
+import BaseLayout from "../../../../shared/components/BaseLayout.astro";
+import { MAIN_SITE_URL } from "../../../../shared/config/config";
+---
+<BaseLayout
+  siteTitle="Porn Recovery Knowledge Platform"
+  siteUrl={MAIN_SITE_URL}
+  title="Trigger Journal — Private, Browser-Local Tool"
+  description="A private trigger journal that stores entries only in your browser. Nothing is sent to any server."
+  canonical="/tools/trigger-journal/"
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Tools", url: "/tools/" }, { name: "Trigger Journal", url: "/tools/trigger-journal/" }]}
+>
+  <h1>Trigger Journal</h1>
+  <p class="note"><strong>Private by design:</strong> entries are stored only in this browser
+  (localStorage). Nothing is uploaded or sent anywhere. Clearing browser data deletes your journal.</p>
+
+  <form id="entry-form">
+    <label>Date/time <input type="datetime-local" id="ts" required /></label>
+    <label>Trigger (what preceded the urge?)
+      <select id="trigger">
+        <option value="stress">Stress</option><option value="loneliness">Loneliness</option>
+        <option value="boredom">Boredom</option><option value="anxiety">Anxiety</option>
+        <option value="insomnia">Insomnia</option><option value="social-media">Social media</option>
+        <option value="being-alone">Being alone</option><option value="nighttime">Nighttime</option>
+        <option value="relationship-problems">Relationship problems</option>
+        <option value="work-pressure">Work pressure</option>
+        <option value="other">Other</option>
+      </select>
+    </label>
+    <label>What did you do?
+      <select id="action">
+        <option value="used-porn">Used pornography</option>
+        <option value="avoided">Avoided / redirected</option>
+        <option value="other">Other</option>
+      </select>
+    </label>
+    <label>Notes (optional) <input type="text" id="notes" maxlength="200" /></label>
+    <button type="submit">Add entry</button>
+  </form>
+
+  <h2>Your entries</h2>
+  <p id="empty-msg">No entries yet.</p>
+  <ul id="entries"></ul>
+  <button id="clear" type="button">Delete all entries</button>
+
+  <p><a href="/triggers/">Learn about triggers</a> · <a href="/tools/">All tools</a></p>
+
+  <script>
+    const KEY = "jiese-trigger-journal";
+    const load = () => JSON.parse(localStorage.getItem(KEY) || "[]");
+    const save = (rows) => localStorage.setItem(KEY, JSON.stringify(rows));
+    const render = () => {
+      const rows = load().slice().reverse();
+      document.getElementById("empty-msg").style.display = rows.length ? "none" : "";
+      const ul = document.getElementById("entries");
+      ul.innerHTML = "";
+      rows.forEach((r) => {
+        const li = document.createElement("li");
+        li.textContent = `${r.ts} — ${r.trigger.replaceAll("-", " ")} — ${r.action === "used-porn" ? "Used pornography" : r.action === "avoided" ? "Avoided / redirected" : "Other"}${r.notes ? " — " + r.notes : ""}`;
+        ul.appendChild(li);
+      });
+    };
+    document.getElementById("entry-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const rows = load();
+      rows.push({
+        ts: document.getElementById("ts").value,
+        trigger: document.getElementById("trigger").value,
+        action: document.getElementById("action").value,
+        notes: document.getElementById("notes").value.trim(),
+      });
+      save(rows); render(); e.target.reset();
+    });
+    document.getElementById("clear").addEventListener("click", () => {
+      if (confirm("Delete all journal entries? This cannot be undone.")) { save([]); render(); }
+    });
+    render();
+  </script>
+  <style>
+    form { display: grid; gap: var(--space-3); max-width: 480px; margin: var(--space-4) 0; }
+    label { display: grid; gap: 4px; font-size: 14px; }
+    button { padding: 10px 16px; background: var(--color-accent); color: #fff;
+      border: none; border-radius: var(--radius-sm); cursor: pointer; font-size: 15px; }
+    #clear { background: var(--color-clinical); margin-top: var(--space-3); }
+    #entries li { margin: var(--space-2) 0; font-size: 14px; }
+  </style>
+</BaseLayout>

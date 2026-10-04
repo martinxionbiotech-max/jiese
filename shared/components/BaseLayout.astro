@@ -13,6 +13,8 @@ interface Props {
   ogType?: string;
   noindex?: boolean;
   nav?: { label: string; href: string }[];
+  /** hreflang alternates: [{lang, href}] — 未来多语言时启用 */
+  alternates?: { lang: string; href: string }[];
 }
 const defaultNav = [
   { label: "Start", href: "/start/", mainSite: true },
@@ -25,6 +27,7 @@ const defaultNav = [
 ];
 const { siteTitle, siteUrl, title, description = "", canonical, jsonLd,
   breadcrumbs = [], lastUpdated, ogType = "website", noindex = false,
+  alternates = [],
   nav = defaultNav } = Astro.props;
 const canonicalUrl = canonical
   ? (canonical.startsWith("http") ? canonical : siteUrl + canonical)
@@ -43,6 +46,9 @@ const canonicalUrl = canonical
     <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalUrl} />
     {description && <meta property="og:description" content={description} />}
+    {alternates.map((a) => (
+      <link rel="alternate" hreflang={a.lang} href={a.href} />
+    ))}
     {Array.isArray(jsonLd)
       ? jsonLd.map((ld) => <script type="application/ld+json" set:html={JSON.stringify(ld)} />)
       : jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
