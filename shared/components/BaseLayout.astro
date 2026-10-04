@@ -45,6 +45,7 @@ const canonicalUrl = canonical
     {description && <meta name="description" content={description} />}
     <link rel="canonical" href={canonicalUrl} />
     <meta name="robots" content={noindex ? "noindex,follow" : "index,follow"} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta property="og:title" content={title} />
     <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalUrl} />
@@ -76,7 +77,7 @@ const canonicalUrl = canonical
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <a href="/" class="brand">{siteTitle}</a>
+        <a href="/" class="brand"><img src="/logo-header.png" alt={siteTitle} class="brand-logo" width="210" height="36" />{siteTitle}</a>
         <nav aria-label="Primary">
           {nav.map((item) => (
             <a href={item.mainSite && siteUrl !== MAIN_SITE_URL ? MAIN_SITE_URL + item.href : item.href}>{item.label}</a>
@@ -124,7 +125,10 @@ const canonicalUrl = canonical
       .site-header { background: var(--color-primary); }
       .header-inner { display: flex; align-items: center; gap: var(--space-5);
         padding: 12px 16px; flex-wrap: wrap; }
-      .brand { color: #fff; font-weight: 700; font-size: 17px; }
+      .brand { color: #fff; font-weight: 700; font-size: 17px; display: flex; align-items: center; gap: var(--space-2); text-decoration: none; }
+      .brand-logo { height: 36px; width: auto; display: block; }
+      .brand { font-size: 0; }
+      .brand:hover { opacity: 0.9; }
       nav a { color: #cfdbe9; margin-right: var(--space-4); font-size: 14px; }
       .footer-nav a { color: var(--color-text-soft); margin-right: var(--space-3);
         font-size: 13px; text-decoration: underline; }

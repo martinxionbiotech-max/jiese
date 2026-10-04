@@ -23,9 +23,11 @@ const org = {
   title="Porn Recovery Knowledge Platform — Experiences, Patterns & Evidence"
   description="A practical, evidence-aware knowledge platform for people trying to regain control over problematic pornography use and compulsive sexual behaviors. Real recovery experiences, structured community observations, scientific evidence, and practical strategies."
   canonical="/"
+  ogImage={MAIN_SITE_URL + "/images/hero-home.webp"}
   jsonLd={org}
 >
   <section class="hero">
+    <img src="/images/hero-home.webp" alt="A mountain trail at dawn, a metaphor for the recovery journey" class="hero-img" width="1600" height="900" />
     <h1>Regain control over problematic pornography use</h1>
     <p class="lede">A practical, evidence-aware knowledge platform for people trying to
     understand and recover from problematic pornography use and compulsive sexual
@@ -98,6 +100,7 @@ const org = {
 
   <style>
     .hero { padding: var(--space-6) 0 var(--space-4); }
+    .hero-img { width: 100%; height: auto; border-radius: var(--radius-md, 10px); margin-bottom: var(--space-4); display: block; }
     .lede { font-size: 18px; color: var(--color-text-soft); max-width: 640px; }
     .points li { margin: var(--space-1) 0; }
     .entries { display: grid; gap: var(--space-4); margin: var(--space-5) 0; }
