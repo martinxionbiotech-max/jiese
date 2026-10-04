@@ -1,0 +1,125 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import TypeBadge from "../../../shared/components/TypeBadge.astro";
+import { getCollection } from 'astro:content';
+import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../shared/config/config";
+
+const experiences = (await getCollection('experiences'))
+  .filter((e) => e.data.privacy_status !== "synthetic");
+const n = experiences.length;
+---
+<BaseLayout
+  siteTitle="Porn Recovery Knowledge Platform"
+  siteUrl={MAIN_SITE_URL}
+  title="The Shape of Recovery: What 124 Community Accounts Actually Show"
+  description="An editorial analysis of 124 de-identified community recovery accounts: what people actually report about triggers, strategies, relapse, and long-term change."
+  canonical="/analysis/"
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Analysis", url: "/analysis/" }]}
+>
+  <h1>The Shape of Recovery: What {n} Community Accounts Actually Show</h1>
+  <TypeBadge type="pattern" />
+  <p class="lede">This is an editorial essay built on {n} de-identified recovery accounts collected from a public Chinese community and processed through this platform's ingestion pipeline. It is analysis, not science. Where I offer an opinion, I say so plainly.</p>
+
+  <h2>Why read 124 strangers' self-reports?</h2>
+  <p>Because the alternative — reading zero — is worse. Recovery from problematic pornography use
+  happens mostly in private. Clinical research on it is young, and the people living through it
+  publish what they know in fragments: a relapse confession at 3 a.m., a two-year milestone post,
+  a question about whether a setback erases everything that came before.</p>
+  <p>None of these posts is evidence in the scientific sense. All of them together are something
+  else: a rough map of the territory, drawn by people who have actually walked it. That map has
+  value if you read it honestly — and if you never confuse it for a topographic survey.</p>
+
+  <h2>What the data says, without decoration</h2>
+  <p>Across {n} processed accounts, the most frequently mentioned triggers were:
+  <strong>frustration (12)</strong>, <strong>stress (8)</strong>, <strong>nighttime (7)</strong>,
+  <strong>insomnia (6)</strong>, <strong>boredom (6)</strong>, and <strong>anxiety (6)</strong>.</p>
+  <p>The most frequently mentioned strategies were:
+  <strong>structured routines (62)</strong> — by an enormous margin — followed by
+  <strong>exercise (14)</strong>, <strong>sleep hygiene (12)</strong>,
+  <strong>social accountability (11)</strong>, <strong>journaling (6)</strong>, and
+  <strong>meditation (6)</strong>.</p>
+  <p>Of accounts with a reported outcome, 44 described periods without relapse and 28 described
+  relapses. Stage coverage ranged from day 1 to multi-year streaks, with 13 accounts at one year
+  or beyond.</p>
+
+  <h2>Observation one: the hour matters as much as the feeling</h2>
+  <p>Here is my first opinion, and I hold it with reasonable confidence: <strong>the late-night
+  cluster is the single most actionable finding in this dataset.</strong> Fourteen of {n} accounts
+  (11%) implicate nighttime, insomnia, or phone use in bed. That may sound small, but consider what
+  it means: a full one in nine people who wrote about their recovery described the same
+  environmental trap — tired, alone, in bed, with a screen.</p>
+  <p>This is not a psychological insight. It is an environmental one. And environments are
+  changeable in a way that cravings are not. A person cannot decide to stop feeling lonely at
+  1 a.m., but they can decide where the phone charges. Several accounts in this dataset describe
+  exactly that move — physical distance from the device — as the concrete change that ended the
+  pattern. That is the rare kind of community wisdom that translates directly into action.</p>
+
+  <h2>Observation two: the community has quietly converged on one answer</h2>
+  <p>Sixty-two of {n} accounts mention structured routine in some form. Not willpower. Not a
+  secret technique. Not a motivational slogan. <strong>Routine.</strong> Daily study of recovery
+  material, fixed sleep hours, scheduled exercise, logged check-ins.</p>
+  <p>My opinion: this convergence is the most credible signal in the entire dataset, precisely
+  because it is boring. Communities that run on hype converge on dramatic claims — "this one trick
+  changed everything." A community that converges on <em>routine</em> is describing what sustained
+  behavior change actually requires. It matches what we know about habit formation from outside
+  this community entirely, which makes it more believable, not less.</p>
+
+  <h2>Observation three: the first ten days are a consensus</h2>
+  <p>Multiple accounts independently identify the first week to ten days as the hardest stretch —
+  described with words like "the hardest part," "strong discomfort," "a personal weak point at days
+  5–6." This is not a physiological claim. It is a reported experience so consistent that this
+  platform treats it as a community pattern. My opinion: <strong>the early-days difficulty is real
+  enough to plan around.</strong> If you are new to this, the honest message from the data is not
+  "the beginning is hard, endure it" but "the beginning is predictably hard, so structure it."</p>
+
+  <h2>Observation four: relapse is a chapter, not the ending</h2>
+  <p>Twenty-eight accounts describe relapses, and the striking thing about them is what they do
+  <em>not</em> say. Almost none treat the relapse as the end of the story. The recurring structure
+  is: relapse, analysis of why, restart with an adjustment. Several long-term accounts — one year,
+  two years, three years, four years — explicitly describe earlier failed attempts as part of the
+  path.</p>
+  <p>My opinion, stated bluntly: <strong>the community's non-shaming norm around relapse is one of
+  its genuinely useful features, and this platform deliberately preserves it.</strong> The
+  alternative norm — treating a setback as proof of failure — appears in some accounts as the
+  self-blame loop, and the accounts that escape it are the ones that treat relapse as information
+  rather than verdict. The data here does not prove that this attitude improves outcomes. But
+  honestly: the people with the longest streaks in this dataset write about their setbacks the
+  way a climber writes about a fall — as something to learn from, not something to be ashamed of.</p>
+
+  <h2>What these accounts cannot tell you</h2>
+  <p>The boundaries matter, so let me draw them clearly.</p>
+  <ul>
+    <li><strong>No causation.</strong> That someone slept better after stopping does not prove
+    stopping caused better sleep. That a skin condition improved does not prove abstinence heals
+    skin. These are sequences, not mechanisms.</li>
+    <li><strong>No timeline promises.</strong> The ninety-day figure, the one-to-three-year
+    recovery estimates, the "first ten days are hardest" — these are community conventions and
+    reported averages, not biological schedules. Your own arc may differ in either direction.</li>
+    <li><strong>No medical conclusions.</strong> Accounts about erectile function, urinary
+    symptoms, insomnia, and anxiety are included here only as reported experiences, always flagged,
+    and never as evidence that recovery treats any condition.</li>
+    <li><strong>Selection bias everywhere.</strong> People post when they relapse or when they
+    hit milestones. The silent middle — the person quietly doing fine, or quietly not — is
+    missing from every dataset like this one, including ours.</li>
+  </ul>
+
+  <h2>A closing opinion</h2>
+  <p>If I had to compress {n} strangers' fragmented accounts into one sentence, it would be this:
+  <strong>the people who describe recovery as something they <em>built</em> — routines,
+  environments, habits, support — write longer, steadier stories than the people who describe it
+  as something they <em>endured</em>.</strong></p>
+  <p>That sentence is my reading of the data, not a finding from it. Treat it accordingly. Then,
+  if you are someone this platform was built for, treat it as a hypothesis worth testing in your
+  own life — which is, in the end, the only laboratory that matters.</p>
+
+  <h2>Method note</h2>
+  <p>Statistics above are computed from structured, de-identified experience records only.
+  Synthetic demonstration records are excluded. Counts reflect records mentioning each item —
+  one account may mention several triggers or strategies. Sources are public community posts;
+  no usernames, identifiers, or personal details are published.</p>
+
+  <p><a href="/experiences/">Browse the underlying accounts</a> ·
+  <a href="/statistics/">Live statistics</a> ·
+  <a href={DATA_SITE_URL + "/evidence/"}>Evidence standards</a> ·
+  <a href="/methodology/">Methodology</a></p>
+</BaseLayout>
