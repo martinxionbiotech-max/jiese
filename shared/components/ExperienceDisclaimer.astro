@@ -1,0 +1,9 @@
+---
+const { kind = "experience" } = Astro.props;
+const text = kind === "experience"
+  ? "This page summarizes a community-reported personal experience. It is not medical evidence or professional advice."
+  : kind === "pattern"
+  ? "This page describes an observed pattern across community reports. Observations of correlation are not evidence of causation."
+  : "Content labeled with its evidence status. Verify current research before relying on it.";
+---
+<p class="note">{text}</p>

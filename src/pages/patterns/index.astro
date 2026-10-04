@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import TypeBadge from "../../../shared/components/TypeBadge.astro";
+import { getCollection } from 'astro:content';
+import { MAIN_SITE_URL } from "../../../shared/config/config";
+
+const patterns = (await getCollection('patterns')).sort((a, b) =>
+  a.data.title.localeCompare(b.data.title));
+
+const siteTitle = "Porn Recovery Knowledge Platform";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Community Patterns",
+  url: MAIN_SITE_URL + "/patterns/",
+  description: "Recurring observations across community recovery reports, described with their uncertainty.",
+};
+---
+<BaseLayout
+  siteTitle={siteTitle}
+  siteUrl={MAIN_SITE_URL}
+  title="Community Patterns — Porn Recovery Knowledge Platform"
+  description="Patterns that recur across many community recovery reports — described as observations of correlation, never as established causes."
+  canonical="/patterns/"
+  jsonLd={jsonLd}
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Patterns", url: "/patterns/" }]}
+>
+  <h1>Community Patterns</h1>
+  <p>Patterns are observations that recur across many independent recovery reports. They
+  are described in observational language, because correlation is not causation.</p>
+  <p class="note">A pattern such as "late-night phone use appears in many relapse reports"
+  does not mean the phone caused the relapse. See <a href="/methodology/">Methodology</a> for
+  how patterns are derived and labeled.</p>
+
+  <div class="grid">
+    {patterns.map((p) => (
+      <a class="card" href={`/patterns/${p.data.pattern_id}/`}>
+        <div><TypeBadge type="pattern" /></div>
+        <h2>{p.data.title}</h2>
+        <p>{p.data.observed_pattern}</p>
+      </a>
+    ))}
+  </div>
+
+  <style>
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: var(--space-4); margin-top: var(--space-4); }
+    .card { border: 1px solid var(--color-border); border-radius: var(--radius-md);
+      padding: var(--space-4); display: block; color: inherit; }
+    .card:hover { text-decoration: none; border-color: var(--color-accent); }
+    .card h2 { font-size: 17px; margin: var(--space-2) 0; }
+    .card p { margin: 0; font-size: 14px; color: var(--color-text-soft); }
+  </style>
+</BaseLayout>

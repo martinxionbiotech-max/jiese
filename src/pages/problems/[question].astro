@@ -1,0 +1,115 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import TypeBadge from "../../../shared/components/TypeBadge.astro";
+import { getCollection, render } from 'astro:content';
+import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../shared/config/config";
+
+export async function getStaticPaths() {
+  const questions = await getCollection('questions');
+  return questions.map((q) => ({ params: { question: q.data.question_id } }));
+}
+
+const { question } = Astro.params;
+
+const questions = await getCollection('questions');
+const experiences = await getCollection('experiences');
+
+const q = questions.find((x) => x.data.question_id === question);
+
+const experienceMap = new Map(experiences.map((e) => [e.data.experience_id, e]));
+const relatedExperiences = q.data.related_experiences.map((id) => experienceMap.get(id)).filter(Boolean);
+
+const { Content } = await render(q);
+
+const siteTitle = "Porn Recovery Knowledge Platform";
+const url = `${MAIN_SITE_URL}/problems/${q.data.question_id}/`;
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [{
+    "@type": "Question",
+    name: q.data.title,
+    acceptedAnswer: { "@type": "Answer", text: q.data.short_answer },
+  }],
+};
+---
+<BaseLayout
+  siteTitle={siteTitle}
+  siteUrl={MAIN_SITE_URL}
+  title={`${q.data.title} | Porn Recovery Knowledge Platform`}
+  description={q.data.short_answer}
+  canonical={`/problems/${q.data.question_id}/`}
+  jsonLd={faqLd}
+  lastUpdated={q.data.last_updated}
+  breadcrumbs={[
+    { name: "Home", url: "/" },
+    { name: "Questions", url: "/problems/" },
+    { name: q.data.title, url: `/problems/${q.data.question_id}/` },
+  ]}
+>
+  <h1>{q.data.title}</h1>
+
+  <h2>Short Answer</h2>
+  <p>{q.data.short_answer}</p>
+
+  <Content />
+
+  {q.data.community_experience && (
+    <>
+      <h2>Community Experience</h2>
+      <p>{q.data.community_experience}</p>
+    </>
+  )}
+
+  {q.data.evidence && (
+    <>
+      <h2>Scientific Evidence</h2>
+      <p>{q.data.evidence}</p>
+    </>
+  )}
+
+  {q.data.what_we_dont_know && (
+    <>
+      <h2>What We Don't Know</h2>
+      <p>{q.data.what_we_dont_know}</p>
+    </>
+  )}
+
+  <h2>Practical Options</h2>
+  {q.data.practical_options.length > 0 ? (
+    <ul>{q.data.practical_options.map((o) => <li>{o}</li>)}</ul>
+  ) : <p>None listed.</p>}
+
+  {q.data.when_to_seek_help && (
+    <>
+      <h2>When to Seek Help</h2>
+      <p class="note">{q.data.when_to_seek_help}</p>
+    </>
+  )}
+
+  {relatedExperiences.length > 0 && (
+    <>
+      <h2>Related Experiences</h2>
+      <ul>
+        {relatedExperiences.map((e) => (
+          <li><a href={`/experiences/${e.data.experience_id}/`}>{e.data.title}</a></li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  {q.data.related_research.length > 0 && (
+    <>
+      <h2>Related Research</h2>
+      <p>The evidence layer lives on the <a href={DATA_SITE_URL}>knowledge base</a>:</p>
+      <ul>
+        {q.data.related_research.map((r) => (
+          <li><a href={`${DATA_SITE_URL}/topics/${r}/`}>{r.replaceAll("-", " ")}</a></li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  <p class="note">This platform provides educational information, not medical advice,
+  diagnosis, or treatment.</p>
+</BaseLayout>

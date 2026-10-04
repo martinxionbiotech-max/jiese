@@ -1,0 +1,88 @@
+---
+import BaseLayout from "../../shared/components/BaseLayout.astro";
+import TypeBadge from "../../shared/components/TypeBadge.astro";
+import { getCollection } from 'astro:content';
+import { MAIN_SITE_URL, DATA_SITE_URL } from "../../shared/config/config";
+
+const experiences = await getCollection('experiences');
+const patterns = await getCollection('patterns');
+const questions = await getCollection('questions');
+const triggers = await getCollection('triggers');
+
+const siteTitle = "Porn Recovery Knowledge Platform";
+const org = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteTitle,
+  url: MAIN_SITE_URL,
+};
+---
+<BaseLayout
+  siteTitle={siteTitle}
+  siteUrl={MAIN_SITE_URL}
+  title="Porn Recovery Knowledge Platform — Experiences, Patterns & Evidence"
+  description="A practical, evidence-aware knowledge platform for people trying to regain control over problematic pornography use and compulsive sexual behaviors. Real recovery experiences, structured community observations, scientific evidence, and practical strategies."
+  canonical="/"
+  jsonLd={org}
+>
+  <section class="hero">
+    <h1>Regain control over problematic pornography use</h1>
+    <p class="lede">A practical, evidence-aware knowledge platform for people trying to
+    understand and recover from problematic pornography use and compulsive sexual
+    behaviors.</p>
+    <ul class="points">
+      <li>Real recovery experiences</li>
+      <li>Structured community observations</li>
+      <li>Scientific evidence</li>
+      <li>Practical recovery strategies</li>
+      <li>No shame. No exaggerated claims.</li>
+    </ul>
+  </section>
+
+  <section class="entries">
+    <a class="entry" href="/start/">
+      <h2>I Want to Quit Porn</h2>
+      <p>Start here: a clear, step-by-step orientation for people who want to stop.</p>
+    </a>
+    <a class="entry" href="/recovery/">
+      <h2>I Want to Understand My Problem</h2>
+      <p>Learn how problematic use develops, what urges are, and what recovery involves.</p>
+    </a>
+    <a class="entry" href="/experiences/">
+      <h2>I Want to Read Real Recovery Experiences</h2>
+      <p>De-identified, structured recovery experiences from community members.</p>
+    </a>
+  </section>
+
+  <section>
+    <h2>Featured Experiences</h2>
+    <p>{experiences.length} structured experience records · <a href="/experiences/">view all</a></p>
+  </section>
+  <section>
+    <h2>Community Patterns</h2>
+    <p>{patterns.length} observed patterns across community reports · <a href="/patterns/">view all</a></p>
+  </section>
+  <section>
+    <h2>Research Highlights</h2>
+    <p>Evidence layer lives on the <a href={DATA_SITE_URL}>knowledge base</a> —
+    what research has found, and what remains debated.</p>
+  </section>
+  <section>
+    <h2>Popular Questions</h2>
+    <ul>
+      {questions.slice(0, 6).map((q) => (
+        <li><a href={`/problems/${q.data.question_id}/`}>{q.data.title}</a></li>
+      ))}
+    </ul>
+  </section>
+
+  <style>
+    .hero { padding: var(--space-6) 0 var(--space-4); }
+    .lede { font-size: 18px; color: var(--color-text-soft); max-width: 640px; }
+    .points li { margin: var(--space-1) 0; }
+    .entries { display: grid; gap: var(--space-4); margin: var(--space-5) 0; }
+    .entry { border: 1px solid var(--color-border); border-radius: var(--radius-md);
+      padding: var(--space-4); }
+    .entry h2 { margin: 0 0 var(--space-2); }
+  </style>
+</BaseLayout>

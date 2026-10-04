@@ -1,0 +1,12 @@
+---
+const { type } = Astro.props;
+const label = {
+  experience: "PERSONAL EXPERIENCE",
+  pattern: "COMMUNITY PATTERN",
+  research: "RESEARCH EVIDENCE",
+  clinical: "CLINICAL INFORMATION",
+  expert: "EXPERT COMMENTARY",
+  uncertain: "UNCERTAIN",
+}[type] ?? type.toUpperCase();
+---
+<span class={`type-badge type-${type}`}>{label}</span>

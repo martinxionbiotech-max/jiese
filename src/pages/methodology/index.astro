@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import TypeBadge from "../../../shared/components/TypeBadge.astro";
+import { MAIN_SITE_URL } from "../../../shared/config/config";
+---
+<BaseLayout
+  siteTitle="Porn Recovery Knowledge Platform"
+  siteUrl={MAIN_SITE_URL}
+  title="Methodology — How Content Is Produced and Labeled"
+  description="How this platform produces content: the four-layer content system, de-identification rules, evidence standards, and quality gates."
+  canonical="/methodology/"
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Methodology", url: "/methodology/" }]}
+>
+  <h1>Methodology</h1>
+  <p>This platform combines two different kinds of information that must never be
+  confused: what people report experiencing, and what scientific research has found.</p>
+
+  <h2>The four content layers</h2>
+  <table class="data-table">
+    <thead><tr><th>Layer</th><th>Label</th><th>What it contains</th></tr></thead>
+    <tbody>
+      <tr><td>1. Personal Experience</td><td><TypeBadge type="experience" /></td>
+        <td>De-identified, structured reports from community members</td></tr>
+      <tr><td>2. Community Pattern</td><td><TypeBadge type="pattern" /></td>
+        <td>Observations that recur across many independent experiences</td></tr>
+      <tr><td>3. Scientific Evidence</td><td><TypeBadge type="research" /></td>
+        <td>Peer-reviewed research, systematic reviews, clinical guidelines</td></tr>
+      <tr><td>4. Clinical / Professional Info</td><td><TypeBadge type="clinical" /></td>
+        <td>Information from professional and clinical sources</td></tr>
+      <tr><td>Uncertain</td><td><TypeBadge type="uncertain" /></td>
+        <td>Topics where evidence is missing, mixed, or debated</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Where community experiences come from</h2>
+  <p>Experiences are extracted from publicly accessible community discussions (for
+  example, Chinese-language recovery communities such as Jiese Ba). Extraction follows
+  strict rules:</p>
+  <ul>
+    <li><strong>De-identification</strong> — no usernames, IDs, avatars, contact info, or locations</li>
+    <li><strong>Redaction</strong> — sexual details are reduced to what is necessary to understand the experience</li>
+    <li><strong>Rewrite</strong> — long posts are condensed into structured records, never copied verbatim</li>
+    <li><strong>Labeling</strong> — every record is labeled as community-reported personal experience</li>
+  </ul>
+
+  <h2>Evidence standards</h2>
+  <p>Scientific content is sourced independently from community experience, using
+  authoritative tiers: WHO / ICD-11, systematic reviews and meta-analyses,
+  peer-reviewed journals, and professional organizations. Community material is never
+  used as scientific evidence. When evidence is missing or mixed, the site says so.</p>
+
+  <h2>What this platform is not</h2>
+  <p>This is not a medical site, not a diagnosis tool, and not a treatment program.
+  Content does not establish that any specific strategy "works" — it reports what
+  people tried and what evidence exists.</p>
+</BaseLayout>

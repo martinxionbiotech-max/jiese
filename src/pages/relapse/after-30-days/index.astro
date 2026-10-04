@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../../../../shared/components/BaseLayout.astro";
+import { MAIN_SITE_URL } from "../../../../shared/config/config";
+
+const siteTitle = "Porn Recovery Knowledge Platform";
+---
+<BaseLayout
+  siteTitle={siteTitle}
+  siteUrl={MAIN_SITE_URL}
+  title="Relapse After 30 Days — Porn Recovery Knowledge Platform"
+  description="What community members report about relapsing after about a month without pornography use."
+  canonical="/relapse/after-30-days/"
+  breadcrumbs={[
+    { name: "Home", url: "/" },
+    { name: "About Relapse", url: "/relapse/" },
+    { name: "After 30 days", url: "/relapse/after-30-days/" },
+  ]}
+>
+  <h1>Relapse After 30 Days</h1>
+  <p>Some community members describe a relapse after about a month of not using
+  pornography. This page reports what they describe, without claiming that any timeline
+  applies to you.</p>
+
+  <h2>What members report</h2>
+  <ul>
+    <li>A relapse around a month in is often described as following a stressful event or a
+    change in routine, rather than a sudden loss of motivation.</li>
+    <li>Some members describe relaxing the strategies that got them through the first weeks
+    — for example, returning the phone to the bedroom or easing restrictions.</li>
+    <li>Many describe the relapse as discouraging precisely because a month felt like a
+    meaningful milestone.</li>
+  </ul>
+
+  <h2>What this means</h2>
+  <p>Thirty days is a common milestone in recovery communities, but it is not an
+  established threshold with any demonstrated significance. A relapse at this point is not
+  more or less meaningful than a relapse at any other time.</p>
+
+  <p class="note">The useful question is not "why did I fail at 30 days" but "what preceded
+  this, and what can I change." See <a href="/relapse/recovery-after-relapse/">recovering
+  after a relapse</a> and <a href="/problems/why-do-relapses-happen-after-a-long-streak/">why
+  relapses happen after a long streak</a>.</p>
+</BaseLayout>

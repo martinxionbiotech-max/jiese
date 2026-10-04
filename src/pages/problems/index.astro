@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import { getCollection } from 'astro:content';
+import { MAIN_SITE_URL } from "../../../shared/config/config";
+
+const questions = (await getCollection('questions')).sort((a, b) =>
+  a.data.title.localeCompare(b.data.title));
+
+const siteTitle = "Porn Recovery Knowledge Platform";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Common Questions",
+  url: MAIN_SITE_URL + "/problems/",
+  description: "Answers to common questions about problematic pornography use, withdrawal, and recovery.",
+};
+---
+<BaseLayout
+  siteTitle={siteTitle}
+  siteUrl={MAIN_SITE_URL}
+  title="Common Questions — Porn Recovery Knowledge Platform"
+  description="Direct answers to common questions about problematic pornography use, withdrawal, urges, sexual function, and recovery — with clear labeling of what is known and what is not."
+  canonical="/problems/"
+  jsonLd={jsonLd}
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Questions", url: "/problems/" }]}
+>
+  <h1>Common Questions</h1>
+  <p>Direct answers to the questions people ask most about problematic pornography use
+  and recovery. Each answer separates community experience from scientific evidence, and
+  states clearly what is not known.</p>
+
+  <div class="list">
+    {questions.map((q) => (
+      <a class="row" href={`/problems/${q.data.question_id}/`}>
+        <span class="q">{q.data.title}</span>
+        <span class="arrow">→</span>
+      </a>
+    ))}
+  </div>
+
+  <style>
+    .list { margin-top: var(--space-4); border-top: 1px solid var(--color-border); }
+    .row { display: flex; justify-content: space-between; align-items: center;
+      padding: var(--space-3) var(--space-2); border-bottom: 1px solid var(--color-border);
+      color: inherit; }
+    .row:hover { text-decoration: none; background: var(--color-bg-alt); }
+    .q { font-size: 15px; }
+    .arrow { color: var(--color-accent); }
+  </style>
+</BaseLayout>

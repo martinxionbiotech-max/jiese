@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import TypeBadge from "../../../shared/components/TypeBadge.astro";
+import { getCollection } from 'astro:content';
+import { MAIN_SITE_URL } from "../../../shared/config/config";
+
+const experiences = (await getCollection('experiences')).sort((a, b) =>
+  a.data.experience_id.localeCompare(b.data.experience_id));
+const triggers = await getCollection('triggers');
+const triggerMap = new Map(triggers.map((t) => [t.data.trigger_id, t]));
+
+const siteTitle = "Porn Recovery Knowledge Platform";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Recovery Experiences",
+  url: MAIN_SITE_URL + "/experiences/",
+  description: "De-identified, structured recovery experiences from community members.",
+};
+---
+<BaseLayout
+  siteTitle={siteTitle}
+  siteUrl={MAIN_SITE_URL}
+  title="Recovery Experiences — Porn Recovery Knowledge Platform"
+  description="Structured, de-identified recovery experiences from community members: what triggered them, what they tried, and what happened. Personal reports, not scientific evidence."
+  canonical="/experiences/"
+  jsonLd={jsonLd}
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Experiences", url: "/experiences/" }]}
+>
+  <h1>Recovery Experiences</h1>
+  <p>Structured, de-identified reports from people who have tried to reduce or stop
+  problematic pornography use. Each record describes what triggered them, what they
+  tried, and what happened.</p>
+  <p class="note">These are personal reports, not scientific evidence. Records marked
+  "synthetic" are example entries used to demonstrate the structure; they are not real
+  recovery reports.</p>
+
+  <div class="cards">
+    {experiences.map((e) => {
+      const expTriggers = e.data.triggers
+        .map((id) => triggerMap.get(id))
+        .filter(Boolean);
+      return (
+        <a class="card" href={`/experiences/${e.data.experience_id}/`}>
+          <div class="card-head">
+            <TypeBadge type="experience" />
+            {e.data.privacy_status === "synthetic" && (
+              <span class="synthetic-badge">SYNTHETIC EXAMPLE</span>
+            )}
+          </div>
+          <h2>{e.data.title}</h2>
+          {e.data.recovery_stage && (
+            <p class="stage">Stage: {e.data.recovery_stage}</p>
+          )}
+          {expTriggers.length > 0 && (
+            <p class="triggers">
+              {expTriggers.map((t) => (
+                <span class="chip">{t.data.title}</span>
+              ))}
+            </p>
+          )}
+        </a>
+      );
+    })}
+  </div>
+
+  <style>
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: var(--space-4); margin-top: var(--space-4); }
+    .card { border: 1px solid var(--color-border); border-radius: var(--radius-md);
+      padding: var(--space-4); display: block; color: inherit; }
+    .card:hover { text-decoration: none; border-color: var(--color-accent); }
+    .card-head { display: flex; gap: var(--space-2); align-items: center; flex-wrap: wrap; }
+    .card h2 { font-size: 17px; margin: var(--space-2) 0 var(--space-1); }
+    .stage { color: var(--color-text-soft); font-size: 14px; margin: 0 0 var(--space-2); }
+    .triggers { margin: 0; display: flex; flex-wrap: wrap; gap: var(--space-1); }
+    .chip { background: var(--color-bg-alt); border: 1px solid var(--color-border);
+      border-radius: 999px; padding: 2px 10px; font-size: 12px; color: var(--color-text-soft); }
+    .synthetic-badge { background: #fdf1ef; color: var(--color-clinical);
+      border: 1px solid var(--color-clinical); border-radius: 999px;
+      padding: 2px 10px; font-size: 12px; font-weight: 600; }
+  </style>
+</BaseLayout>

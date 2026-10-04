@@ -1,0 +1,88 @@
+---
+import "../styles/design-tokens.css";
+interface Props {
+  siteTitle: string;
+  siteUrl: string;
+  title: string;
+  description?: string;
+  canonical?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  breadcrumbs?: { name: string; url: string }[];
+  lastUpdated?: string;
+  ogType?: string;
+  noindex?: boolean;
+  nav?: { label: string; href: string }[];
+}
+const defaultNav = [
+  { label: "Start", href: "/start/" },
+  { label: "Recovery", href: "/recovery/" },
+  { label: "Experiences", href: "/experiences/" },
+  { label: "Problems", href: "/problems/" },
+  { label: "Triggers", href: "/triggers/" },
+  { label: "Strategies", href: "/strategies/" },
+  { label: "Research", href: "/research/" },
+];
+const { siteTitle, siteUrl, title, description = "", canonical, jsonLd,
+  breadcrumbs = [], lastUpdated, ogType = "website", noindex = false,
+  nav = defaultNav } = Astro.props;
+const canonicalUrl = canonical
+  ? (canonical.startsWith("http") ? canonical : siteUrl + canonical)
+  : siteUrl + Astro.url.pathname;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="robots" content={noindex ? "noindex,follow" : "index,follow"} />
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    {description && <meta property="og:description" content={description} />}
+    {Array.isArray(jsonLd)
+      ? jsonLd.map((ld) => <script type="application/ld+json" set:html={JSON.stringify(ld)} />)
+      : jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="brand">{siteTitle}</a>
+        <nav aria-label="Primary">
+          {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+        </nav>
+      </div>
+    </header>
+    {breadcrumbs.length > 0 && (
+      <nav class="container breadcrumbs" aria-label="Breadcrumb">
+        {breadcrumbs.map((b, i) => (
+          <span>{i > 0 && " › "}<a href={b.url}>{b.name}</a></span>
+        ))}
+      </nav>
+    )}
+    <main class="container"><slot /></main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>This site provides educational information about problematic
+        pornography use and recovery. It is not medical advice, diagnosis, or treatment.
+        If you are in crisis or concerned about your mental health, contact a qualified
+        professional. See the <a href="/disclaimer/">full disclaimer</a>.</p>
+        {lastUpdated && <p class="meta">Last updated: {lastUpdated}</p>}
+      </div>
+    </footer>
+    <style>
+      .site-header { background: var(--color-primary); }
+      .header-inner { display: flex; align-items: center; gap: var(--space-5);
+        padding: 12px 16px; flex-wrap: wrap; }
+      .brand { color: #fff; font-weight: 700; font-size: 17px; }
+      nav a { color: #cfdbe9; margin-right: var(--space-4); font-size: 14px; }
+      nav a:hover { color: #fff; }
+      .breadcrumbs { font-size: 13px; color: var(--color-text-soft);
+        padding: var(--space-3) 0 0; }
+      .site-footer { margin-top: var(--space-7); padding: var(--space-5) 0;
+        background: var(--color-bg-alt); font-size: 13px; color: var(--color-text-soft); }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import TypeBadge from "../../../shared/components/TypeBadge.astro";
+import ExperienceDisclaimer from "../../../shared/components/ExperienceDisclaimer.astro";
+import { getCollection, render } from 'astro:content';
+import { MAIN_SITE_URL } from "../../../shared/config/config";
+
+export async function getStaticPaths() {
+  const patterns = await getCollection('patterns');
+  return patterns.map((p) => ({ params: { pattern: p.data.pattern_id } }));
+}
+
+const { pattern } = Astro.params;
+
+const patterns = await getCollection('patterns');
+const questions = await getCollection('questions');
+const experiences = await getCollection('experiences');
+const strategies = await getCollection('strategies');
+
+const p = patterns.find((x) => x.data.pattern_id === pattern);
+
+const questionMap = new Map(questions.map((q) => [q.data.question_id, q]));
+const experienceMap = new Map(experiences.map((e) => [e.data.experience_id, e]));
+const strategyMap = new Map(strategies.map((s) => [s.data.strategy_id, s]));
+
+const relatedQuestions = p.data.related_questions.map((id) => questionMap.get(id)).filter(Boolean);
+const supportingExperiences = p.data.supporting_experiences.map((id) => experienceMap.get(id)).filter(Boolean);
+const practicalStrategies = p.data.practical_strategies.map((id) => strategyMap.get(id)).filter(Boolean);
+
+const { Content } = await render(p);
+
+const siteTitle = "Porn Recovery Knowledge Platform";
+const url = `${MAIN_SITE_URL}/patterns/${p.data.pattern_id}/`;
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: p.data.title,
+  description: p.data.observed_pattern,
+  datePublished: p.data.last_updated,
+  dateModified: p.data.last_updated,
+  mainEntityOfPage: url,
+};
+---
+<BaseLayout
+  siteTitle={siteTitle}
+  siteUrl={MAIN_SITE_URL}
+  title={`${p.data.title} — Community Pattern | Porn Recovery Knowledge Platform`}
+  description={p.data.observed_pattern}
+  canonical={`/patterns/${p.data.pattern_id}/`}
+  jsonLd={jsonLd}
+  lastUpdated={p.data.last_updated}
+  breadcrumbs={[
+    { name: "Home", url: "/" },
+    { name: "Patterns", url: "/patterns/" },
+    { name: p.data.title, url: `/patterns/${p.data.pattern_id}/` },
+  ]}
+>
+  <TypeBadge type="pattern" />
+  <h1>{p.data.title}</h1>
+  <ExperienceDisclaimer kind="pattern" />
+
+  <h2>Observed Pattern</h2>
+  <p>{p.data.observed_pattern}</p>
+  <Content />
+
+  {supportingExperiences.length > 0 && (
+    <>
+      <h2>Supporting Experiences</h2>
+      <ul>
+        {supportingExperiences.map((e) => (
+          <li><a href={`/experiences/${e.data.experience_id}/`}>{e.data.title}</a></li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  <h2>Possible Explanations</h2>
+  {p.data.possible_explanations.length > 0 ? (
+    <ul>{p.data.possible_explanations.map((x) => <li>{x}</li>)}</ul>
+  ) : <p>None listed.</p>}
+
+  <h2>Scientific Evidence</h2>
+  <p>{p.data.scientific_evidence ?? "No direct research identified."}</p>
+
+  <h2>Contradictory Evidence</h2>
+  <p>{p.data.contradictory_evidence ?? "None identified."}</p>
+
+  <h2>Uncertainty</h2>
+  <p>{p.data.uncertainty ?? "The relationship remains uncertain."}</p>
+
+  {practicalStrategies.length > 0 && (
+    <>
+      <h2>Practical Strategies</h2>
+      <ul>
+        {practicalStrategies.map((s) => (
+          <li><a href={`/strategies/${s.data.strategy_id}/`}>{s.data.title}</a></li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  {relatedQuestions.length > 0 && (
+    <>
+      <h2>Related Questions</h2>
+      <ul>
+        {relatedQuestions.map((q) => (
+          <li><a href={`/problems/${q.data.question_id}/`}>{q.data.title}</a></li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  <p class="note">This platform provides educational information, not medical advice,
+  diagnosis, or treatment.</p>
+</BaseLayout>

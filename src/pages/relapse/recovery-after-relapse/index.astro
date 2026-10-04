@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../../../../shared/components/BaseLayout.astro";
+import { MAIN_SITE_URL } from "../../../../shared/config/config";
+
+const siteTitle = "Porn Recovery Knowledge Platform";
+---
+<BaseLayout
+  siteTitle={siteTitle}
+  siteUrl={MAIN_SITE_URL}
+  title="Recovering After a Relapse — Porn Recovery Knowledge Platform"
+  description="How community members describe getting back on track after a relapse, without shame and without causal claims."
+  canonical="/relapse/recovery-after-relapse/"
+  breadcrumbs={[
+    { name: "Home", url: "/" },
+    { name: "About Relapse", url: "/relapse/" },
+    { name: "Recovering after a relapse", url: "/relapse/recovery-after-relapse/" },
+  ]}
+>
+  <h1>Recovering After a Relapse</h1>
+  <p>Recovering after a relapse means returning to the attempt to stop or reduce
+  pornography use after a period of use. Community members describe this as one of the most
+  important skills in the whole process.</p>
+
+  <h2>What members describe as helpful</h2>
+  <ul>
+    <li><strong>Treating the relapse as information.</strong> Ask what preceded it, not
+    "what is wrong with me."</li>
+    <li><strong>Reducing shame.</strong> Members frequently say the shame after a slip was
+    harder than the slip itself, and that reducing it allowed a quicker restart.</li>
+    <li><strong>Restarting with a small step.</strong> A concrete next action — removing a
+    trigger, telling someone, planning the evening — rather than a grand new plan.</li>
+    <li><strong>Not starting the count from zero.</strong> Many members describe continuing
+    their progress rather than treating a slip as erasing everything.</li>
+  </ul>
+
+  <p class="note">These are community-reported approaches, not proven interventions. They
+  are offered because they are the moves members most often describe as working for them.</p>
+
+  <h2>Related</h2>
+  <ul>
+    <li><a href="/problems/how-do-i-handle-a-relapse-without-shame/">How to handle a relapse without shame</a></li>
+    <li><a href="/patterns/post-relapse-binge/">The post-relapse binge pattern</a></li>
+    <li><a href="/patterns/shame-spiral/">The shame spiral</a></li>
+    <li><a href="/problems/what-counts-as-a-relapse/">What counts as a relapse?</a></li>
+  </ul>
+</BaseLayout>

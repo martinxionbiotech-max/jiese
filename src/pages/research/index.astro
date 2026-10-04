@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../shared/config/config";
+
+const siteTitle = "Porn Recovery Knowledge Platform";
+
+const topics = [
+  { slug: "problematic-pornography-use", title: "Problematic Pornography Use", desc: "What PPU is and how it is defined in research." },
+  { slug: "compulsive-sexual-behavior-disorder", title: "Compulsive Sexual Behaviour Disorder (CSBD)", desc: "The ICD-11 diagnosis and how it relates to pornography use." },
+  { slug: "pornography-withdrawal", title: "Withdrawal", desc: "Whether a distinct withdrawal syndrome exists and what evidence shows." },
+  { slug: "pornography-and-erectile-function", title: "Pornography and Erectile Function", desc: "The debated link between pornography use and erectile function." },
+  { slug: "dopamine-and-pornography", title: "Dopamine and Pornography", desc: "What the brain's reward system does and does not tell us." },
+  { slug: "flatline", title: "The Flatline", desc: "A community term, and what evidence exists for it." },
+  { slug: "pornography-addiction-debate", title: "The Addiction Debate", desc: "Whether PPU is best understood as addiction, compulsion, or impulse-control." },
+  { slug: "relapse-and-compulsive-behavior", title: "Relapse", desc: "What is known about relapse in compulsive behaviors." },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Research & Evidence",
+  url: MAIN_SITE_URL + "/research/",
+  description: "The evidence layer: what research has found about problematic pornography use, and what remains debated.",
+};
+---
+<BaseLayout
+  siteTitle={siteTitle}
+  siteUrl={MAIN_SITE_URL}
+  title="Research & Evidence — Porn Recovery Knowledge Platform"
+  description="The evidence layer for problematic pornography use: what research has found, and what remains debated, with sourcing independent from community reports."
+  canonical="/research/"
+  jsonLd={jsonLd}
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Research", url: "/research/" }]}
+>
+  <h1>Research &amp; Evidence</h1>
+  <p>This platform keeps two kinds of information separate: what people report, and what
+  scientific research has found. The detailed, sourced evidence layer lives on the
+  <a href={DATA_SITE_URL}>knowledge base</a>, where claims are tied to their sources and
+  clearly marked when the evidence is missing or mixed.</p>
+
+  <h2>How evidence is handled</h2>
+  <p>Scientific content is sourced independently from community experience, using
+  authoritative tiers: the WHO / ICD-11, systematic reviews and meta-analyses, peer-reviewed
+  journals, and professional organizations. Community material is never used as scientific
+  evidence. See <a href="/methodology/">Methodology</a>.</p>
+
+  <h2>Key topics</h2>
+  <div class="grid">
+    {topics.map((t) => (
+      <a class="card" href={`${DATA_SITE_URL}/topics/${t.slug}/`}>
+        <h3>{t.title}</h3>
+        <p>{t.desc}</p>
+      </a>
+    ))}
+  </div>
+
+  <h2>A note on the state of the evidence</h2>
+  <p>Much of this field is genuinely unsettled. Whether problematic pornography use is best
+  understood as an addiction, a compulsion, or an impulse-control problem is debated.
+  Whether a distinct withdrawal syndrome exists, and whether pornography use affects sexual
+  function or the brain in lasting ways, are open questions. This platform says so plainly
+  rather than presenting a settled picture.</p>
+
+  <style>
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: var(--space-4); margin-top: var(--space-4); }
+    .card { border: 1px solid var(--color-border); border-radius: var(--radius-md);
+      padding: var(--space-4); display: block; color: inherit; }
+    .card:hover { text-decoration: none; border-color: var(--color-accent); }
+    .card h3 { margin: 0 0 var(--space-2); font-size: 16px; }
+    .card p { margin: 0; font-size: 14px; color: var(--color-text-soft); }
+  </style>
+</BaseLayout>

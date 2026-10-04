@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../../../../shared/components/BaseLayout.astro";
+import { getCollection } from 'astro:content';
+import { MAIN_SITE_URL } from "../../../../shared/config/config";
+
+const triggers = (await getCollection('triggers')).sort((a, b) =>
+  a.data.title.localeCompare(b.data.title));
+
+const siteTitle = "Porn Recovery Knowledge Platform";
+---
+<BaseLayout
+  siteTitle={siteTitle}
+  siteUrl={MAIN_SITE_URL}
+  title="Common Relapse Triggers — Porn Recovery Knowledge Platform"
+  description="The situations and feelings community members most often name before a relapse, described as observations rather than causes."
+  canonical="/relapse/triggers/"
+  breadcrumbs={[
+    { name: "Home", url: "/" },
+    { name: "About Relapse", url: "/relapse/" },
+    { name: "Triggers", url: "/relapse/triggers/" },
+  ]}
+>
+  <h1>Common Relapse Triggers</h1>
+  <p>Community members most often name a small set of situations before a relapse. These
+  are observations, not causes — a trigger frequently co-occurs with other factors such as
+  tiredness, low mood, or privacy.</p>
+
+  <ul>
+    {triggers.map((t) => (
+      <li><a href={`/triggers/${t.data.trigger_id}/`}>{t.data.title}</a> — {t.data.description}</li>
+    ))}
+  </ul>
+
+  <p class="note">Recognizing your own triggers is consistently described as a turning
+  point. See the full <a href="/triggers/">Triggers</a> section for contexts and coping
+  strategies for each one.</p>
+</BaseLayout>

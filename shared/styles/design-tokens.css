@@ -1,0 +1,44 @@
+:root {
+  --color-primary: #1e3a5f;
+  --color-primary-soft: #2c4f7d;
+  --color-accent: #2e7d6e;
+  --color-accent-soft: #e6f2ef;
+  --color-text: #232830;
+  --color-text-soft: #5a6472;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f5f7f9;
+  --color-border: #dde3ea;
+  --color-experience: #7d5ba6;
+  --color-pattern: #2e7d6e;
+  --color-research: #1e6091;
+  --color-clinical: #b3541e;
+  --color-uncertain: #8a8f98;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px;
+  --radius-sm: 4px; --radius-md: 8px;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; font-family: var(--font-sans); color: var(--color-text);
+  background: var(--color-bg); line-height: 1.65; font-size: 16px; }
+a { color: var(--color-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1,h2,h3 { color: var(--color-primary); line-height: 1.3; }
+.container { max-width: 980px; margin: 0 auto; padding: 0 var(--space-4); }
+.type-badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+  font-size: 12px; font-weight: 600; letter-spacing: .02em; }
+.type-experience { background: #efe7f7; color: var(--color-experience); }
+.type-pattern { background: #e3f1ed; color: var(--color-pattern); }
+.type-research { background: #e3edf6; color: var(--color-research); }
+.type-clinical { background: #fbece2; color: var(--color-clinical); }
+.type-uncertain { background: #eceef1; color: var(--color-uncertain); }
+.note { background: var(--color-bg-alt); border-left: 3px solid var(--color-accent);
+  padding: var(--space-3) var(--space-4); margin: var(--space-4) 0; font-size: 14px; }
+.danger-note { background: #fdf1ef; border-left: 3px solid var(--color-clinical);
+  padding: var(--space-3) var(--space-4); margin: var(--space-4) 0; font-size: 14px; }
+table.data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: var(--space-4) 0; }
+table.data-table th, table.data-table td { border: 1px solid var(--color-border);
+  padding: var(--space-2) var(--space-3); text-align: left; vertical-align: top; }
+table.data-table th { background: var(--color-bg-alt); }

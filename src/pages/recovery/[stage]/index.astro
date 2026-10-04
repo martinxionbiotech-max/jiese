@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../../../../shared/components/BaseLayout.astro";
+import TypeBadge from "../../../../shared/components/TypeBadge.astro";
+import { getCollection } from 'astro:content';
+import { STAGES, type Stage } from "../../../lib/stages";
+import { MAIN_SITE_URL } from "../../../../shared/config/config";
+
+export async function getStaticPaths() {
+  return STAGES.map((s) => ({ params: { stage: s.id } }));
+}
+
+const { stage } = Astro.params;
+const data = STAGES.find((s) => s.id === stage) as Stage;
+
+const experiences = await getCollection('experiences');
+const related = experiences
+  .filter((e) => (e.data.recovery_stage ?? "").includes(data.label.split(" ")[0]) || (e.data.duration ?? "").includes(data.label))
+  .slice(0, 3);
+const allStages = STAGES;
+---
+<BaseLayout
+  siteTitle="Porn Recovery Knowledge Platform"
+  siteUrl={MAIN_SITE_URL}
+  title={`${data.title} — Community-Reported Recovery Stage`}
+  description={`What some community members reported around ${data.label} of their recovery attempts. Observational only — no timeline promises.`}
+  canonical={`/recovery/${data.id}/`}
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Recovery", url: "/recovery/" }, { name: data.label, url: `/recovery/${data.id}/` }]}
+>
+  <h1>{data.title}</h1>
+  <TypeBadge type="pattern" />
+  <p class="note">Stages are how community members describe their own timelines.
+  This page reports observations only — <strong>it does not predict what will happen to you</strong>.</p>
+
+  <h2>What some community members reported</h2>
+  <ul>
+    {data.reported.map((r) => <li>{r}</li>)}
+  </ul>
+
+  <h2>Important note</h2>
+  <p>{data.note}</p>
+
+  <h2>All stages</h2>
+  <ul>
+    {allStages.map((s) => (
+      <li><a href={`/recovery/${s.id}/`} aria-current={s.id === data.id ? "page" : undefined}>{s.label}</a></li>
+    ))}
+  </ul>
+
+  {related.length > 0 && (
+    <>
+      <h2>Related experiences</h2>
+      <ul>
+        {related.map((e) => (
+          <li><a href={`/experiences/${e.data.experience_id}/`}>{e.data.title}</a></li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  <p class="note">See also: <a href="/recovery/">Recovery overview</a> ·
+  <a href="/relapse/">About relapse</a> · <a href="/methodology/">Methodology</a></p>
+</BaseLayout>

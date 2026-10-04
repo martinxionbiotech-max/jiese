@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import TypeBadge from "../../../shared/components/TypeBadge.astro";
+import { getCollection } from 'astro:content';
+import { MAIN_SITE_URL } from "../../../shared/config/config";
+
+const triggers = (await getCollection('triggers')).sort((a, b) =>
+  a.data.title.localeCompare(b.data.title));
+
+const siteTitle = "Porn Recovery Knowledge Platform";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Triggers",
+  url: MAIN_SITE_URL + "/triggers/",
+  description: "Situations and feelings that community members report as preceding urges to use pornography.",
+};
+---
+<BaseLayout
+  siteTitle={siteTitle}
+  siteUrl={MAIN_SITE_URL}
+  title="Triggers — Porn Recovery Knowledge Platform"
+  description="Situations, feelings, and contexts that community members report as preceding urges to use pornography. Recognize your own triggers and what people report doing about them."
+  canonical="/triggers/"
+  jsonLd={jsonLd}
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Triggers", url: "/triggers/" }]}
+>
+  <h1>Triggers</h1>
+  <p>A trigger is a situation, feeling, or context that precedes an urge. These entries
+  describe what community members report — the trigger itself, the contexts where it
+  appears, and the coping strategies people describe.</p>
+  <p class="note">Triggers are community observations, not established causes. Recognizing
+  your own triggers is consistently described as a turning point, but no causal link is
+  claimed here.</p>
+
+  <div class="grid">
+    {triggers.map((t) => (
+      <a class="card" href={`/triggers/${t.data.trigger_id}/`}>
+        <h2>{t.data.title}</h2>
+        <p>{t.data.description}</p>
+        <p class="meta">{t.data.community_reports} community reports reference this trigger</p>
+      </a>
+    ))}
+  </div>
+
+  <style>
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: var(--space-4); margin-top: var(--space-4); }
+    .card { border: 1px solid var(--color-border); border-radius: var(--radius-md);
+      padding: var(--space-4); display: block; color: inherit; }
+    .card:hover { text-decoration: none; border-color: var(--color-accent); }
+    .card h2 { font-size: 17px; margin: 0 0 var(--space-2); }
+    .card p { margin: 0; font-size: 14px; color: var(--color-text-soft); }
+    .card .meta { margin-top: var(--space-2); font-size: 12px; color: var(--color-text-soft); }
+  </style>
+</BaseLayout>

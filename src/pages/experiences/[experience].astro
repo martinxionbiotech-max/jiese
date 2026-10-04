@@ -1,0 +1,169 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import TypeBadge from "../../../shared/components/TypeBadge.astro";
+import ExperienceDisclaimer from "../../../shared/components/ExperienceDisclaimer.astro";
+import { getCollection, render } from 'astro:content';
+import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../shared/config/config";
+
+export async function getStaticPaths() {
+  const experiences = await getCollection('experiences');
+  return experiences.map((e) => ({ params: { experience: e.data.experience_id } }));
+}
+
+const { experience } = Astro.params;
+
+const experiences = await getCollection('experiences');
+const triggers = await getCollection('triggers');
+const strategies = await getCollection('strategies');
+const questions = await getCollection('questions');
+const patterns = await getCollection('patterns');
+
+const exp = experiences.find((e) => e.data.experience_id === experience);
+
+const triggerMap = new Map(triggers.map((t) => [t.data.trigger_id, t]));
+const strategyMap = new Map(strategies.map((s) => [s.data.strategy_id, s]));
+const questionMap = new Map(questions.map((q) => [q.data.question_id, q]));
+const patternMap = new Map(patterns.map((p) => [p.data.pattern_id, p]));
+
+const expTriggers = exp.data.triggers.map((id) => triggerMap.get(id)).filter(Boolean);
+const expStrategies = exp.data.strategies.map((id) => strategyMap.get(id)).filter(Boolean);
+const expQuestions = exp.data.related_questions.map((id) => questionMap.get(id)).filter(Boolean);
+const expPatterns = exp.data.related_patterns.map((id) => patternMap.get(id)).filter(Boolean);
+
+const similar = experiences
+  .filter((other) => other.data.experience_id !== exp.data.experience_id)
+  .map((other) => {
+    const shared = other.data.triggers.filter((t) => exp.data.triggers.includes(t)).length;
+    return { other, shared };
+  })
+  .filter((x) => x.shared > 0)
+  .sort((a, b) => b.shared - a.shared)
+  .slice(0, 3)
+  .map((x) => x.other);
+
+const { Content } = await render(exp);
+
+const siteTitle = "Porn Recovery Knowledge Platform";
+const url = `${MAIN_SITE_URL}/experiences/${exp.data.experience_id}/`;
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: exp.data.title,
+  description: exp.data.reported_problem ?? "A structured community recovery experience.",
+  datePublished: exp.data.last_updated,
+  dateModified: exp.data.last_updated,
+  mainEntityOfPage: url,
+};
+---
+<BaseLayout
+  siteTitle={siteTitle}
+  siteUrl={MAIN_SITE_URL}
+  title={`${exp.data.title} — Porn Recovery Knowledge Platform`}
+  description={exp.data.reported_problem ?? "A structured, de-identified community recovery experience."}
+  canonical={`/experiences/${exp.data.experience_id}/`}
+  jsonLd={jsonLd}
+  lastUpdated={exp.data.last_updated}
+  breadcrumbs={[
+    { name: "Home", url: "/" },
+    { name: "Experiences", url: "/experiences/" },
+    { name: exp.data.title, url: `/experiences/${exp.data.experience_id}/` },
+  ]}
+>
+  <div class="head">
+    <TypeBadge type="experience" />
+    {exp.data.privacy_status === "synthetic" && (
+      <span class="synthetic-badge">SYNTHETIC EXAMPLE</span>
+    )}
+  </div>
+  <h1>{exp.data.title}</h1>
+  <ExperienceDisclaimer kind="experience" />
+
+  <Content />
+
+  <h2>Snapshot</h2>
+  <table class="data-table">
+    <tbody>
+      <tr><th>Stage</th><td>{exp.data.recovery_stage ?? "Not reported"}</td></tr>
+      <tr><th>Duration of attempt</th><td>{exp.data.duration ?? "Not reported"}</td></tr>
+      <tr><th>Goal</th><td>{exp.data.goal ?? "Not reported"}</td></tr>
+      <tr><th>Reported problem</th><td>{exp.data.reported_problem ?? "Not reported"}</td></tr>
+      <tr><th>Relapse reported</th><td>{exp.data.relapse ? "Yes" : "No"}</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Triggers</h2>
+  {expTriggers.length > 0 ? (
+    <ul>
+      {expTriggers.map((t) => (
+        <li><a href={`/triggers/${t.data.trigger_id}/`}>{t.data.title}</a></li>
+      ))}
+    </ul>
+  ) : <p>Not reported.</p>}
+
+  <h2>What the Person Tried</h2>
+  {expStrategies.length > 0 ? (
+    <ul>
+      {expStrategies.map((s) => (
+        <li><a href={`/strategies/${s.data.strategy_id}/`}>{s.data.title}</a></li>
+      ))}
+    </ul>
+  ) : <p>Not reported.</p>}
+
+  <h2>Reported Outcome</h2>
+  <p>{exp.data.outcome ?? "Not reported."}</p>
+  {exp.data.reported_changes.length > 0 && (
+    <>
+      <h3>Reported changes</h3>
+      <ul>
+        {exp.data.reported_changes.map((c) => <li>{c}</li>)}
+      </ul>
+    </>
+  )}
+
+  <h2>What We Can Learn</h2>
+  {exp.data.lessons.length > 0 ? (
+    <ul>{exp.data.lessons.map((l) => <li>{l}</li>)}</ul>
+  ) : <p>Not reported.</p>}
+  {exp.data.uncertainties.length > 0 && (
+    <>
+      <h3>Uncertainties</h3>
+      <ul>{exp.data.uncertainties.map((u) => <li>{u}</li>)}</ul>
+    </>
+  )}
+
+  {similar.length > 0 && (
+    <>
+      <h2>Similar Experiences</h2>
+      <ul>
+        {similar.map((s) => (
+          <li><a href={`/experiences/${s.data.experience_id}/`}>{s.data.title}</a></li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  <h2>Relevant Research</h2>
+  {exp.data.related_research.length > 0 ? (
+    <ul>
+      {exp.data.related_research.map((r) => (
+        <li><a href={`${DATA_SITE_URL}/topics/${r}/`}>{r.replaceAll("-", " ")}</a></li>
+      ))}
+    </ul>
+  ) : <p>None linked.</p>}
+
+  <h2>Limitations</h2>
+  <p class="note">This is a single community-reported experience (or a synthetic example
+  demonstrating the record structure). It is not evidence that any strategy works, that any
+  timeline applies, or that a causal link exists. Individual experiences vary widely.</p>
+
+  <p class="note">This platform provides educational information, not medical advice,
+  diagnosis, or treatment.</p>
+
+  <style>
+    .head { display: flex; gap: var(--space-2); align-items: center; flex-wrap: wrap; }
+    .synthetic-badge { background: #fdf1ef; color: var(--color-clinical);
+      border: 1px solid var(--color-clinical); border-radius: 999px;
+      padding: 2px 10px; font-size: 12px; font-weight: 600; }
+    table.data-table th { width: 200px; }
+  </style>
+</BaseLayout>

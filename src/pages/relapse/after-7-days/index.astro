@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../../../../shared/components/BaseLayout.astro";
+import { MAIN_SITE_URL } from "../../../../shared/config/config";
+
+const siteTitle = "Porn Recovery Knowledge Platform";
+---
+<BaseLayout
+  siteTitle={siteTitle}
+  siteUrl={MAIN_SITE_URL}
+  title="Relapse After 7 Days — Porn Recovery Knowledge Platform"
+  description="What community members report about relapsing after about a week without pornography use."
+  canonical="/relapse/after-7-days/"
+  breadcrumbs={[
+    { name: "Home", url: "/" },
+    { name: "About Relapse", url: "/relapse/" },
+    { name: "After 7 days", url: "/relapse/after-7-days/" },
+  ]}
+>
+  <h1>Relapse After 7 Days</h1>
+  <p>Some community members describe a relapse after about a week of not using pornography.
+  This page reports what they describe, without making any causal claim about timing.</p>
+
+  <h2>What members report</h2>
+  <ul>
+    <li>Some describe the first week as a period of strong, frequent urges, and a relapse
+    during that week as common.</li>
+    <li>Members often link an early relapse to a specific trigger — stress, boredom, or
+    being alone at night — rather than to a lack of effort.</li>
+    <li>Several describe the first week as the hardest, with urges becoming more manageable
+    afterward for those who continued.</li>
+  </ul>
+
+  <h2>What this means</h2>
+  <p>A relapse at around seven days is not a meaningful clinical marker. There is no
+  established timeline, and no evidence that seven days is a particular threshold. The
+  pattern some members describe is simply that the early period is often difficult.</p>
+
+  <p class="note">Treat an early relapse as information about your triggers, not as failure.
+  See <a href="/relapse/recovery-after-relapse/">recovering after a relapse</a> and
+  <a href="/patterns/early-days-hardest/">the early-days pattern</a>.</p>
+</BaseLayout>

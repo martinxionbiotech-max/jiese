@@ -1,0 +1,115 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import TypeBadge from "../../../shared/components/TypeBadge.astro";
+import ExperienceDisclaimer from "../../../shared/components/ExperienceDisclaimer.astro";
+import { getCollection, render } from 'astro:content';
+import { MAIN_SITE_URL } from "../../../shared/config/config";
+
+export async function getStaticPaths() {
+  const triggers = await getCollection('triggers');
+  return triggers.map((t) => ({ params: { trigger: t.data.trigger_id } }));
+}
+
+const { trigger } = Astro.params;
+
+const triggers = await getCollection('triggers');
+const questions = await getCollection('questions');
+const experiences = await getCollection('experiences');
+
+const t = triggers.find((x) => x.data.trigger_id === trigger);
+
+const questionMap = new Map(questions.map((q) => [q.data.question_id, q]));
+const relatedQuestions = t.data.related_questions.map((id) => questionMap.get(id)).filter(Boolean);
+
+const relatedExperiences = experiences.filter((e) =>
+  e.data.triggers.includes(t.data.trigger_id));
+
+const { Content } = await render(t);
+
+const siteTitle = "Porn Recovery Knowledge Platform";
+const url = `${MAIN_SITE_URL}/triggers/${t.data.trigger_id}/`;
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: `${t.data.title} — a reported trigger`,
+  description: t.data.description,
+  datePublished: t.data.last_updated,
+  dateModified: t.data.last_updated,
+  mainEntityOfPage: url,
+};
+---
+<BaseLayout
+  siteTitle={siteTitle}
+  siteUrl={MAIN_SITE_URL}
+  title={`${t.data.title} — Reported Trigger | Porn Recovery Knowledge Platform`}
+  description={t.data.description}
+  canonical={`/triggers/${t.data.trigger_id}/`}
+  jsonLd={jsonLd}
+  lastUpdated={t.data.last_updated}
+  breadcrumbs={[
+    { name: "Home", url: "/" },
+    { name: "Triggers", url: "/triggers/" },
+    { name: t.data.title, url: `/triggers/${t.data.trigger_id}/` },
+  ]}
+>
+  <TypeBadge type="uncertain" />
+  <h1>{t.data.title}</h1>
+  <ExperienceDisclaimer kind="pattern" />
+
+  <h2>What It Is</h2>
+  <Content />
+
+  <h2>Community Reports</h2>
+  <p>{t.data.title} is referenced in {t.data.community_reports} community reports in this
+  dataset. These are personal reports, not evidence that this trigger causes urges or
+  relapse.</p>
+
+  <h2>Common Contexts</h2>
+  {t.data.contexts.length > 0 ? (
+    <ul>{t.data.contexts.map((c) => <li>{c}</li>)}</ul>
+  ) : <p>None listed.</p>}
+
+  <h2>Reported Coping Strategies</h2>
+  {t.data.coping_strategies.length > 0 ? (
+    <ul>{t.data.coping_strategies.map((c) => <li>{c}</li>)}</ul>
+  ) : <p>None listed.</p>}
+  <p class="note">These are strategies community members report using, not proven
+  interventions. See the <a href="/strategies/">Strategies</a> section for details.</p>
+
+  <h2>Evidence</h2>
+  <p>Evidence status: <strong>{t.data.evidence_status}</strong>. This trigger is a
+  community observation; no causal relationship with pornography use is established by
+  this platform.</p>
+
+  <h2>Limitations</h2>
+  <p class="note">Community reports show that people describe this situation before urges,
+  but correlation is not causation. A trigger may co-occur with other factors — such as
+  tiredness, low mood, or privacy — that are the actual relevant conditions.</p>
+
+  {relatedExperiences.length > 0 && (
+    <>
+      <h2>Related Experiences</h2>
+      <ul>
+        {relatedExperiences.map((e) => (
+          <li><a href={`/experiences/${e.data.experience_id}/`}>{e.data.title}</a></li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  {relatedQuestions.length > 0 && (
+    <>
+      <h2>Related Questions</h2>
+      <ul>
+        {relatedQuestions.map((q) => (
+          <li><a href={`/problems/${q.data.question_id}/`}>{q.data.title}</a></li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  <h2>When Professional Support May Be Appropriate</h2>
+  <p class="note">If this trigger is tied to persistent distress — such as ongoing anxiety,
+  insomnia, or low mood — or if urges feel unmanageable, professional support may be
+  appropriate. This platform provides educational information, not a substitute for care.</p>
+</BaseLayout>

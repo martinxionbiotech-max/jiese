@@ -1,0 +1,93 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import TypeBadge from "../../../shared/components/TypeBadge.astro";
+import { getCollection, render } from 'astro:content';
+import { MAIN_SITE_URL } from "../../../shared/config/config";
+
+export async function getStaticPaths() {
+  const strategies = await getCollection('strategies');
+  return strategies.map((s) => ({ params: { strategy: s.data.strategy_id } }));
+}
+
+const { strategy } = Astro.params;
+
+const strategies = await getCollection('strategies');
+const triggers = await getCollection('triggers');
+
+const s = strategies.find((x) => x.data.strategy_id === strategy);
+
+const triggerMap = new Map(triggers.map((t) => [t.data.trigger_id, t]));
+const relatedTriggers = s.data.related_triggers.map((id) => triggerMap.get(id)).filter(Boolean);
+
+const badgeType = s.data.type === "evidence-supported" ? "research"
+  : s.data.type === "mixed" ? "uncertain" : "pattern";
+
+const { Content } = await render(s);
+
+const siteTitle = "Porn Recovery Knowledge Platform";
+const url = `${MAIN_SITE_URL}/strategies/${s.data.strategy_id}/`;
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: s.data.title,
+  description: s.data.description,
+  datePublished: s.data.last_updated,
+  dateModified: s.data.last_updated,
+  mainEntityOfPage: url,
+};
+---
+<BaseLayout
+  siteTitle={siteTitle}
+  siteUrl={MAIN_SITE_URL}
+  title={`${s.data.title} — Recovery Strategy | Porn Recovery Knowledge Platform`}
+  description={s.data.description}
+  canonical={`/strategies/${s.data.strategy_id}/`}
+  jsonLd={jsonLd}
+  lastUpdated={s.data.last_updated}
+  breadcrumbs={[
+    { name: "Home", url: "/" },
+    { name: "Strategies", url: "/strategies/" },
+    { name: s.data.title, url: `/strategies/${s.data.strategy_id}/` },
+  ]}
+>
+  <TypeBadge type={badgeType} />
+  <h1>{s.data.title}</h1>
+  <p class="meta">Type: {s.data.type.replaceAll("-", " ")}</p>
+
+  <h2>What It Is</h2>
+  <p>{s.data.description}</p>
+  <Content />
+
+  <h2>How People Use It</h2>
+  {s.data.how_people_use_it.length > 0 ? (
+    <ul>{s.data.how_people_use_it.map((x) => <li>{x}</li>)}</ul>
+  ) : <p>None listed.</p>}
+
+  <h2>Evidence</h2>
+  <p>{s.data.evidence ?? "No direct evidence identified."}</p>
+
+  {s.data.limitations && (
+    <>
+      <h2>Limitations</h2>
+      <p>{s.data.limitations}</p>
+    </>
+  )}
+
+  {relatedTriggers.length > 0 && (
+    <>
+      <h2>Related Triggers</h2>
+      <ul>
+        {relatedTriggers.map((t) => (
+          <li><a href={`/triggers/${t.data.trigger_id}/`}>{t.data.title}</a></li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  <p class="note">This platform provides educational information, not medical advice,
+  diagnosis, or treatment.</p>
+
+  <style>
+    .meta { color: var(--color-text-soft); font-size: 14px; }
+  </style>
+</BaseLayout>

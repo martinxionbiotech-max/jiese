@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import { getCollection } from 'astro:content';
+import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../shared/config/config";
+const stages = ["Day 1", "Day 3", "Day 7", "Day 14", "Day 21", "Day 30", "Day 45", "Day 60", "Day 90", "6 Months", "1 Year"];
+---
+<BaseLayout
+  siteTitle="Porn Recovery Knowledge Platform"
+  siteUrl={MAIN_SITE_URL}
+  title="Recovery — What Problematic Pornography Use Recovery Involves"
+  description="What recovery from problematic pornography use involves: the urge-use-regret cycle, recovery stages as reported by community members, and what research can and cannot yet say."
+  canonical="/recovery/"
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Recovery", url: "/recovery/" }]}
+>
+  <h1>Recovery</h1>
+  <p>Recovery from problematic pornography use is the process of regaining a sense of
+  control and reducing the distress or life problems connected to porn use. It is not a
+  single event and not a fixed timeline.</p>
+
+  <h2>The cycle people describe</h2>
+  <p>Across community reports, a recurring pattern emerges:</p>
+  <ol>
+    <li><strong>Trigger</strong> — a situation or feeling (stress, boredom, loneliness, being alone at night)</li>
+    <li><strong>Urge</strong> — a felt pull toward use</li>
+    <li><strong>Behavior</strong> — using pornography, often described as automatic or hard to stop</li>
+    <li><strong>Aftermath</strong> — regret, shame, low mood, or a sense of lost control</li>
+  </ol>
+  <p class="note">This cycle is a community observation. It is not a clinical model.
+  See <a href="/methodology/">Methodology</a> for how patterns are derived.</p>
+
+  <h2>Recovery stages people report</h2>
+  <p>Community members often track progress in days. Some community members reported the
+  following stages; these are <strong>not</strong> predictions of what will happen to you:</p>
+  <ul>
+    {stages.map((s) => <li>{s} — see <a href={`/recovery/${s.toLowerCase().replaceAll(" ", "-")}/`}>stage page</a></li>)}
+  </ul>
+
+  <h2>What research says</h2>
+  <p>Scientific classification of problematic pornography use remains debated. The
+  WHO's ICD-11 includes Compulsive Sexual Behaviour Disorder (CSBD) as an
+  impulse-control disorder. Researchers differ on whether PPU is best understood as an
+  addiction, a compulsion, or an impulse-control problem. Detailed, sourced coverage
+  lives on the <a href={DATA_SITE_URL}>knowledge base</a>.</p>
+
+  <h2>Where to go next</h2>
+  <ul>
+    <li><a href="/triggers/">Understand your triggers</a></li>
+    <li><a href="/strategies/">Recovery strategies</a></li>
+    <li><a href="/experiences/">Real experiences</a></li>
+    <li><a href="/relapse/">About relapse</a></li>
+  </ul>
+</BaseLayout>

@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import { MAIN_SITE_URL } from "../../../shared/config/config";
+---
+<BaseLayout
+  siteTitle="Porn Recovery Knowledge Platform"
+  siteUrl={MAIN_SITE_URL}
+  title="Health & Medical Disclaimer"
+  description="This platform provides educational information about problematic pornography use. It is not medical advice, diagnosis, or treatment."
+  canonical="/disclaimer/"
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Disclaimer", url: "/disclaimer/" }]}
+>
+  <h1>Health &amp; Medical Disclaimer</h1>
+  <p>This website provides general educational information about problematic pornography
+  use (PPU), compulsive sexual behavior, and related recovery experiences. By using this
+  site, you acknowledge the following:</p>
+  <ul>
+    <li><strong>Not medical advice.</strong> Nothing on this site is medical advice,
+    diagnosis, treatment, or a substitute for consultation with a qualified healthcare
+    professional.</li>
+    <li><strong>Not individualized.</strong> Content is general information. It does not
+    take into account your personal circumstances, health history, or situation.</li>
+    <li><strong>Experiences are not evidence.</strong> Personal experiences and community
+    patterns describe what some people reported. They do not establish that a strategy,
+    timeline, or outcome applies to you.</li>
+    <li><strong>Evidence is summarized, not complete.</strong> Research summaries reflect
+    sources available at the time of writing and may be superseded.</li>
+    <li><strong>Seek professional help when needed.</strong> If you experience significant
+    distress, depression, anxiety, or thoughts of self-harm, contact a qualified
+    professional or local emergency services.</li>
+  </ul>
+  <p class="note">If you are in crisis, please contact a local crisis line or emergency
+  services in your country.</p>
+</BaseLayout>

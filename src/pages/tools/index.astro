@@ -1,0 +1,194 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import { MAIN_SITE_URL } from "../../../shared/config/config";
+
+const siteTitle = "Porn Recovery Knowledge Platform";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Tools",
+  url: MAIN_SITE_URL + "/tools/",
+  description: "Small, private, client-side tools for tracking urges and recovery progress.",
+};
+---
+<BaseLayout
+  siteTitle={siteTitle}
+  siteUrl={MAIN_SITE_URL}
+  title="Tools — Porn Recovery Knowledge Platform"
+  description="Private, browser-based tools for recovery: an urge log and a recovery stage tracker. Your data never leaves your device."
+  canonical="/tools/"
+  jsonLd={jsonLd}
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Tools", url: "/tools/" }]}
+>
+  <h1>Tools</h1>
+  <p>Small, private tools that run entirely in your browser. Nothing you enter is sent
+  anywhere or stored on a server.</p>
+
+  <section class="tool">
+    <h2>Urge Log</h2>
+    <p>Record an urge: what triggered it, your current stage, and the outcome. Entries are
+    saved only in your browser (local storage) so you can spot your own patterns over time.</p>
+
+    <form id="urge-form" class="form">
+      <label>Trigger
+        <select id="urge-trigger" name="trigger">
+          <option value="stress">Stress</option>
+          <option value="boredom">Boredom</option>
+          <option value="loneliness">Loneliness</option>
+          <option value="nighttime">Nighttime</option>
+          <option value="being-alone">Being alone</option>
+          <option value="social-media">Social media</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+      <label>Current stage (days without use)
+        <input id="urge-stage" name="stage" type="number" min="0" value="0" />
+      </label>
+      <label>Outcome
+        <select id="urge-outcome" name="outcome">
+          <option value="resisted">Resisted</option>
+          <option value="slipped">Slipped</option>
+          <option value="relapsed">Relapsed</option>
+        </select>
+      </label>
+      <button type="submit">Log urge</button>
+    </form>
+
+    <h3>Your entries</h3>
+    <ul id="urge-list" class="log"></ul>
+    <button id="urge-clear" class="clear" type="button">Clear all entries</button>
+  </section>
+
+  <section class="tool">
+    <h2>Recovery Stage Tracker</h2>
+    <p>Enter your start date to see how many days you are into recovery, and the stage that
+    corresponds to.</p>
+    <form id="tracker-form" class="form">
+      <label>Start date
+        <input id="tracker-date" name="date" type="date" />
+      </label>
+      <button type="submit">Show my stage</button>
+    </form>
+    <p id="tracker-output" class="output"></p>
+  </section>
+
+  <section class="tool">
+    <h2>In development</h2>
+    <p>These tools are planned but not yet available:</p>
+    <ul>
+      <li><strong>Journal</strong> — a private, browser-based journal for reflection.</li>
+      <li><strong>Workbook</strong> — a guided workbook for mapping triggers and strategies.</li>
+      <li><strong>Accountability</strong> — tools for structured check-ins with someone you trust.</li>
+    </ul>
+  </section>
+
+  <p class="note">These tools are aids for self-observation. They are not medical devices and
+  not a substitute for professional support.</p>
+
+  <style>
+    .tool { margin: var(--space-5) 0; padding: var(--space-4);
+      border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+    .form { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: end; }
+    .form label { display: flex; flex-direction: column; font-size: 14px;
+      color: var(--color-text-soft); gap: var(--space-1); }
+    .form input, .form select { padding: var(--space-2); font-size: 15px;
+      border: 1px solid var(--color-border); border-radius: var(--radius-sm); }
+    .form button { padding: var(--space-2) var(--space-4); background: var(--color-accent);
+      color: #fff; border: none; border-radius: var(--radius-sm); cursor: pointer; }
+    .log { list-style: none; padding: 0; margin: var(--space-3) 0; font-size: 14px; }
+    .log li { padding: var(--space-2) 0; border-bottom: 1px solid var(--color-border); }
+    .clear { background: none; border: 1px solid var(--color-border); color: var(--color-text-soft);
+      padding: var(--space-1) var(--space-3); border-radius: var(--radius-sm); cursor: pointer; }
+    .output { font-size: 15px; }
+  </style>
+</BaseLayout>
+
+<script is:inline>
+(function () {
+  var KEY = "urge-log-entries";
+
+  function loadEntries() {
+    try { return JSON.parse(localStorage.getItem(KEY) || "[]"); }
+    catch (e) { return []; }
+  }
+  function saveEntries(entries) {
+    localStorage.setItem(KEY, JSON.stringify(entries));
+  }
+  function render() {
+    var list = document.getElementById("urge-list");
+    var entries = loadEntries();
+    list.innerHTML = "";
+    entries.slice().reverse().forEach(function (e) {
+      var li = document.createElement("li");
+      li.textContent = e.date + " — trigger: " + e.trigger + ", stage: day " + e.stage +
+        ", outcome: " + e.outcome;
+      list.appendChild(li);
+    });
+  }
+
+  var form = document.getElementById("urge-form");
+  if (form) {
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var entries = loadEntries();
+      entries.push({
+        date: new Date().toISOString().slice(0, 10),
+        trigger: document.getElementById("urge-trigger").value,
+        stage: document.getElementById("urge-stage").value,
+        outcome: document.getElementById("urge-outcome").value,
+      });
+      saveEntries(entries);
+      render();
+      form.reset();
+      document.getElementById("urge-stage").value = "0";
+    });
+  }
+
+  var clearBtn = document.getElementById("urge-clear");
+  if (clearBtn) {
+    clearBtn.addEventListener("click", function () {
+      if (confirm("Clear all urge log entries? This cannot be undone.")) {
+        saveEntries([]);
+        render();
+      }
+    });
+  }
+
+  var tracker = document.getElementById("tracker-form");
+  if (tracker) {
+    tracker.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var value = document.getElementById("tracker-date").value;
+      var out = document.getElementById("tracker-output");
+      if (!value) { out.textContent = "Please choose a start date."; return; }
+      var start = new Date(value + "T00:00:00");
+      var now = new Date();
+      var days = Math.floor((now - start) / (1000 * 60 * 60 * 24));
+      if (days < 0) { out.textContent = "That start date is in the future."; return; }
+
+      var stages = [
+        { day: 1, slug: "day-1", label: "Day 1" },
+        { day: 3, slug: "day-3", label: "Day 3" },
+        { day: 7, slug: "day-7", label: "Day 7" },
+        { day: 14, slug: "day-14", label: "Day 14" },
+        { day: 21, slug: "day-21", label: "Day 21" },
+        { day: 30, slug: "day-30", label: "Day 30" },
+        { day: 45, slug: "day-45", label: "Day 45" },
+        { day: 60, slug: "day-60", label: "Day 60" },
+        { day: 90, slug: "day-90", label: "Day 90" },
+        { day: 182, slug: "6-months", label: "6 Months" },
+        { day: 365, slug: "1-year", label: "1 Year" },
+      ];
+      var current = stages[0];
+      for (var i = 0; i < stages.length; i++) {
+        if (days >= stages[i].day) { current = stages[i]; } else { break; }
+      }
+      out.innerHTML = "You are <strong>" + days + "</strong> days into recovery. Closest stage: " +
+        "<a href='/recovery/" + current.slug + "/'>" + current.label + "</a>. " +
+        "See the <a href='/recovery/'>recovery overview</a>.";
+    });
+  }
+
+  render();
+})();
+</script>

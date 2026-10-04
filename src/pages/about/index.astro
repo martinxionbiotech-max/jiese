@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../shared/config/config";
+---
+<BaseLayout
+  siteTitle="Porn Recovery Knowledge Platform"
+  siteUrl={MAIN_SITE_URL}
+  title="About the Project"
+  description="About the Porn Recovery Knowledge Platform: a structured knowledge and experience platform for people seeking to understand and recover from problematic pornography use."
+  canonical="/about/"
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "About", url: "/about/" }]}
+>
+  <h1>About the Project</h1>
+  <p>This project is a structured knowledge and experience platform for people seeking
+  to understand and recover from problematic pornography use and compulsive sexual
+  behaviors.</p>
+  <p>Its core assets are:</p>
+  <ul>
+    <li><strong>Real recovery experiences</strong> — de-identified and structured</li>
+    <li><strong>Community patterns</strong> — recurring observations across experiences</li>
+    <li><strong>Scientific evidence</strong> — sourced independently from community data</li>
+    <li><strong>A growing knowledge graph</strong> — connecting experiences, triggers,
+    strategies, questions, and research</li>
+  </ul>
+  <p>Read how content is produced: <a href="/methodology/">Methodology</a>.
+  The research knowledge base lives at <a href={DATA_SITE_URL}>data site</a>.</p>
+</BaseLayout>

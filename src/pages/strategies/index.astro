@@ -1,0 +1,66 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import TypeBadge from "../../../shared/components/TypeBadge.astro";
+import { getCollection } from 'astro:content';
+import { MAIN_SITE_URL } from "../../../shared/config/config";
+
+const strategies = await getCollection('strategies');
+const groups = [
+  { type: "evidence-supported", label: "Evidence-supported", badge: "research" },
+  { type: "mixed", label: "Mixed evidence", badge: "uncertain" },
+  { type: "community-reported", label: "Community-reported", badge: "pattern" },
+];
+
+const siteTitle = "Porn Recovery Knowledge Platform";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Recovery Strategies",
+  url: MAIN_SITE_URL + "/strategies/",
+  description: "Practical strategies people report using to reduce or stop problematic pornography use, with evidence status.",
+};
+---
+<BaseLayout
+  siteTitle={siteTitle}
+  siteUrl={MAIN_SITE_URL}
+  title="Recovery Strategies — Porn Recovery Knowledge Platform"
+  description="Practical strategies people report using to reduce or stop problematic pornography use, each labeled with its evidence status."
+  canonical="/strategies/"
+  jsonLd={jsonLd}
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Strategies", url: "/strategies/" }]}
+>
+  <h1>Recovery Strategies</h1>
+  <p>Strategies people report using to reduce or stop problematic pornography use. Each is
+  labeled by evidence status: most are community-reported, while a few have broader
+  research support.</p>
+  <p class="note">"Community-reported" means people describe using it — not that it is
+  proven to work. No strategy here is presented as a guaranteed solution.</p>
+
+  {groups.map((g) => {
+    const items = strategies.filter((s) => s.data.type === g.type);
+    if (items.length === 0) return null;
+    return (
+      <section>
+        <h2>{g.label} <TypeBadge type={g.badge} /></h2>
+        <div class="grid">
+          {items.sort((a, b) => a.data.title.localeCompare(b.data.title)).map((s) => (
+            <a class="card" href={`/strategies/${s.data.strategy_id}/`}>
+              <h3>{s.data.title}</h3>
+              <p>{s.data.description}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    );
+  })}
+
+  <style>
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: var(--space-4); margin-top: var(--space-3); }
+    .card { border: 1px solid var(--color-border); border-radius: var(--radius-md);
+      padding: var(--space-4); display: block; color: inherit; }
+    .card:hover { text-decoration: none; border-color: var(--color-accent); }
+    .card h3 { margin: 0 0 var(--space-2); font-size: 16px; }
+    .card p { margin: 0; font-size: 14px; color: var(--color-text-soft); }
+  </style>
+</BaseLayout>

@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../../../../shared/components/BaseLayout.astro";
+import { MAIN_SITE_URL } from "../../../../shared/config/config";
+
+const siteTitle = "Porn Recovery Knowledge Platform";
+---
+<BaseLayout
+  siteTitle={siteTitle}
+  siteUrl={MAIN_SITE_URL}
+  title="Relapse After 90 Days — Porn Recovery Knowledge Platform"
+  description="What community members report about relapsing after roughly 90 days without pornography use."
+  canonical="/relapse/after-90-days/"
+  breadcrumbs={[
+    { name: "Home", url: "/" },
+    { name: "About Relapse", url: "/relapse/" },
+    { name: "After 90 days", url: "/relapse/after-90-days/" },
+  ]}
+>
+  <h1>Relapse After 90 Days</h1>
+  <p>Some community members describe a relapse after roughly 90 days of not using
+  pornography. Because 90 days is a well-known community goal, a relapse at this point can
+  feel especially discouraging.</p>
+
+  <h2>What members report</h2>
+  <ul>
+    <li>A relapse after a long streak is often described as following a reappearing trigger
+    or a stressful event, sometimes combined with a moment of overconfidence.</li>
+    <li>Members sometimes describe a relapse after 90 days as feeling like "losing
+    everything," even though the previous 90 days still happened.</li>
+    <li>Several describe a single slip turning into a short binge, then a restart.</li>
+  </ul>
+
+  <h2>What this means</h2>
+  <p>The 90-day mark is a community goal with no demonstrated scientific significance, and
+  a relapse at this point is not a special kind of failure. The period of control that came
+  before is not erased by a single event.</p>
+
+  <p class="note">See <a href="/relapse/recovery-after-relapse/">recovering after a
+  relapse</a>, <a href="/patterns/post-relapse-binge/">the post-relapse binge pattern</a>,
+  and <a href="/problems/what-is-the-90-day-challenge/">what the 90-day challenge actually
+  is</a>.</p>
+</BaseLayout>

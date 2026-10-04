@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import { MAIN_SITE_URL } from "../../../shared/config/config";
+
+const siteTitle = "Porn Recovery Knowledge Platform";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "About Relapse",
+  url: MAIN_SITE_URL + "/relapse/",
+  description: "What relapse is, why it is common, and how people describe recovering after one.",
+};
+---
+<BaseLayout
+  siteTitle={siteTitle}
+  siteUrl={MAIN_SITE_URL}
+  title="About Relapse — Porn Recovery Knowledge Platform"
+  description="Relapse is common and is not failure. What community members report about relapse, and how they describe recovering afterward — without shame and without causal claims."
+  canonical="/relapse/"
+  jsonLd={jsonLd}
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "About Relapse", url: "/relapse/" }]}
+>
+  <h1>About Relapse</h1>
+  <p>A relapse means returning to pornography use after a period of stopping or reducing it.
+  Community members overwhelmingly describe relapse as a common part of the process — not
+  as failure.</p>
+
+  <h2>What people report about relapse</h2>
+  <ul>
+    <li><strong>It is common.</strong> Many members describe several attempts and setbacks
+    before longer periods of control.</li>
+    <li><strong>It is usually tied to a trigger.</strong> Stress, boredom, being alone, and
+    late-night phone use are among the situations people name before a relapse.</li>
+    <li><strong>The shame can be harder than the slip itself.</strong> Members frequently
+    describe self-criticism as the part that made restarting difficult.</li>
+  </ul>
+  <p class="note">These are community observations, not established facts about relapse.
+  See <a href="/methodology/">Methodology</a> for how observations are handled.</p>
+
+  <h2>Why this platform avoids shame language</h2>
+  <p>You will not find phrases like "just try harder" or "real men don't relapse" here.
+  Those framings are not supported by evidence and are reported by many members to make
+  recovery harder. Instead, this platform treats a relapse as information: a chance to
+  learn what preceded it and what to change next.</p>
+
+  <h2>Where to go next</h2>
+  <ul>
+    <li><a href="/relapse/triggers/">Common relapse triggers</a></li>
+    <li><a href="/relapse/recovery-after-relapse/">Recovering after a relapse</a></li>
+    <li><a href="/relapse/after-7-days/">Relapse after 7 days</a></li>
+    <li><a href="/relapse/after-30-days/">Relapse after 30 days</a></li>
+    <li><a href="/relapse/after-90-days/">Relapse after 90 days</a></li>
+    <li><a href="/problems/what-counts-as-a-relapse/">What counts as a relapse?</a></li>
+    <li><a href="/problems/how-do-i-handle-a-relapse-without-shame/">Handling relapse without shame</a></li>
+  </ul>
+</BaseLayout>
