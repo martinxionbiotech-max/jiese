@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../../../../shared/components/BaseLayout.astro";
+import TypeBadge from "../../../../shared/components/TypeBadge.astro";
+import { getCollection } from 'astro:content';
+import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../../shared/config/config";
+const n = (await getCollection('experiences')).filter((e) => e.data.privacy_status !== "synthetic").length;
+---
+<BaseLayout
+  siteTitle="Porn Recovery Knowledge Platform"
+  siteUrl={MAIN_SITE_URL}
+  title="What Long-Term Success Actually Looks Like: A Portrait from 13 Accounts"
+  description="Editorial analysis of the 13 community accounts that reached one year or more: the one thing they share, what they don't, and what to distrust."
+  canonical="/analysis/long-term-success/"
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Analysis", url: "/analysis/" }, { name: "Long-Term Success", url: "/analysis/long-term-success/" }]}
+>
+  <h1>What Long-Term Success Actually Looks Like</h1>
+  <TypeBadge type="pattern" />
+  <p class="lede">Thirteen of the {n} processed community accounts describe a year or more of
+  recovery. Thirteen is a small number. Small enough to distrust — and small enough to read
+  all of, which is exactly what this essay does. It is analysis, not science. Opinions are
+  labeled as mine.</p>
+
+  <h2>The one thing they almost all share</h2>
+  <p>Twelve of the thirteen long-term accounts mention <strong>structured routine</strong> —
+  fixed daily practice, study schedules, check-ins. Not one describes success as a feat of
+  willpower. Not one credits a single technique. The closest any account comes to a "method"
+  is the habit system itself.</p>
+  <p>Let me state my opinion plainly, because the number invites it: <strong>routine is not
+  merely correlated with these long accounts; it is what the accounts are about.</strong> When
+  these people describe four years of recovery, they describe what they did every day, not what
+  they felt. Feeling, in these narratives, is downstream of structure.</p>
+
+  <h2>What they do <em>not</em> share</h2>
+  <ul>
+    <li><strong>Not age.</strong> The accounts span adolescence to middle age and beyond.</li>
+    <li><strong>Not history length.</strong> Some started young, one describes a thirty-year
+    history before 200 days. Duration of use did not predict the arc.</li>
+    <li><strong>Not a single technique.</strong> Beyond routine itself, the tools scatter —
+    one used blockers, one reduced social media, one phone restrictions, one exercise.</li>
+    <li><strong>Not an unbroken streak.</strong> At least five of the thirteen explicitly
+    describe earlier failed attempts or interrupted streaks. The four-year, zero-relapse
+    account is the exception, not the pattern.</li>
+  </ul>
+
+  <h2>Observation: the past is present in these stories</h2>
+  <p>Here is my second opinion: <strong>the long-term accounts read as archives, not as
+  victories.</strong> The twelve-year history is still in the two-year account. The decade of
+  relapse cycles is still in the 200-day account. These people did not erase their history;
+  they reorganized their relationship to it. The accounts that frame the past as wasted time
+  are the discouraged ones; the long-term ones frame it as material.</p>
+
+  <h2>Observation: one account warns against itself</h2>
+  <p>The single one-year account that describes a rough patch is worth more than several
+  clean success stories. It names the failure mode of the whole approach: the routine decayed,
+  pressure arrived, the state collapsed. My opinion: <strong>that account is the honest one.</strong>
+  Every streak is a maintained structure, and structures require maintenance. The people who
+  stay long-term appear to understand this; the people who treat a streak as a trophy appear
+  in the relapse archives instead.</p>
+
+  <h2>What to distrust about success stories</h2>
+  <p>Selection bias deserves one more paragraph. People post at milestones. The person who
+  reached one year and quietly stopped posting — and the person who never reached thirty days
+  — are invisible here. Thirteen accounts cannot tell you your odds. What they can tell you
+  is what the territory looked like for the ones who made it across: unglamorous, daily, and
+  structured, with the failures kept in the story rather than edited out.</p>
+
+  <h2>A closing opinion</h2>
+  <p>If someone asks me what separates the long-term accounts from the rest, I would say:
+  <strong>the long-term ones stopped asking how to stop, and started building the day they
+  wanted to live anyway.</strong> That is my reading — a hypothesis, not a finding. Test it
+  against the accounts yourself; they are all linked below.</p>
+
+  <p><a href="/experiences/">Browse the underlying accounts</a> ·
+  <a href="/analysis/">Main analysis</a> ·
+  <a href="/statistics/">Live statistics</a> ·
+  <a href={DATA_SITE_URL + "/evidence/"}>Evidence standards</a></p>
+</BaseLayout>

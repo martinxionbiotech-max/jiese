@@ -1,0 +1,69 @@
+---
+import BaseLayout from "../../../../shared/components/BaseLayout.astro";
+import TypeBadge from "../../../../shared/components/TypeBadge.astro";
+import { getCollection } from 'astro:content';
+import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../../shared/config/config";
+const n = (await getCollection('experiences')).filter((e) => e.data.privacy_status !== "synthetic").length;
+---
+<BaseLayout
+  siteTitle="Porn Recovery Knowledge Platform"
+  siteUrl={MAIN_SITE_URL}
+  title="The Night Shift: Why the Late-Night Cluster Keeps Appearing"
+  description="Editorial analysis of the 13 accounts that implicate nighttime, insomnia, or phone use in bed — the most actionable pattern in the dataset."
+  canonical="/analysis/nighttime/"
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Analysis", url: "/analysis/" }, { name: "The Night Shift", url: "/analysis/nighttime/" }]}
+>
+  <h1>The Night Shift: Why the Late-Night Cluster Keeps Appearing</h1>
+  <TypeBadge type="pattern" />
+  <p class="lede">Thirteen of the {n} processed accounts implicate nighttime, insomnia, or
+  phone use in bed. Six of the eight with a reported outcome describe relapse. This essay
+  examines the cluster — and, more usefully, the countermeasures the accounts themselves
+  propose. Analysis, not science; opinions are labeled as mine.</p>
+
+  <h2>The anatomy of the trap</h2>
+  <p>Read together, the accounts describe the same scene with minor variations: it is late,
+  sleep will not come, and a screen is within reach. One account names the full combination
+  explicitly — poor sleep, staying in bed, solitude, boredom. Another describes a 3 a.m.
+  relapse after vigilance decayed. A third describes an all-night episode that ends in a
+  first post seeking help.</p>
+  <p>My first opinion: <strong>this is not a willpower problem. It is an environmental
+  problem.</strong> Fatigue degrades self-regulation; the bed is a conditioned cue; the phone
+  is the delivery mechanism. No amount of resolve fixes a trap built of tiredness, place, and
+  device. The accounts that escape do so by removing a leg of the tripod.</p>
+
+  <h2>The countermeasures, in the accounts' own terms</h2>
+  <ul>
+    <li><strong>Physical distance from the phone.</strong> The clearest single intervention:
+    charge the device outside the bedroom, or at least out of arm's reach.</li>
+    <li><strong>Sleep hygiene.</strong> Fixed bedtimes, earlier sleep, no screens before bed.</li>
+    <li><strong>Leaving the room.</strong> One account names getting out of bed as the move —
+    interrupting the scene rather than outlasting it.</li>
+    <li><strong>Reducing the daytime feed.</strong> Cutting suggestive media and short-video
+    apps during the day, on the reasoning that a quieter feed means quieter nights.</li>
+  </ul>
+
+  <h2>Observation: the near-miss matters</h2>
+  <p>One account describes watching in the evening and <em>not</em> acting, framing it as a
+  partial success. My opinion: <strong>that near-miss is the most instructive night record in
+  the set.</strong> It shows the cluster is a gradient, not a cliff — and that partial wins at
+  1 a.m. are real wins. A plan that only works when perfectly executed is no plan at all.</p>
+
+  <h2>Observation: sleep problems deserve more than advice</h2>
+  <p>Two accounts describe years of insomnia — five and seven years respectively — and ask
+  whether recovery alone can fix their sleep. My opinion, stated plainly: <strong>chronic
+  insomnia is a medical matter, not a discipline matter.</strong> The community's sleep advice
+  is reasonable wellness guidance and nothing more. If sleep has been broken for years, the
+  honest answer to "will recovery fix this" is: ask a doctor, not a forum.</p>
+
+  <h2>What the cluster establishes, and what it doesn't</h2>
+  <p>The cluster is an observed association in community reports — strong enough to be worth
+  planning around, not strong enough to be called a mechanism. It does not establish that
+  nighttime causes relapse; tired, alone, and scrolling may all ride on the same underlying
+  day. But for practical purposes, the distinction barely matters: <strong>change the hour,
+  and you change the odds</strong> is a cheap hypothesis to test.</p>
+
+  <p><a href="/triggers/nighttime/">The nighttime trigger</a> ·
+  <a href="/strategies/phone-restrictions/">Phone restrictions</a> ·
+  <a href="/analysis/">Main analysis</a> ·
+  <a href="/statistics/">Live statistics</a></p>
+</BaseLayout>
