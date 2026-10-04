@@ -14,6 +14,7 @@ supporting_experiences:
   - cm-075
   - cm-090
   - cm-101
+  - cm-120
 possible_explanations:
   - "Interpreting a slip as losing all progress"
   - "All-or-nothing thinking about streaks"
