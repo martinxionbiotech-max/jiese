@@ -82,6 +82,14 @@ const canonicalUrl = canonical
             <a href={item.mainSite && siteUrl !== MAIN_SITE_URL ? MAIN_SITE_URL + item.href : item.href}>{item.label}</a>
           ))}
         </nav>
+        {siteUrl !== MAIN_SITE_URL && (
+          <nav class="cross-nav" aria-label="Main site">
+            <span class="cross-label">Main site:</span>
+            {defaultNav.filter((i) => i.mainSite).map((item) => (
+              <a href={MAIN_SITE_URL + item.href}>{item.label}</a>
+            ))}
+          </nav>
+        )}
       </div>
     </header>
     {breadcrumbs.length > 0 && (
@@ -121,6 +129,10 @@ const canonicalUrl = canonical
       .footer-nav a { color: var(--color-text-soft); margin-right: var(--space-3);
         font-size: 13px; text-decoration: underline; }
       .footer-nav a:hover { color: var(--color-accent); }
+      .cross-nav { margin-top: var(--space-1); }
+      .cross-label { color: #8fa3ba; font-size: 12px; margin-right: var(--space-2); }
+      .cross-nav a { color: #cfdbe9; margin-right: var(--space-3); font-size: 13px; }
+      .cross-nav a:hover { color: #fff; }
       nav a:hover { color: #fff; }
       .breadcrumbs { font-size: 13px; color: var(--color-text-soft);
         padding: var(--space-3) 0 0; }

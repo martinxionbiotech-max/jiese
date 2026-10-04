@@ -1,0 +1,38 @@
+# Porn Recovery Knowledge Platform
+
+An educational platform about problematic pornography use and recovery. All community
+experience records are de-identified and labeled; they are reports, not scientific
+evidence. Editorial analysis pages state opinions explicitly and keep evidence
+boundaries. This site is not medical advice.
+
+## Core sections
+
+- Start: https://selfcontrolatlas.com/start/ — orientation for people who want to stop
+- Problems (FAQ): https://selfcontrolatlas.com/problems/ — 45 answered questions with short answers
+- Experiences: https://selfcontrolatlas.com/experiences/ — 124 de-identified community records
+- Patterns: https://selfcontrolatlas.com/patterns/ — 12 recurring community patterns
+- Triggers: https://selfcontrolatlas.com/triggers/ — 22 documented triggers
+- Strategies: https://selfcontrolatlas.com/strategies/ — 16 strategies with evidence ratings
+- Recovery stages: https://selfcontrolatlas.com/recovery/ — community-reported timeline, framed as reported, not biological
+- Statistics: https://selfcontrolatlas.com/statistics/ — live aggregation, community sample, excludes synthetic records
+- Analysis: https://selfcontrolatlas.com/analysis/ — editorial deep-dives (opinions labeled; statistics verifiable)
+
+## Editorial analysis essays
+
+- The Shape of Recovery: https://selfcontrolatlas.com/analysis/ — 124-account overview
+- Long-Term Success: https://selfcontrolatlas.com/analysis/long-term-success/
+- The Night Shift: https://selfcontrolatlas.com/analysis/nighttime/
+- Relapse, Read Carefully: https://selfcontrolatlas.com/analysis/relapse/
+- The First Week: https://selfcontrolatlas.com/analysis/early-days/
+- What the Accounts Use: https://selfcontrolatlas.com/analysis/strategies/
+
+## Policies
+
+- Disclaimer: https://selfcontrolatlas.com/disclaimer/ (not medical advice)
+- Editorial Policy: https://selfcontrolatlas.com/editorial-policy/
+- Crisis Resources: https://selfcontrolatlas.com/crisis-resources/
+- Privacy: https://selfcontrolatlas.com/privacy-policy/ (static site; no tracking, no cookies)
+
+## Knowledge base (data site)
+
+- https://data.selfcontrolatlas.com/ — research library, topics, claims, controversies
