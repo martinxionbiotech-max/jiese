@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import { MAIN_SITE_URL } from "../../../shared/config/config";
+---
+<BaseLayout
+  siteTitle="Porn Recovery Knowledge Platform"
+  siteUrl={ MAIN_SITE_URL }
+  title="Editorial Policy"
+  description="How content is produced, labeled, de-identified, and corrected."
+  canonical="/editorial-policy/"
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Editorial Policy", url: "/editorial-policy/" }]}
+>
+<h1>Editorial Policy</h1>
+<p>This policy explains how content on this platform is produced, labeled, and corrected.
+It exists so readers can judge what kind of information they are looking at.</p>
+<h2>Content types and labels</h2>
+<ul>
+  <li><strong>Community experience records</strong> are de-identified, editorially
+  rewritten summaries of publicly shared recovery accounts. They are labeled as community
+  reports. They are <em>never</em> presented as scientific evidence.</li>
+  <li><strong>Community patterns</strong> are recurring structures observed across multiple
+  experience records. They are observations, not findings.</li>
+  <li><strong>Synthetic examples</strong> (used only to demonstrate the data model) are
+  explicitly labeled SYNTHETIC everywhere they appear. They are excluded from all
+  statistics, never cited as real experiences, and never used as evidence.</li>
+  <li><strong>Research summaries</strong> paraphrase published studies with source type and
+  evidence strength ratings. Where DOIs or PMIDs are known they are provided; where
+  uncertain, they are left unstated rather than guessed.</li>
+  <li><strong>Claims and controversies</strong> present the state of the evidence with
+  explicit status ratings and named uncertainties.</li>
+</ul>
+<h2>De-identification and privacy</h2>
+<p>Community-derived records are processed to remove usernames, identifiers, contact
+details, locations, and other personal information. Source material is never published
+and is excluded from the public repository. Do not attempt to re-identify records.</p>
+<h2>Language and tone</h2>
+<p>Content is written to be calm, non-judgmental, and evidence-aware. It does not shame
+pornography users, does not assume every reader has an addiction, and does not diagnose.</p>
+<h2>Evidence boundaries</h2>
+<p>The platform maintains a strict separation: personal experience is not evidence,
+community observation is not causation, correlation is not causation, and "uncertain" is
+not "false." Statements that exceed available evidence are corrected or removed.</p>
+<h2>Corrections</h2>
+<p>Factual errors are corrected when identified, including errors in published analysis
+pieces. The current version of any page is authoritative.</p>
+<p>Last updated: 2026-10-04.</p>
+
+</BaseLayout>

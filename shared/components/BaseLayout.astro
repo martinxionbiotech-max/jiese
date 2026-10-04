@@ -77,10 +77,18 @@ const canonicalUrl = canonical
         <p>This site provides educational information about problematic
         pornography use and recovery. It is not medical advice, diagnosis, or treatment.
         If you are in crisis or concerned about your mental health, contact a qualified
-        professional. See the <a href="/disclaimer/">full disclaimer</a>.
-        <a href={MAIN_SITE_URL + "/about/"}>About</a> ·
-        <a href={MAIN_SITE_URL + "/methodology/"}>Methodology</a> ·
-        <a href={MAIN_SITE_URL + "/tools/"}>Tools</a></p>
+        professional. See the <a href="/disclaimer/">full disclaimer</a>.</p>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href={MAIN_SITE_URL + "/about/"}>About</a> ·
+          <a href={MAIN_SITE_URL + "/methodology/"}>Methodology</a> ·
+          <a href={MAIN_SITE_URL + "/tools/"}>Tools</a> ·
+          <a href="/editorial-policy/">Editorial Policy</a> ·
+          <a href="/privacy-policy/">Privacy</a> ·
+          <a href="/terms/">Terms</a> ·
+          <a href="/cookie-policy/">Cookies</a> ·
+          <a href="/advertising-disclosure/">Advertising Disclosure</a> ·
+          <a href="/crisis-resources/">Crisis Resources</a>
+        </nav>
         {lastUpdated && <p class="meta">Last updated: {lastUpdated}</p>}
       </div>
     </footer>
@@ -90,6 +98,9 @@ const canonicalUrl = canonical
         padding: 12px 16px; flex-wrap: wrap; }
       .brand { color: #fff; font-weight: 700; font-size: 17px; }
       nav a { color: #cfdbe9; margin-right: var(--space-4); font-size: 14px; }
+      .footer-nav a { color: var(--color-text-soft); margin-right: var(--space-3);
+        font-size: 13px; text-decoration: underline; }
+      .footer-nav a:hover { color: var(--color-accent); }
       nav a:hover { color: #fff; }
       .breadcrumbs { font-size: 13px; color: var(--color-text-soft);
         padding: var(--space-3) 0 0; }

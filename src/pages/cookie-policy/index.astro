@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import { MAIN_SITE_URL } from "../../../shared/config/config";
+---
+<BaseLayout
+  siteTitle="Porn Recovery Knowledge Platform"
+  siteUrl={ MAIN_SITE_URL }
+  title="Cookie Policy"
+  description="This site sets no cookies. Browser-local tools are explained."
+  canonical="/cookie-policy/"
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Cookie Policy", url: "/cookie-policy/" }]}
+>
+<h1>Cookie Policy</h1>
+<p>This website <strong>does not use cookies</strong>.</p>
+<ul>
+  <li>No session cookies, no preference cookies, no tracking cookies.</li>
+  <li>No third-party services that set cookies (no analytics, no ad networks, no
+  embedded social widgets).</li>
+</ul>
+<h2>Local storage</h2>
+<p>The Trigger Journal tool uses browser <strong>local storage</strong> — data that stays
+on your device and is never sent to any server. Clearing your browser data removes it.</p>
+<h2>External links</h2>
+<p>Linked third-party sites (for example, publishers or crisis services) may set their own
+cookies according to their policies, which we do not control.</p>
+<p>Last updated: 2026-10-04.</p>
+
+</BaseLayout>

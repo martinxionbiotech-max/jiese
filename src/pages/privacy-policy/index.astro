@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import { MAIN_SITE_URL } from "../../../shared/config/config";
+---
+<BaseLayout
+  siteTitle="Porn Recovery Knowledge Platform"
+  siteUrl={ MAIN_SITE_URL }
+  title="Privacy Policy"
+  description="This platform is static: no accounts, no tracking, no cookies. Your data stays yours."
+  canonical="/privacy-policy/"
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Privacy Policy", url: "/privacy-policy/" }]}
+>
+<h1>Privacy Policy</h1>
+<p>This website is a static educational platform. This policy explains, in plain terms,
+how information is (and is not) handled here.</p>
+<h2>What this site does not do</h2>
+<ul>
+  <li><strong>No accounts, no sign-ups.</strong> You cannot create an account here; there is
+  no login system.</li>
+  <li><strong>No personal data collection.</strong> We do not collect names, email addresses,
+  or any other personally identifying information.</li>
+  <li><strong>No tracking or analytics.</strong> The site runs no analytics scripts and no
+  third-party trackers.</li>
+  <li><strong>No advertising.</strong> There is no ad network and no ad-related data processing.</li>
+  <li><strong>No cookies.</strong> This site does not set cookies. (See the Cookie Policy.)</li>
+</ul>
+<h2>Browser-local tools</h2>
+<p>The Trigger Journal tool stores your entries <strong>only in your own browser's local
+storage</strong>. Entries never leave your device, are never transmitted, and are deleted
+when you clear your browser data. We have no access to them.</p>
+<h2>Content sources</h2>
+<p>Community-derived content on this site is de-identified before publication. Original
+source material (usernames, identifiers, contact details, locations) is never published
+and is kept out of the public site entirely. See the Editorial Policy for details.</p>
+<h2>Third-party links</h2>
+<p>Pages may link to external websites (research publishers, official classifications,
+crisis services). Those sites have their own privacy practices, which we do not control.</p>
+<h2>Changes</h2>
+<p>If this policy changes, the updated version will be posted on this page.</p>
+<h2>Contact</h2>
+<p>Questions about privacy can be directed to the platform maintainer via the project
+repository contact channels.</p>
+<p>Last updated: 2026-10-04.</p>
+
+</BaseLayout>

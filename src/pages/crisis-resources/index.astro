@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import { MAIN_SITE_URL } from "../../../shared/config/config";
+---
+<BaseLayout
+  siteTitle="Porn Recovery Knowledge Platform"
+  siteUrl={ MAIN_SITE_URL }
+  title="Crisis Resources"
+  description="If you are in crisis: emergency numbers and helplines, by country."
+  canonical="/crisis-resources/"
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Crisis Resources", url: "/crisis-resources/" }]}
+>
+<h1>If You Are in Crisis</h1>
+<p>This is an educational platform. It cannot provide crisis support, and messages here
+are not monitored in real time.</p>
+<p class="note"><strong>If you are in immediate danger or thinking about harming yourself,
+please contact local emergency services right now.</strong></p>
+<h2>Immediate options</h2>
+<ul>
+  <li><strong>Local emergency services:</strong> call your country's emergency number
+  (for example, 110 or 120 in China, 911 in the United States, 112 in much of Europe).</li>
+  <li><strong>United States:</strong> 988 Suicide &amp; Crisis Lifeline — call or text 988.</li>
+  <li><strong>United Kingdom &amp; Ireland:</strong> Samaritans — call 116 123 (free).</li>
+  <li><strong>Anywhere:</strong> Find a helpline in your country at
+  <a href="https://findahelpline.com" rel="noopener">findahelpline.com</a>.</li>
+</ul>
+<h2>Not in crisis, but struggling</h2>
+<p>If pornography use or related distress is affecting your life, consider speaking with a
+qualified professional — a doctor, psychologist, counselor, or therapist. This platform
+explains the evidence; it does not treat.</p>
+<p>You matter. Reaching out is a reasonable, common, and serious step — not a failure.</p>
+
+</BaseLayout>
