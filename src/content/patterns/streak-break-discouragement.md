@@ -8,6 +8,8 @@ supporting_experiences:
   - cm-004
   - cm-006
   - synthetic-005
+  - cm-030
+  - cm-051
 possible_explanations:
   - "Interpreting a slip as losing all progress"
   - "All-or-nothing thinking about streaks"

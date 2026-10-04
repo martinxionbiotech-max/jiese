@@ -6,6 +6,8 @@ observed_pattern: "Community members often describe urges as intense but short-l
 supporting_experiences:
   - cm-005
   - synthetic-001
+  - cm-033
+  - cm-050
 possible_explanations:
   - "Urges rising and falling like other momentary states"
   - "Attention moving on when not fed"

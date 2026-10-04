@@ -8,6 +8,7 @@ supporting_experiences:
   - cm-008
   - cm-009
   - synthetic-005
+  - cm-049
 possible_explanations:
   - "Feelings of failure lowering motivation to stop"
   - "The 'what does it matter now' reasoning after a slip"

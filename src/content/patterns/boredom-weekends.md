@@ -5,6 +5,7 @@ content_type: pattern
 observed_pattern: "Weekends and days off appear repeatedly in relapse reports, with members linking unstructured time and boredom to urges."
 supporting_experiences:
   - synthetic-003
+  - cm-026
 possible_explanations:
   - "Less structure and supervision on days off"
   - "Boredom leaving attention with nowhere to go"

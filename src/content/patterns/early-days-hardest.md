@@ -7,6 +7,7 @@ supporting_experiences:
   - cm-012
   - synthetic-001
   - synthetic-003
+  - cm-052
 possible_explanations:
   - "Habit loops still being strong before new routines form"
   - "Cues and triggers still present in daily life"
