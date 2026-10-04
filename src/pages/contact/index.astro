@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../../../shared/components/BaseLayout.astro";
+import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../shared/config/config";
+---
+<BaseLayout
+  siteTitle="Porn Recovery Knowledge Platform"
+  siteUrl={MAIN_SITE_URL}
+  title="Contact"
+  description="How to contact the SelfControlAtlas project: corrections, questions, and content requests."
+  canonical="/contact/"
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Contact", url: "/contact/" }]}
+>
+  <h1>Contact</h1>
+  <p>This project is an independent research / educational knowledge platform
+  (see <a href="/about/">About</a>). Contact is handled through the project repository.</p>
+
+  <h2>Corrections</h2>
+  <p>Found a factual error? Please open an issue in the
+  <a href="https://github.com/martinxionbiotech-max/jiese/issues" rel="noopener">project repository</a>
+  with the page URL and a short description. Corrections are handled as described in the
+  <a href="/editorial-policy/">editorial policy</a>.</p>
+
+  <h2>Questions about content</h2>
+  <p>For questions about methodology, evidence handling, or specific pages, use the
+  repository issues as well. Please note: this platform cannot provide personal advice,
+  diagnosis, or crisis support.</p>
+
+  <h2>If you need help</h2>
+  <p class="note">This site is educational content only. If you are in crisis, please see
+  <a href="/crisis-resources/">crisis resources</a>. For personal health concerns, consult a
+  qualified professional.</p>
+
+  <h2>About the sites</h2>
+  <ul>
+    <li>Main site: <a href={MAIN_SITE_URL}>{MAIN_SITE_URL.replace("https://", "")}</a></li>
+    <li>Knowledge base: <a href={DATA_SITE_URL}>{DATA_SITE_URL.replace("https://", "")}</a></li>
+  </ul>
+</BaseLayout>

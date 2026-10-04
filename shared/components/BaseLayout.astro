@@ -26,6 +26,7 @@ const defaultNav = [
   { label: "Triggers", href: "/triggers/", mainSite: true },
   { label: "Strategies", href: "/strategies/", mainSite: true },
   { label: "Research", href: "/research/" },
+  { label: "Knowledge Base", href: "/", dataSite: true },
 ];
 const { siteTitle, siteUrl, title, description = "", canonical, jsonLd,
   breadcrumbs = [], lastUpdated, ogType = "website", noindex = false,
@@ -80,7 +81,7 @@ const canonicalUrl = canonical
         <a href="/" class="brand"><img src="/logo-header.png" alt={siteTitle} class="brand-logo" width="210" height="36" />{siteTitle}</a>
         <nav aria-label="Primary">
           {nav.map((item) => (
-            <a href={item.mainSite && siteUrl !== MAIN_SITE_URL ? MAIN_SITE_URL + item.href : item.href}>{item.label}</a>
+            <a href={item.dataSite && siteUrl !== DATA_SITE_URL ? DATA_SITE_URL + item.href : item.mainSite && siteUrl !== MAIN_SITE_URL ? MAIN_SITE_URL + item.href : item.href}>{item.label}</a>
           ))}
         </nav>
         {siteUrl !== MAIN_SITE_URL && (
@@ -109,6 +110,7 @@ const canonicalUrl = canonical
         professional. See the <a href="/disclaimer/">full disclaimer</a>.</p>
         <nav class="footer-nav" aria-label="Footer">
           <a href={MAIN_SITE_URL + "/about/"}>About</a> ·
+          <a href={MAIN_SITE_URL + "/contact/"}>Contact</a> ·
           <a href={MAIN_SITE_URL + "/methodology/"}>Methodology</a> ·
           <a href={MAIN_SITE_URL + "/tools/"}>Tools</a> ·
           <a href="/editorial-policy/">Editorial Policy</a> ·
