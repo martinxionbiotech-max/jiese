@@ -1,0 +1,68 @@
+---
+import BaseLayout from "../../../../shared/components/BaseLayout.astro";
+import TypeBadge from "../../../../shared/components/TypeBadge.astro";
+import { getCollection } from 'astro:content';
+import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../../shared/config/config";
+const n = (await getCollection('experiences')).filter((e) => e.data.privacy_status !== "synthetic").length;
+---
+<BaseLayout
+  siteTitle="Porn Recovery Knowledge Platform"
+  siteUrl={MAIN_SITE_URL}
+  title="Relapse, Read Carefully: What 28 Setback Accounts Actually Say"
+  description="Editorial analysis of the 28 relapse accounts: what precedes setbacks, what follows them, and why the community's non-shaming norm is its most useful feature."
+  canonical="/analysis/relapse/"
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Analysis", url: "/analysis/" }, { name: "Relapse", url: "/analysis/relapse/" }]}
+>
+  <h1>Relapse, Read Carefully: What 28 Setback Accounts Actually Say</h1>
+  <TypeBadge type="pattern" />
+  <p class="lede">Twenty-eight of the {n} processed accounts describe relapses. Read individually,
+  they are confessions. Read together, they are a pattern language — a shared vocabulary for what
+  goes wrong, and what happens next. Analysis, not science. Opinions are labeled as mine.</p>
+
+  <h2>What precedes a relapse</h2>
+  <p>The 28 setback accounts implicate, in order of frequency:
+  <strong>frustration (8)</strong>, <strong>nighttime (5)</strong>, <strong>stress (4)</strong>,
+  <strong>insomnia (3)</strong>, <strong>boredom (3)</strong>. Read that list again: the top
+  trigger is not desire. It is <em>frustration</em> — the emotional residue of a bad day, a
+  failed attempt, a setback itself.</p>
+  <p>My first opinion: <strong>the community's own "emotional relapse" category is its most
+  important diagnostic contribution.</strong> One account states it outright — bad mood,
+  setbacks, criticism, job loss are the hardest kind of trigger, harder than situational ones.
+  If you are planning for relapse prevention, plan for the bad day before you plan for the
+  weak moment. They are often the same event, in that order.</p>
+
+  <h2>What follows a relapse</h2>
+  <p>This is where the dataset gets interesting. The accounts split into two shapes:</p>
+  <ul>
+    <li><strong>The loop.</strong> Relapse → self-blame → a few days of abstinence → relapse.
+    One account names this loop explicitly and describes escaping it only by converting regret
+    into vigilance.</li>
+    <li><strong>The restart.</strong> Relapse → analysis of why → restart with an adjustment.
+    The 200+ day account restarts at day 50. The 300-day account describes earlier setbacks as
+    part of a longer arc. The decade-of-cycles account ends in recovery.</li>
+  </ul>
+  <p>My second opinion, stated bluntly: <strong>the difference between these two shapes is not
+  the relapse. It is the story told afterward.</strong> Both groups relapsed. One group turned
+  the event into a verdict; the other turned it into information. This is an observation about
+  narratives, not a proven mechanism — but it is the single most consistent pattern in the
+  setback data.</p>
+
+  <h2>Observation: vigilance decays before the event</h2>
+  <p>Several accounts describe the same pre-relapse arc: a long streak, then a gradual drop in
+  study and practice, then a setback that feels sudden but was, in the account's own
+  hindsight, prepared. One account calls it "forgetting to stay vigilant." My opinion:
+  <strong>relapse in these stories is rarely an ambush; it is usually a lapse in maintenance
+  noticed only afterward.</strong> The practical corollary is uncomfortable and useful: the
+  risk signal is not the urge. It is the skipped routine.</p>
+
+  <h2>What the numbers must not be used to claim</h2>
+  <p>These 28 accounts are self-selected and processed. No relapse rate can be computed from
+  them, no trigger frequency generalizes to any population, and no single account proves that
+  any strategy prevents or causes anything. The value here is vocabulary and pattern, not
+  statistics. Anyone who quotes these counts as prevalence is misreading the method section.</p>
+
+  <p><a href="/analysis/">Main analysis</a> ·
+  <a href="/patterns/stress-triggered-relapse/">Stress-triggered relapse pattern</a> ·
+  <a href="/patterns/shame-spiral/">The shame spiral</a> ·
+  <a href="/relapse/">Relapse section</a></p>
+</BaseLayout>

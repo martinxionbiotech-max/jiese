@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../../../../shared/components/BaseLayout.astro";
+import TypeBadge from "../../../../shared/components/TypeBadge.astro";
+import { getCollection } from 'astro:content';
+import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../../shared/config/config";
+const n = (await getCollection('experiences')).filter((e) => e.data.privacy_status !== "synthetic").length;
+---
+<BaseLayout
+  siteTitle="Porn Recovery Knowledge Platform"
+  siteUrl={MAIN_SITE_URL}
+  title="What the Accounts Use: A Strategy Map With All the Caveats"
+  description="Editorial analysis of strategy mentions across community accounts — what dominates, what clusters, and why no relapse rate can be computed here."
+  canonical="/analysis/strategies/"
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Analysis", url: "/analysis/" }, { name: "Strategies", url: "/analysis/strategies/" }]}
+>
+  <h1>What the Accounts Use: A Strategy Map With All the Caveats</h1>
+  <TypeBadge type="pattern" />
+  <p class="lede">Across the {n} processed accounts, strategy mentions form a steep pyramid:
+  one strategy dominates, a handful cluster beneath it, and everything else scatters. This essay
+  maps the pyramid — and explains why the obvious-sounding conclusions from it must not be drawn.
+  Analysis, not science; opinions are labeled as mine.</p>
+
+  <h2>The pyramid</h2>
+  <p><strong>Structured routine (62 mentions)</strong> stands alone at the top. Beneath it:
+  exercise (14), sleep hygiene (12), social accountability (11), journaling (6), meditation (6).
+  Everything else — blockers, media reduction, phone restrictions, environment change — appears
+  a handful of times each.</p>
+  <p>My first opinion: <strong>this pyramid is not a ranking of effectiveness. It is a ranking of
+  how the community talks.</strong> Routine is mentioned by everyone because routine is the
+  community's grammar — its default answer, its first advice, its closing line. That 62 people
+  mention it tells you what they believe, not what works. The two questions are different.</p>
+
+  <h2>The temptation, declined</h2>
+  <p>It is tempting to compute relapse rates per strategy and rank them. I computed them, and I
+  am not publishing them as findings, because the numbers are meaningless: tiny samples,
+  self-selected accounts, mentions rather than trials. What the honest version shows is only
+  this: <strong>strategy mentions do not separate the relapsed from the clean in this dataset
+  in any way worth trusting.</strong> Sleep hygiene and meditation show zero relapses among
+  their handful of users; social accountability shows a higher share. These are noise-level
+  differences. Any claim built on them would be false precision wearing a table.</p>
+
+  <h2>What the long-term accounts change about the picture</h2>
+  <p>There is one comparison with a little more signal: the thirteen one-year-plus accounts.
+  Twelve mention structured routine, and beyond it they scatter — one blocker, one media
+  reduction, one phone restriction, one exercise. My second opinion: <strong>the long-term
+  accounts suggest not that routine works, but that anything works if it is embedded in a
+  routine.</strong> The tool varied. The container did not. That is an observation about the
+  accounts, not evidence about outcomes.</p>
+
+  <h2>How to use a strategy map honestly</h2>
+  <p>A strategy map built from community reports is useful for exactly three things: learning
+  what people actually try, finding practices you had not considered, and calibrating
+  expectations about what the community emphasizes. It is not useful for choosing your strategy
+  by popularity, and it cannot rank strategies by effectiveness. For that, the platform's
+  evidence layer — where each strategy's research support is rated separately — is the right
+  place to look.</p>
+
+  <p><a href="/strategies/">Browse all strategies</a> ·
+  <a href={DATA_SITE_URL + "/evidence/"}>Evidence standards</a> ·
+  <a href="/analysis/">Main analysis</a> ·
+  <a href="/statistics/">Live statistics</a></p>
+</BaseLayout>

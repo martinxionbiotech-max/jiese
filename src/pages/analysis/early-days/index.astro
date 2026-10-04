@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../../../../shared/components/BaseLayout.astro";
+import TypeBadge from "../../../../shared/components/TypeBadge.astro";
+import { getCollection } from 'astro:content';
+import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../../shared/config/config";
+const n = (await getCollection('experiences')).filter((e) => e.data.privacy_status !== "synthetic").length;
+---
+<BaseLayout
+  siteTitle="Porn Recovery Knowledge Platform"
+  siteUrl={MAIN_SITE_URL}
+  title="The First Week: What 13 Early Accounts Agree On"
+  description="Editorial analysis of the first-week accounts: the predictable shape of early difficulty, the clear first days, and what to actually do with them."
+  canonical="/analysis/early-days/"
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Analysis", url: "/analysis/" }, { name: "The First Week", url: "/analysis/early-days/" }]}
+>
+  <h1>The First Week: What 13 Early Accounts Agree On</h1>
+  <TypeBadge type="pattern" />
+  <p class="lede">Thirteen of the {n} processed accounts sit within their first seven days.
+  They include day-2 commitments, a day-5 weak point, a day-6 check-in, and first posts written
+  after all-night episodes. Read together, they sketch the same shape. Analysis, not science;
+  opinions are labeled as mine.</p>
+
+  <h2>The shape of the first week</h2>
+  <p>The accounts describe a consistent arc: <strong>a clear first day or two</strong> — one
+  guidance post explicitly advises using this window, when urges are typically quiet, to write
+  down symptoms, risks, and goals — followed by <strong>a difficult stretch around days five
+  to ten</strong>. One account names days 5–6 as a personal weak point. Another describes "strong
+  discomfort" in the first ten days of a month that later eased.</p>
+  <p>My first opinion: <strong>the early window is the most underused asset in these stories.</strong>
+  People spend the clear days waiting, then meet the hard days unprepared. The accounts that use
+  the clear days — writing goals, building the daily structure — describe the hard days
+  differently: as weather, not as ambush.</p>
+
+  <h2>What the early relapses share</h2>
+  <p>Five of the thirteen early accounts describe relapse. Their triggers cluster the same way
+  the full dataset does — nighttime, frustration, boredom. Nothing exotic. My second opinion:
+  <strong>early relapse is rarely about weak character and usually about weak structure.</strong>
+  The day-5 account relapsed on a missed reflection day. The all-night account began with
+  scrolling. These are systems failures wearing emotional costumes.</p>
+
+  <h2>Observation: the near-miss is an early account too</h2>
+  <p>One first-week account describes watching in the evening and not acting — a partial win.
+  It sits in the early set with the relapses and the check-ins, and it belongs there. My opinion:
+  <strong>counting only clean days and broken days is a broken accounting system.</strong> The
+  near-miss is data: it says the environment was risky and the person held. Early recovery is
+  mostly near-misses strung together. Treating them as failures discards the actual work.</p>
+
+  <h2>The honest early-days message</h2>
+  <p>Compress the thirteen accounts and you get this: the beginning is predictably hard, the
+  hard part arrives around the first week, and the people who wrote the most useful early
+  accounts were the ones treating it as a scheduled difficulty — something to structure for,
+  not something to endure. That is a reported pattern, not a promise. Your first week may look
+  different. The point of the accounts is not to predict yours, but to make you unsurprised by
+  it.</p>
+
+  <p><a href="/analysis/">Main analysis</a> ·
+  <a href="/patterns/early-days-hardest/">The early-days-hardest pattern</a> ·
+  <a href="/start/">Start here</a> ·
+  <a href="/recovery/">Recovery overview</a></p>
+</BaseLayout>
