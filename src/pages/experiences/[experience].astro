@@ -63,6 +63,7 @@ const jsonLd = {
   canonical={`/experiences/${exp.data.experience_id}/`}
   jsonLd={jsonLd}
   lastUpdated={exp.data.last_updated}
+  noindex={exp.data.privacy_status === "synthetic"}
   breadcrumbs={[
     { name: "Home", url: "/" },
     { name: "Experiences", url: "/experiences/" },

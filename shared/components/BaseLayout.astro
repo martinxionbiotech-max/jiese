@@ -15,6 +15,8 @@ interface Props {
   nav?: { label: string; href: string }[];
   /** hreflang alternates: [{lang, href}] — 未来多语言时启用 */
   alternates?: { lang: string; href: string }[];
+  /** Open Graph image URL (absolute) */
+  ogImage?: string;
 }
 const defaultNav = [
   { label: "Start", href: "/start/", mainSite: true },
@@ -28,7 +30,8 @@ const defaultNav = [
 const { siteTitle, siteUrl, title, description = "", canonical, jsonLd,
   breadcrumbs = [], lastUpdated, ogType = "website", noindex = false,
   alternates = [],
-  nav = defaultNav } = Astro.props;
+  nav = defaultNav,
+  ogImage } = Astro.props;
 const canonicalUrl = canonical
   ? (canonical.startsWith("http") ? canonical : siteUrl + canonical)
   : siteUrl + Astro.url.pathname;
@@ -46,9 +49,26 @@ const canonicalUrl = canonical
     <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalUrl} />
     {description && <meta property="og:description" content={description} />}
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    {description && <meta name="twitter:description" content={description} />}
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
     {alternates.map((a) => (
       <link rel="alternate" hreflang={a.lang} href={a.href} />
     ))}
+    {breadcrumbs.length > 0 && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: breadcrumbs.map((b, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: b.name,
+          item: b.url.startsWith("http") ? b.url : siteUrl + b.url,
+        })),
+      })} />
+    )}
     {Array.isArray(jsonLd)
       ? jsonLd.map((ld) => <script type="application/ld+json" set:html={JSON.stringify(ld)} />)
       : jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
