@@ -18,6 +18,8 @@ practical_strategies:
 related_questions:
   - how-do-i-avoid-relapsing-when-alone
   - can-i-recover-alone
+related_triggers: ["loneliness", "being-alone"]
+related_research: ["loneliness"]
 last_updated: "2026-10-04"
 ---
 

@@ -15,7 +15,11 @@ when_to_seek_help: "If use feels out of control and causes significant distress 
 related_experiences:
   - synthetic-002
 related_research:
-  - "problematic-pornography-use"
+  - "ppu"
+evidence_status: "supported"
+reasonable_conclusion: "PPU is best understood as pornography use associated with distress, impaired control, or life interference — defined by consequences, not by amount. Research instruments (like the PPCS) operationalize it this way, and the construct is now the standard term in the academic literature."
+what_evidence_does_not_show: "PPU is not a formal diagnosis and does not imply any specific brain mechanism or treatment."
+why_evidence_difficult: "Cutoff scores on self-report scales are conventions, and self-perceived PPU is heavily shaped by values and culture."
 last_updated: "2026-10-04"
 ---
 

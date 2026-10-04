@@ -14,7 +14,11 @@ when_to_seek_help: "If concentration problems are persistent and interfere with 
 related_experiences:
   - synthetic-004
 related_research:
-  - "attention-and-compulsive-behavior"
+  - "steele-2013-sexual-desire"
+evidence_status: "limited"
+reasonable_conclusion: "Concentration problems are frequently reported by heavy users and some report improvement after stopping. But concentration depends on sleep, mood, and anxiety, all of which correlate with heavy use patterns — so a direct effect of pornography itself is not established."
+what_evidence_does_not_show: "No reliable evidence shows pornography use directly impairs cognitive function in a way that persists or that stopping reliably improves it."
+why_evidence_difficult: "Self-reports of focus are subjective and heavily influenced by expectation; studies rarely control for sleep and mental health."
 last_updated: "2026-10-04"
 ---
 

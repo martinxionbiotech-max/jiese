@@ -15,7 +15,7 @@ when_to_seek_help: "A therapist can provide confidential accountability if you h
 related_experiences:
   - synthetic-005
 related_research:
-  - "social-support-and-behavior-change"
+  - "self-regulation"
 last_updated: "2026-10-04"
 ---
 

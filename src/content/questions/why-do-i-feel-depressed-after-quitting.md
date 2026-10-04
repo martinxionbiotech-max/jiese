@@ -15,7 +15,11 @@ when_to_seek_help: "If low mood is persistent, severe, or includes thoughts of s
 related_experiences:
   - synthetic-005
 related_research:
-  - "mood-and-compulsive-behavior"
+  - "emotion-regulation"
+evidence_status: "limited"
+reasonable_conclusion: "Low mood after stopping is commonly reported and plausibly reflects both the loss of a coping behavior and underlying mood issues. It is not evidence of 'brain damage' from previous use. Persistent low mood should be treated as a health matter, not a phase to endure."
+what_evidence_does_not_show: "No evidence establishes that quitting pornography causes clinical depression or that the low mood resolves on a fixed timeline."
+why_evidence_difficult: "Depression and heavy pornography use often co-occur, and causal direction cannot be determined from self-reports."
 last_updated: "2026-10-04"
 ---
 

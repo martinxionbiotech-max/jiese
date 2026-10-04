@@ -16,7 +16,7 @@ related_experiences:
   - synthetic-002
   - synthetic-005
 related_research:
-  - "relapse-and-compulsive-behavior"
+  - "relapse"
 last_updated: "2026-10-04"
 ---
 

@@ -15,7 +15,10 @@ related_experiences:
   - synthetic-001
 related_research:
   - "pied"
-  - "pornography-and-erectile-function"
+evidence_status: "mixed"
+reasonable_conclusion: "'Porn-induced erectile dysfunction' is a clinical hypothesis with case reports behind it, not an established diagnosis. The most prominent review supporting it is case-report based and has been criticized; large population studies found no association. The reasonable position is: plausible, unproven, worth discussing with a doctor for anyone affected."
+what_evidence_does_not_show: "Evidence does not establish PIED as a common or distinct clinical entity, nor does it establish a treatment protocol."
+why_evidence_difficult: "The main supporting literature is case reports; population studies conflict; anxiety about PIED itself can cause performance problems."
 last_updated: "2026-10-04"
 ---
 

@@ -15,7 +15,8 @@ when_to_seek_help: "If anxiety or distress is significant, meditation is not a s
 related_experiences:
   - synthetic-003
 related_research:
-  - "mindfulness-and-compulsive-behavior"
+  - "emotion-regulation"
+  - "urge-vs-craving"
 last_updated: "2026-10-04"
 ---
 

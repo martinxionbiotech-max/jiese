@@ -15,7 +15,11 @@ when_to_seek_help: "If anxiety is persistent, severe, or interfering with daily 
 related_experiences:
   - synthetic-002
 related_research:
-  - "anxiety-and-compulsive-behavior"
+  - "emotion-regulation"
+evidence_status: "limited"
+reasonable_conclusion: "Anxiety in the early weeks after stopping is a common report and may reflect the loss of a coping mechanism rather than a withdrawal symptom. It is treatable and usually transient, but persistent anxiety deserves professional attention regardless of cause."
+what_evidence_does_not_show: "Evidence does not establish that quitting pornography causes an anxiety syndrome with a defined course."
+why_evidence_difficult: "Many people use pornography partly to manage anxiety, so stopping reveals pre-existing anxiety that was previously masked."
 last_updated: "2026-10-04"
 ---
 

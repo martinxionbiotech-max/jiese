@@ -14,7 +14,7 @@ when_to_seek_help: "If insomnia is persistent, a professional can help address s
 related_experiences:
   - synthetic-001
 related_research:
-  - "sleep-and-impulse-control"
+  - "brand-2016-ipace"
 last_updated: "2026-10-04"
 ---
 

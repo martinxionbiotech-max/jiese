@@ -18,6 +18,8 @@ practical_strategies:
 related_questions:
   - how-do-i-handle-a-relapse-without-shame
   - why-do-i-keep-relapsing
+related_triggers: ["failure", "emotional-distress"]
+related_research: ["emotion-regulation"]
 last_updated: "2026-10-04"
 ---
 

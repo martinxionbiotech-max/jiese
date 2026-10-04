@@ -15,7 +15,7 @@ when_to_seek_help: "If you are unsure what a healthy goal is for you, a professi
 related_experiences:
   - synthetic-003
 related_research:
-  - "abstinence-versus-reduction"
+  - "ppu-definition"
 last_updated: "2026-10-04"
 ---
 

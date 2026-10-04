@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../../shared/components/BaseLayout.astro";
 import TypeBadge from "../../../shared/components/TypeBadge.astro";
+import EvidenceSummary from "../../../shared/components/EvidenceSummary.astro";
 import { getCollection, render } from 'astro:content';
 import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../shared/config/config";
 
@@ -23,6 +24,15 @@ const { Content } = await render(q);
 
 const siteTitle = "Porn Recovery Knowledge Platform";
 const url = `${MAIN_SITE_URL}/problems/${q.data.question_id}/`;
+const STRENGTH_LABELS = {
+  supported: "Strong",
+  "partially-supported": "Moderate",
+  mixed: "Mixed",
+  limited: "Limited",
+  "not-established": "Not established",
+  unknown: "Uncertain",
+};
+
 const faqLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -49,6 +59,14 @@ const faqLd = {
 >
   <h1>{q.data.title}</h1>
 
+  <EvidenceSummary
+    bottomLine={q.data.short_answer}
+    strength={STRENGTH_LABELS[q.data.evidence_status]}
+    supported={q.data.evidence}
+    notEstablished={q.data.what_evidence_does_not_show}
+    keyUncertainty={q.data.what_we_dont_know}
+  />
+
   <h2>Short Answer</h2>
   <p>{q.data.short_answer}</p>
 
@@ -72,6 +90,27 @@ const faqLd = {
     <>
       <h2>What We Don't Know</h2>
       <p>{q.data.what_we_dont_know}</p>
+    </>
+  )}
+
+  {q.data.reasonable_conclusion && (
+    <>
+      <h2>What We Can Reasonably Conclude</h2>
+      <p>{q.data.reasonable_conclusion}</p>
+    </>
+  )}
+
+  {q.data.what_evidence_does_not_show && (
+    <>
+      <h2>What the Evidence Does NOT Show</h2>
+      <p>{q.data.what_evidence_does_not_show}</p>
+    </>
+  )}
+
+  {q.data.why_evidence_difficult && (
+    <>
+      <h2>Why the Evidence Is Difficult to Interpret</h2>
+      <p>{q.data.why_evidence_difficult}</p>
     </>
   )}
 
@@ -110,9 +149,15 @@ const faqLd = {
         </ul>
       )}
       <ul>
-        {q.data.related_research.map((r) => (
-          <li><a href={`${DATA_SITE_URL}/topics/${r}/`}>{r.replaceAll("-", " ")}</a></li>
-        ))}
+        {q.data.related_research.map((r) => {
+          const isResearch = r.startsWith("bothe-") || r.startsWith("brand-") || r.startsWith("csbd-") ||
+            r.startsWith("de-alarcon-") || r.startsWith("dsm5-") || r.startsWith("gola-") ||
+            r.startsWith("grubbs-") || r.startsWith("kraus-") || r.startsWith("landripet-") ||
+            r.startsWith("park-") || r.startsWith("prause-") || r.startsWith("stark-") ||
+            r.startsWith("steele-") || r.startsWith("voon-") || r.startsWith("walton-");
+          const href = isResearch ? `${DATA_SITE_URL}/research/${r}/` : `${DATA_SITE_URL}/topics/${r}/`;
+          return <li><a href={href}>{r.replaceAll("-", " ")}</a></li>;
+        })}
       </ul>
     </>
   )}

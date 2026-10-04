@@ -18,6 +18,8 @@ practical_strategies:
 related_questions:
   - what-is-the-chaser-effect
   - why-do-urges-come-back
+related_triggers: ["stress"]
+related_research: ["craving", "urge-vs-craving"]
 last_updated: "2026-10-04"
 ---
 

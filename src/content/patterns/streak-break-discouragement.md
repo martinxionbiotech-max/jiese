@@ -18,6 +18,8 @@ practical_strategies:
 related_questions:
   - why-do-relapses-happen-after-a-long-streak
   - how-do-i-handle-a-relapse-without-shame
+related_triggers: ["frustration", "failure"]
+related_research: ["relapse"]
 last_updated: "2026-10-04"
 ---
 

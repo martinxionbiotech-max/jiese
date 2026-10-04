@@ -15,7 +15,9 @@ when_to_seek_help: "If shame or self-criticism feels overwhelming, a professiona
 related_experiences:
   - synthetic-005
 related_research:
-  - "shame-and-behavior-change"
+  - "relapse"
+  - "emotion-regulation"
+  - "grubbs-2019-moral-incongruence"
 last_updated: "2026-10-04"
 ---
 

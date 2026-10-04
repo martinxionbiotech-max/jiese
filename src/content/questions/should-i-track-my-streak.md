@@ -14,7 +14,7 @@ when_to_seek_help: "If tracking is causing significant distress or self-criticis
 related_experiences:
   - synthetic-005
 related_research:
-  - "streaks-and-motivation"
+  - "habit-formation"
 last_updated: "2026-10-04"
 ---
 

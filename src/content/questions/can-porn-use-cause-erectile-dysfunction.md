@@ -14,7 +14,11 @@ when_to_seek_help: "Persistent erectile dysfunction should be evaluated by a doc
 related_experiences:
   - synthetic-001
 related_research:
-  - "pornography-and-erectile-function"
+  - "pied"
+evidence_status: "mixed"
+reasonable_conclusion: "The claim that pornography use is a common cause of erectile dysfunction in young men is not established. Some clinical reports describe improvements after stopping, but large population studies found no association, and anxiety itself can cause erection difficulties — which creates a self-reinforcing loop in people worried about 'porn-induced ED.'"
+what_evidence_does_not_show: "Evidence does not establish a causal mechanism by which pornography use causes erectile dysfunction, nor that stopping pornography reliably treats ED."
+why_evidence_difficult: "ED has many causes, people with ED may reduce pornography use because of it (reverse causality), and most studies are cross-sectional or based on self-selected clinic samples."
 last_updated: "2026-10-04"
 ---
 

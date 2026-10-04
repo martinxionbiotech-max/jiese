@@ -15,7 +15,8 @@ when_to_seek_help: "If use continues despite blockers and causes distress, profe
 related_experiences:
   - synthetic-004
 related_research:
-  - "blockers-and-self-control"
+  - "habit-formation"
+  - "self-regulation"
 last_updated: "2026-10-04"
 ---
 

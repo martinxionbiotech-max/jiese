@@ -14,7 +14,8 @@ when_to_seek_help: "If a community's claims or pressure cause distress, consider
 related_experiences:
   - synthetic-001
 related_research:
-  - "reboot-movement"
+  - "withdrawal-definition"
+  - "behavioral-addiction-debate"
 last_updated: "2026-10-04"
 ---
 

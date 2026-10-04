@@ -14,7 +14,8 @@ when_to_seek_help: "If you are distressed about masturbation or about your sexua
 related_experiences:
   - synthetic-003
 related_research:
-  - "masturbation-and-pornography"
+  - "ppu-definition"
+  - "cue-reactivity"
 last_updated: "2026-10-04"
 ---
 

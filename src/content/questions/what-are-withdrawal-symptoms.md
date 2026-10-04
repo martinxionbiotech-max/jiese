@@ -14,7 +14,11 @@ when_to_seek_help: "If symptoms such as low mood or anxiety are severe or persis
 related_experiences:
   - synthetic-001
 related_research:
-  - "pornography-withdrawal"
+  - "withdrawal-definition"
+evidence_status: "limited"
+reasonable_conclusion: "People stopping pornography sometimes report irritability, urges, low mood, and restlessness in the first weeks. Whether this constitutes a clinical withdrawal syndrome is not established; the reports are real, the label is not."
+what_evidence_does_not_show: "Evidence does not establish a medically defined withdrawal syndrome for pornography use with predictable symptoms and timeline."
+why_evidence_difficult: "Reported symptoms overlap heavily with everyday stress, anxiety, and mood variation, and there are no controlled studies separating abstinence effects from other life factors."
 last_updated: "2026-10-04"
 ---
 

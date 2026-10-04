@@ -14,7 +14,8 @@ when_to_seek_help: "If you are distressed or confused about masturbation, a prof
 related_experiences:
   - synthetic-003
 related_research:
-  - "masturbation-and-pornography"
+  - "ppu-definition"
+  - "sexual-dysfunction-overview"
 last_updated: "2026-10-04"
 ---
 

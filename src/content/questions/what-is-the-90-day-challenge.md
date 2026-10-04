@@ -15,7 +15,7 @@ related_experiences:
   - synthetic-001
   - synthetic-005
 related_research:
-  - "abstinence-duration"
+  - "withdrawal-definition"
 last_updated: "2026-10-04"
 ---
 

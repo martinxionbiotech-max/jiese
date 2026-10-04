@@ -16,7 +16,7 @@ related_experiences:
   - synthetic-001
   - synthetic-003
 related_research:
-  - "pornography-withdrawal"
+  - "withdrawal-definition"
 last_updated: "2026-10-04"
 ---
 

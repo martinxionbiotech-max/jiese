@@ -15,7 +15,11 @@ when_to_seek_help: "If you are unsure or distressed, a professional can help you
 related_experiences:
   - synthetic-002
 related_research:
-  - "problematic-pornography-use"
+  - "ppu"
+evidence_status: "supported"
+reasonable_conclusion: "A useful rule: use becomes a problem when it causes distress, interferes with life, or persists despite wanting to stop — not merely when it is frequent. Frequency alone is a weak predictor of problems, and the PPCS research shows perceived problems track distress and loss of control more than amount of use."
+what_evidence_does_not_show: "Evidence does not support judging use as problematic by frequency alone, or universal thresholds that apply to everyone."
+why_evidence_difficult: "Moral beliefs strongly shape self-perceived addiction, and surveys show people with identical use patterns rate themselves very differently."
 last_updated: "2026-10-04"
 ---
 

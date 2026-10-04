@@ -14,7 +14,11 @@ when_to_seek_help: "If urges after use feel overwhelming, professional support m
 related_experiences:
   - synthetic-004
 related_research:
-  - "chaser-effect"
+  - "urge-vs-craving"
+evidence_status: "community-reported"
+reasonable_conclusion: "The 'chaser effect' — strong urges in the days after a relapse or sexual activity — is a widely reported community experience. It is a descriptive label for a real reported pattern, not an established scientific concept."
+what_evidence_does_not_show: "No research establishes the chaser effect as a specific mechanism with a predictable timeline."
+why_evidence_difficult: "The pattern is documented only in community self-reports, which are self-selected and not systematically collected."
 last_updated: "2026-10-04"
 ---
 

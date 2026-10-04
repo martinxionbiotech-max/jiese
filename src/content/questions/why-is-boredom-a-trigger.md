@@ -15,7 +15,7 @@ when_to_seek_help: "If boredom is a constant feature of life and tied to low moo
 related_experiences:
   - synthetic-003
 related_research:
-  - "boredom-and-impulsivity"
+  - "boredom"
 last_updated: "2026-10-04"
 ---
 

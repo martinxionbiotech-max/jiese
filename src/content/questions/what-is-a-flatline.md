@@ -14,7 +14,11 @@ when_to_seek_help: "If a change in sexual desire or function is concerning or pe
 related_experiences:
   - synthetic-001
 related_research:
-  - "flatline"
+  - "flatline-definition"
+evidence_status: "community-reported"
+reasonable_conclusion: "The 'flatline' — a reported period of low libido and low mood weeks into abstinence — is a common community-described phase. It has no clinical definition and no research support as a specific phenomenon."
+what_evidence_does_not_show: "No evidence establishes that a flatline phase occurs on a specific timeline, or that it signals 'rebooting' progress."
+why_evidence_difficult: "Low libido and low mood are common for many reasons, and the flatline narrative can shape how people interpret ordinary mood variation."
 last_updated: "2026-10-04"
 ---
 

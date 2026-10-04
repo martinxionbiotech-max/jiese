@@ -16,16 +16,20 @@ const patterns = await getCollection('patterns');
 const questions = await getCollection('questions');
 const experiences = await getCollection('experiences');
 const strategies = await getCollection('strategies');
+const triggers = await getCollection('triggers');
 
 const p = patterns.find((x) => x.data.pattern_id === pattern);
 
 const questionMap = new Map(questions.map((q) => [q.data.question_id, q]));
 const experienceMap = new Map(experiences.map((e) => [e.data.experience_id, e]));
 const strategyMap = new Map(strategies.map((s) => [s.data.strategy_id, s]));
+const triggerMap = new Map(triggers.map((t) => [t.data.trigger_id, t]));
 
 const relatedQuestions = p.data.related_questions.map((id) => questionMap.get(id)).filter(Boolean);
 const supportingExperiences = p.data.supporting_experiences.map((id) => experienceMap.get(id)).filter(Boolean);
 const practicalStrategies = p.data.practical_strategies.map((id) => strategyMap.get(id)).filter(Boolean);
+const relatedTriggers = p.data.related_triggers.map((id) => triggerMap.get(id)).filter(Boolean);
+const relatedResearch = p.data.related_research;
 
 const { Content } = await render(p);
 
@@ -101,7 +105,29 @@ const jsonLd = {
 
   {relatedQuestions.length > 0 && (
     <>
-      <h2>Related Questions</h2>
+      {relatedTriggers.length > 0 && (
+    <>
+      <h2>Common Triggers</h2>
+      <ul>
+        {relatedTriggers.map((t) => (
+          <li><a href={`/triggers/${t.data.trigger_id}/`}>{t.data.title}</a></li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  {relatedResearch.length > 0 && (
+    <>
+      <h2>Related Evidence</h2>
+      <ul>
+        {relatedResearch.map((r) => (
+          <li><a href={`https://data.selfcontrolatlas.com/topics/${r}/`}>{r.replaceAll("-", " ")}</a></li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  <h2>Related Questions</h2>
       <ul>
         {relatedQuestions.map((q) => (
           <li><a href={`/problems/${q.data.question_id}/`}>{q.data.title}</a></li>

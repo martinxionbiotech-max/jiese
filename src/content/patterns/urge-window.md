@@ -18,6 +18,8 @@ practical_strategies:
 related_questions:
   - why-do-urges-come-back
   - what-should-i-do-instead-of-using-porn
+related_triggers: ["stress"]
+related_research: ["urge-vs-craving", "craving"]
 last_updated: "2026-10-04"
 ---
 

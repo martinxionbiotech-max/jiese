@@ -16,7 +16,8 @@ related_experiences:
   - synthetic-001
   - synthetic-003
 related_research:
-  - "environment-and-behavior-change"
+  - "loneliness"
+  - "boredom"
 last_updated: "2026-10-04"
 ---
 

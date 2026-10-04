@@ -14,8 +14,12 @@ when_to_seek_help: "If use feels out of control and causes significant distress,
 related_experiences:
   - synthetic-002
 related_research:
-  - "compulsive-sexual-behavior-disorder"
-  - "pornography-addiction-debate"
+  - "csbd"
+  - "behavioral-addiction-debate"
+evidence_status: "mixed"
+reasonable_conclusion: "The honest answer is that 'pornography addiction' is not an established medical diagnosis, but the distress some people report is real and clinically recognized behavior patterns exist. CSBD exists in the ICD-11 as an impulse-control disorder, which is not the same as being classified as an addiction."
+what_evidence_does_not_show: "The evidence does not show that pornography use affects the brain in ways identical to substance addiction, and no biomarker or brain scan can currently diagnose 'porn addiction.'"
+why_evidence_difficult: "The term is used in different ways by researchers, clinicians, and communities, and much research measures self-perceived addiction, which reflects distress and moral beliefs as much as behavior itself."
 last_updated: "2026-10-04"
 ---
 

@@ -13,8 +13,12 @@ practical_options:
 when_to_seek_help: "If you have concerns about hormones or sexual health, a doctor can provide accurate testing and advice."
 related_experiences:
   - synthetic-002
+evidence_status: "not-established"
+reasonable_conclusion: "The claim that abstinence from pornography or masturbation raises testosterone is not supported by evidence. Short-term studies found no meaningful testosterone boost from abstinence, and long-term effects are unstudied."
+what_evidence_does_not_show: "Evidence does not show that stopping pornography or masturbation increases testosterone levels or produces the benefits claimed by 'NoFap' content."
+why_evidence_difficult: "Testosterone varies with sleep, stress, and time of day, making small effects hard to detect, and most claims trace back to a single small, short study that did not replicate."
 related_research:
-  - "testosterone-and-pornography"
+  - "reward-system"
 last_updated: "2026-10-04"
 ---
 

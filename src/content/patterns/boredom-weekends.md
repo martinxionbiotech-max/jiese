@@ -18,6 +18,8 @@ practical_strategies:
 related_questions:
   - why-is-boredom-a-trigger
   - what-should-i-do-instead-of-using-porn
+related_triggers: ["boredom", "weekend", "idle-time"]
+related_research: ["boredom", "impulse-control"]
 last_updated: "2026-10-04"
 ---
 

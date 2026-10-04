@@ -15,7 +15,7 @@ when_to_seek_help: "If urges feel overwhelming or unmanageable, or drive you to 
 related_experiences:
   - synthetic-001
 related_research:
-  - "urges-and-craving"
+  - "urge-vs-craving"
 last_updated: "2026-10-04"
 ---
 

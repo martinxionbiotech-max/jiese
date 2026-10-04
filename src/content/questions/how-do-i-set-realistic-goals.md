@@ -15,7 +15,7 @@ when_to_seek_help: "If you struggle to set or keep goals, a professional can hel
 related_experiences:
   - synthetic-003
 related_research:
-  - "goal-setting-and-behavior-change"
+  - "habit-formation"
 last_updated: "2026-10-04"
 ---
 

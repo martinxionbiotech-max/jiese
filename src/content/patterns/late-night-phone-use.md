@@ -18,6 +18,8 @@ practical_strategies:
 related_questions:
   - how-do-i-deal-with-urges-at-night
   - can-porn-affect-my-sleep
+related_triggers: ["nighttime", "phone-use", "insomnia"]
+related_research: ["stress", "habit-formation"]
 last_updated: "2026-10-04"
 ---
 

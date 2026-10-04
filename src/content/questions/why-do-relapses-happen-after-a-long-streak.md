@@ -15,7 +15,8 @@ when_to_seek_help: "If a relapse after a long streak causes significant distress
 related_experiences:
   - synthetic-005
 related_research:
-  - "relapse-and-compulsive-behavior"
+  - "relapse"
+  - "relapse"
 last_updated: "2026-10-04"
 ---
 

@@ -14,7 +14,11 @@ when_to_seek_help: "If you meet a pattern of loss of control with significant di
 related_experiences:
   - synthetic-002
 related_research:
-  - "compulsive-sexual-behavior-disorder"
+  - "csbd"
+evidence_status: "supported"
+reasonable_conclusion: "CSBD (compulsive sexual behavior disorder) is a real ICD-11 diagnosis characterized by a persistent failure to control intense sexual impulses causing marked distress or impairment. Its inclusion reflects clinical consensus that some people's sexual behavior is genuinely disordered, even as the classification (impulse-control vs addiction) remains debated."
+what_evidence_does_not_show: "The ICD-11 classification does not establish that CSBD is an 'addiction' in the neurobiological sense — the WHO deliberately placed it with impulse-control disorders."
+why_evidence_difficult: "The same behaviors can be described through addiction, compulsion, or moral frameworks, and the field has not settled which fits best."
 last_updated: "2026-10-04"
 ---
 

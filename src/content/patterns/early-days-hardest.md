@@ -18,6 +18,8 @@ practical_strategies:
 related_questions:
   - how-long-does-porn-withdrawal-last
   - is-it-normal-to-have-strong-urges-at-first
+related_triggers: ["anxiety", "frustration"]
+related_research: ["withdrawal-definition"]
 last_updated: "2026-10-04"
 ---
 

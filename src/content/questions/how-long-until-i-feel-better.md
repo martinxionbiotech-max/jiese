@@ -16,7 +16,7 @@ related_experiences:
   - synthetic-001
   - synthetic-002
 related_research:
-  - "recovery-timelines"
+  - "withdrawal-definition"
 last_updated: "2026-10-04"
 ---
 

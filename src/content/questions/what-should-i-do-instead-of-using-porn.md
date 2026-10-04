@@ -15,7 +15,9 @@ when_to_seek_help: "If you cannot identify any alternative that works, professio
 related_experiences:
   - synthetic-003
 related_research:
-  - "urge-surfing"
+  - "habit-formation"
+  - "self-regulation"
+  - "urge-vs-craving"
 last_updated: "2026-10-04"
 ---
 

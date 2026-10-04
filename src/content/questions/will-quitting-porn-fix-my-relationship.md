@@ -14,7 +14,7 @@ when_to_seek_help: "If relationship distress is significant, relationship counse
 related_experiences:
   - synthetic-002
 related_research:
-  - "pornography-and-relationships"
+  - "ppu-definition"
 last_updated: "2026-10-04"
 ---
 

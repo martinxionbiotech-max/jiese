@@ -18,6 +18,8 @@ practical_strategies:
 related_questions:
   - how-do-i-avoid-relapsing-when-alone
   - what-should-i-do-instead-of-using-porn
+related_triggers: ["being-alone", "boredom"]
+related_research: ["boredom"]
 last_updated: "2026-10-04"
 ---
 

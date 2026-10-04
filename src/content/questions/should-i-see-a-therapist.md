@@ -15,7 +15,9 @@ when_to_seek_help: "If use causes significant distress, or you also experience d
 related_experiences:
   - synthetic-002
 related_research:
-  - "psychotherapy-for-compulsive-sexual-behavior"
+  - "seeking-professional-help"
+  - "cbt-for-csbd"
+  - "cbt-for-csbd"
 last_updated: "2026-10-04"
 ---
 

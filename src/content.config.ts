@@ -87,7 +87,11 @@ const questions = defineCollection({
     related_experiences: z.array(z.string()).default([]),
     related_research: z.array(z.string()).default([]),
     // Phase 2 (Part 14/15)
-    evidence_status: z.enum(['supported', 'partially-supported', 'mixed', 'limited', 'not-established', 'unknown']).default('unknown'),
+    evidence_status: z.enum(['supported', 'partially-supported', 'mixed', 'limited', 'not-established', 'unknown', 'community-reported']).default('unknown'),
+    // Phase 2 Upgrade: original synthesis fields
+    reasonable_conclusion: z.string().optional(),
+    what_evidence_does_not_show: z.string().optional(),
+    why_evidence_difficult: z.string().optional(),
     related_claims: z.array(z.string()).default([]),
     related_topics: z.array(z.string()).default([]),
     related_patterns: z.array(z.string()).default([]),
@@ -111,6 +115,8 @@ const patterns = defineCollection({
     contradictory_evidence: z.string().optional(),
     uncertainty: z.string().optional(),
     practical_strategies: z.array(z.string()).default([]),
+    related_triggers: z.array(z.string()).default([]),
+    related_research: z.array(z.string()).default([]),
     related_questions: z.array(z.string()).default([]),
     // Phase 2 (Part 7)
     observed_context: z.string().optional(),

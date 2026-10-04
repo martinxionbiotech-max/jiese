@@ -14,7 +14,11 @@ when_to_seek_help: "If concerns about brain effects are causing distress, a prof
 related_experiences:
   - synthetic-002
 related_research:
-  - "dopamine-and-pornography"
+  - "dopamine"
+evidence_status: "limited"
+reasonable_conclusion: "Dopamine is involved in sexual arousal and reward, but popular claims that pornography 'depletes,' 'fries,' or 'destroys' dopamine are not supported by evidence. Neuroimaging findings in compulsive users are small, mixed, and cannot be translated into everyday claims about brain damage."
+what_evidence_does_not_show: "No evidence shows pornography use causes lasting dopamine system damage in humans, or that a 'dopamine reset' or 'reboot' has a measurable biological basis."
+why_evidence_difficult: "Dopamine cannot be measured directly in daily life, and studies use small samples and proxy measures whose meaning is debated even among researchers."
 last_updated: "2026-10-04"
 ---
 

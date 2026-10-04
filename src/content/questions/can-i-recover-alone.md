@@ -15,7 +15,7 @@ when_to_seek_help: "If attempts on your own are not working, or distress is sign
 related_experiences:
   - synthetic-003
 related_research:
-  - "self-help-and-recovery"
+  - "de-alarcon-2019-systematic-review"
 last_updated: "2026-10-04"
 ---
 

@@ -15,7 +15,8 @@ when_to_seek_help: "If intrusive sexual thoughts are distressing or persistent, 
 related_experiences:
   - synthetic-004
 related_research:
-  - "intrusive-thoughts"
+  - "urge-vs-craving"
+  - "emotion-regulation"
 last_updated: "2026-10-04"
 ---
 

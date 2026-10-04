@@ -16,7 +16,7 @@ related_experiences:
   - synthetic-002
   - synthetic-003
 related_research:
-  - "exercise-and-mood"
+  - "habit-formation"
 last_updated: "2026-10-04"
 ---
 

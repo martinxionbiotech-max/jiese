@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../../shared/components/BaseLayout.astro";
 import TypeBadge from "../../../shared/components/TypeBadge.astro";
-import { MAIN_SITE_URL } from "../../../shared/config/config";
+import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../shared/config/config";
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
@@ -48,6 +48,37 @@ import { MAIN_SITE_URL } from "../../../shared/config/config";
   authoritative tiers: WHO / ICD-11, systematic reviews and meta-analyses,
   peer-reviewed journals, and professional organizations. Community material is never
   used as scientific evidence. When evidence is missing or mixed, the site says so.</p>
+
+  <h2>Data interpretation framework</h2>
+  <p>All statistics and pattern analyses built on this platform's experience dataset are
+  interpreted under explicit constraints:</p>
+  <ul>
+    <li><strong>Sample size and source population.</strong> Statistics report the number of
+    processed records; counts are stated plainly (for example, "62 of 124 records").</li>
+    <li><strong>Selection bias.</strong> People post when they relapse or reach milestones;
+    the dataset is self-selected and cannot represent any general population.</li>
+    <li><strong>Reporting bias.</strong> Posts reflect what people choose to share, not a
+    complete account of their experience.</li>
+    <li><strong>Survivorship bias.</strong> Success stories are more visible than quiet
+    non-posters; absence from the dataset is not evidence of absence.</li>
+    <li><strong>Coding methodology.</strong> Records are manually structured from source
+    posts with de-identification; counts reflect records mentioning each item, not
+    prevalence in any population.</li>
+    <li><strong>What frequency means.</strong> A frequency count means "this was mentioned
+    often," nothing more.</li>
+    <li><strong>What frequency does NOT mean.</strong> It does not mean the item is common,
+    effective, causal, or important.</li>
+  </ul>
+  <p>In short: <strong>community dataset ≠ general population</strong>, and
+  <strong>community experience ≠ clinical evidence</strong>. Analysis pieces repeat these
+  constraints and label opinions as opinions.</p>
+
+  <h2>Research process</h2>
+  <p>The evidence layer is built by locating published studies through academic databases,
+  recording source identifiers (DOI/PMID where verified), and summarizing them with
+  explicit evidence-strength ratings. Where a source identifier cannot be verified, it is
+  left unstated rather than guessed. Summaries are paraphrases, not reproductions of
+  publisher text. See the <a href={DATA_SITE_URL + "/evidence/"}>evidence standards</a>.</p>
 
   <h2>What this platform is not</h2>
   <p>This is not a medical site, not a diagnosis tool, and not a treatment program.

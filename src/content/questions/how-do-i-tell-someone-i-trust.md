@@ -15,7 +15,8 @@ when_to_seek_help: "If you have no one you feel safe telling, a therapist or a s
 related_experiences:
   - synthetic-005
 related_research:
-  - "social-support-and-behavior-change"
+  - "loneliness"
+  - "seeking-professional-help"
 last_updated: "2026-10-04"
 ---
 

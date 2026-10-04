@@ -14,8 +14,11 @@ when_to_seek_help: "Persistent erectile or other sexual function problems should
 related_experiences:
   - synthetic-001
 related_research:
-  - "pornography-and-erectile-function"
   - "pied"
+evidence_status: "mixed"
+reasonable_conclusion: "Some clinical case reports describe improved sexual function after stopping pornography, but population studies found no link between pornography use and sexual difficulties. Improvements reported by individuals are real for them but cannot be generalized or attributed to a specific mechanism."
+what_evidence_does_not_show: "Evidence does not establish that quitting pornography reliably improves erectile function or sexual satisfaction."
+why_evidence_difficult: "Sexual function is influenced by anxiety, relationship factors, and expectation, and self-selected reports of improvement are subject to placebo and reporting bias."
 last_updated: "2026-10-04"
 ---
 

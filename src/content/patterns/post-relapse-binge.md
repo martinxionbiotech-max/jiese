@@ -18,6 +18,8 @@ practical_strategies:
 related_questions:
   - how-do-i-handle-a-relapse-without-shame
   - what-counts-as-a-relapse
+related_triggers: ["frustration"]
+related_research: ["relapse", "craving"]
 last_updated: "2026-10-04"
 ---
 

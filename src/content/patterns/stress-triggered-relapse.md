@@ -19,6 +19,8 @@ practical_strategies:
 related_questions:
   - why-do-i-keep-relapsing
   - why-do-relapses-happen-after-a-long-streak
+related_triggers: ["stress", "work-pressure", "academic-pressure"]
+related_research: ["stress"]
 last_updated: "2026-10-04"
 ---
 

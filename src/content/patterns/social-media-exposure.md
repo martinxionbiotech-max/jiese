@@ -18,6 +18,8 @@ practical_strategies:
 related_questions:
   - do-website-blockers-work
   - how-do-i-deal-with-sexual-thoughts
+related_triggers: ["social-media", "internet-use"]
+related_research: ["cue-reactivity"]
 last_updated: "2026-10-04"
 ---
 
