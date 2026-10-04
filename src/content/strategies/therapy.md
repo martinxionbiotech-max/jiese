@@ -15,6 +15,11 @@ related_triggers:
   - emotional-distress
   - anxiety
   - relationship-problems
+strategy_type: evidence-supported
+scientific_rationale: "Psychotherapy approaches such as CBT have research support for addressing compulsive and impulse-control difficulties generally."
+evidence_strength: moderate
+who_may_find_useful: "People whose use causes significant distress or impairment, and those who have not improved with self-directed strategies."
+when_not_appropriate: "This page is not a treatment recommendation. A qualified professional should tailor any therapeutic approach individually."
 last_updated: "2026-10-04"
 ---
 

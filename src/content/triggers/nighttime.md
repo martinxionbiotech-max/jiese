@@ -18,6 +18,10 @@ related_questions:
   - how-do-i-deal-with-urges-at-night
   - can-porn-affect-my-sleep
   - what-is-the-chaser-effect
+co_occurring_triggers: ["fatigue", "phone-use", "being-alone", "boredom"]
+possible_mechanisms:
+  - "Lower self-regulation resources late in the day (a common finding in self-control research)"
+  - "Reduced social oversight at night"
 last_updated: "2026-10-04"
 ---
 

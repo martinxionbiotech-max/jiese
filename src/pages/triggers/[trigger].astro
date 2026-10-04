@@ -99,7 +99,21 @@ const jsonLd = {
 
   {relatedQuestions.length > 0 && (
     <>
-      <h2>Related Questions</h2>
+      {t.data.co_occurring_triggers?.length > 0 && (
+    <>
+      <h2>Related Triggers</h2>
+      <p>Reported as co-occurring with this trigger. These are observed associations
+      in community reports, not causal relationships.</p>
+      <ul>{t.data.co_occurring_triggers.map((c) => <li>{c.replaceAll("-", " ")}</li>)}</ul>
+    </>
+  )}
+  {t.data.possible_mechanisms?.length > 0 && (
+    <>
+      <h2>Possible Psychological Mechanisms</h2>
+      <ul>{t.data.possible_mechanisms.map((m) => <li>{m}</li>)}</ul>
+    </>
+  )}
+  <h2>Related Questions</h2>
       <ul>
         {relatedQuestions.map((q) => (
           <li><a href={`/problems/${q.data.question_id}/`}>{q.data.title}</a></li>

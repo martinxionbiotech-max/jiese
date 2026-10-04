@@ -1,5 +1,6 @@
 ---
 import "../styles/design-tokens.css";
+import { MAIN_SITE_URL, DATA_SITE_URL } from "../config/config";
 interface Props {
   siteTitle: string;
   siteUrl: string;
@@ -14,12 +15,12 @@ interface Props {
   nav?: { label: string; href: string }[];
 }
 const defaultNav = [
-  { label: "Start", href: "/start/" },
-  { label: "Recovery", href: "/recovery/" },
-  { label: "Experiences", href: "/experiences/" },
-  { label: "Problems", href: "/problems/" },
-  { label: "Triggers", href: "/triggers/" },
-  { label: "Strategies", href: "/strategies/" },
+  { label: "Start", href: "/start/", mainSite: true },
+  { label: "Recovery", href: "/recovery/", mainSite: true },
+  { label: "Experiences", href: "/experiences/", mainSite: true },
+  { label: "Problems", href: "/problems/", mainSite: true },
+  { label: "Triggers", href: "/triggers/", mainSite: true },
+  { label: "Strategies", href: "/strategies/", mainSite: true },
   { label: "Research", href: "/research/" },
 ];
 const { siteTitle, siteUrl, title, description = "", canonical, jsonLd,
@@ -51,7 +52,9 @@ const canonicalUrl = canonical
       <div class="container header-inner">
         <a href="/" class="brand">{siteTitle}</a>
         <nav aria-label="Primary">
-          {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+          {nav.map((item) => (
+            <a href={item.mainSite && siteUrl !== MAIN_SITE_URL ? MAIN_SITE_URL + item.href : item.href}>{item.label}</a>
+          ))}
         </nav>
       </div>
     </header>
@@ -68,7 +71,10 @@ const canonicalUrl = canonical
         <p>This site provides educational information about problematic
         pornography use and recovery. It is not medical advice, diagnosis, or treatment.
         If you are in crisis or concerned about your mental health, contact a qualified
-        professional. See the <a href="/disclaimer/">full disclaimer</a>.</p>
+        professional. See the <a href="/disclaimer/">full disclaimer</a>.
+        <a href={MAIN_SITE_URL + "/about/"}>About</a> ·
+        <a href={MAIN_SITE_URL + "/methodology/"}>Methodology</a> ·
+        <a href={MAIN_SITE_URL + "/tools/"}>Tools</a></p>
         {lastUpdated && <p class="meta">Last updated: {lastUpdated}</p>}
       </div>
     </footer>

@@ -152,6 +152,17 @@ const jsonLd = {
   ) : <p>None linked.</p>}
 
   <h2>Limitations</h2>
+  <h2>Record provenance</h2>
+  <ul>
+    <li>Source type: {exp.data.source_type ?? "community"}</li>
+    {exp.data.source_platform && <li>Source platform: {exp.data.source_platform}</li>}
+    {exp.data.date_collected && <li>Collected: {exp.data.date_collected}</li>}
+    {exp.data.processing_status && <li>Processing status: {exp.data.processing_status}</li>}
+    {exp.data.human_review_status && <li>Review status: {exp.data.human_review_status}</li>}
+    <li>Privacy status: {exp.data.privacy_status === "synthetic" ? "Synthetic example (not derived from a real person)" : "De-identified"}</li>
+  </ul>
+  {exp.data.processing_notes && <p>{exp.data.processing_notes}</p>}
+
   <p class="note">This is a single community-reported experience (or a synthetic example
   demonstrating the record structure). It is not evidence that any strategy works, that any
   timeline applies, or that a causal link exists. Individual experiences vary widely.</p>

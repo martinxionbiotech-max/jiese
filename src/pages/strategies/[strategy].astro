@@ -75,7 +75,42 @@ const jsonLd = {
 
   {relatedTriggers.length > 0 && (
     <>
-      <h2>Related Triggers</h2>
+      {s.data.strategy_type && (
+    <>
+      <h2>Strategy Type</h2>
+      <p>{
+        s.data.strategy_type === "evidence-supported"
+          ? "Evidence-supported intervention (direct research support exists — see Evidence)."
+          : s.data.strategy_type === "general-healthy"
+          ? "General healthy behavior (good for wellbeing; direct evidence for PPU specifically is limited)."
+          : s.data.strategy_type === "uncertain"
+          ? "Uncertain / experimental (little direct research)."
+          : "Community-reported strategy (widely reported in recovery communities; direct research limited)."
+      }</p>
+    </>
+  )}
+  {s.data.scientific_rationale && (
+    <>
+      <h2>Scientific Rationale</h2>
+      <p>{s.data.scientific_rationale}</p>
+    </>
+  )}
+  {s.data.evidence_strength && (
+    <p><strong>Evidence strength:</strong> {s.data.evidence_strength}</p>
+  )}
+  {s.data.who_may_find_useful && (
+    <>
+      <h2>Who May Find It Useful</h2>
+      <p>{s.data.who_may_find_useful}</p>
+    </>
+  )}
+  {s.data.when_not_appropriate && (
+    <>
+      <h2>When It May Not Be Appropriate</h2>
+      <p>{s.data.when_not_appropriate}</p>
+    </>
+  )}
+  <h2>Related Triggers</h2>
       <ul>
         {relatedTriggers.map((t) => (
           <li><a href={`/triggers/${t.data.trigger_id}/`}>{t.data.title}</a></li>

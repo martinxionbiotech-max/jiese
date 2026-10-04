@@ -102,6 +102,13 @@ const faqLd = {
     <>
       <h2>Related Research</h2>
       <p>The evidence layer lives on the <a href={DATA_SITE_URL}>knowledge base</a>:</p>
+      {q.data.related_claims?.length > 0 && (
+        <ul>
+          {q.data.related_claims.map((c) => (
+            <li>Claim assessment: <a href={`${DATA_SITE_URL}/claims/${c}/`}>{c.replaceAll("-", " ")}</a></li>
+          ))}
+        </ul>
+      )}
       <ul>
         {q.data.related_research.map((r) => (
           <li><a href={`${DATA_SITE_URL}/topics/${r}/`}>{r.replaceAll("-", " ")}</a></li>
