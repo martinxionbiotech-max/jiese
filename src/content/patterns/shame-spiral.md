@@ -3,9 +3,7 @@ pattern_id: shame-spiral
 title: "The Shame Spiral"
 content_type: pattern
 observed_pattern: "Feelings of shame after use are frequently described as leading to more use, creating a cycle members describe as hard to break."
-supporting_experiences:
-  - synthetic-005
-  - cm-049
+supporting_experiences: ["cm-049"]
 possible_explanations:
   - "Shame reducing motivation and hope"
   - "Using pornography to escape the discomfort of shame"

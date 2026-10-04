@@ -3,17 +3,7 @@ pattern_id: late-night-phone-use
 title: "Late-Night Phone Use"
 content_type: pattern
 observed_pattern: "Late-night phone use appears repeatedly in relapse reports, often described as scrolling in bed that drifts toward pornography use."
-supporting_experiences:
-  - cm-003
-  - cm-004
-  - cm-014
-  - cm-015
-  - synthetic-001
-  - synthetic-004
-  - cm-033
-  - cm-085
-  - cm-098
-  - cm-105
+supporting_experiences: ["cm-003", "cm-004", "cm-014", "cm-015", "cm-033", "cm-085", "cm-098", "cm-105"]
 possible_explanations:
   - "Reduced structure and supervision late at night"
   - "Tiredness lowering deliberate decision-making"

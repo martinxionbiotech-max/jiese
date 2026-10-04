@@ -3,10 +3,7 @@ pattern_id: chaser-effect
 title: "The Chaser Effect"
 content_type: pattern
 observed_pattern: "After any sexual activity, including use, members often describe a short period of stronger urges in the following hours or days."
-supporting_experiences:
-  - synthetic-004
-  - cm-048
-  - cm-051
+supporting_experiences: ["cm-048", "cm-051"]
 possible_explanations:
   - "Recent activity making related cues more salient"
   - "A return of desire shortly after arousal subsides"

@@ -3,9 +3,7 @@ pattern_id: alone-at-home
 title: "Alone at Home"
 content_type: pattern
 observed_pattern: "Being alone at home with a device appears repeatedly in relapse reports as the setting where urges are hardest to resist."
-supporting_experiences:
-  - synthetic-001
-  - synthetic-003
+supporting_experiences: []
 possible_explanations:
   - "Privacy and uninterrupted time"
   - "Device availability and habit"

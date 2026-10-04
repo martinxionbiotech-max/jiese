@@ -3,16 +3,7 @@ pattern_id: early-days-hardest
 title: "Early Days Are Hardest"
 content_type: pattern
 observed_pattern: "The first days and weeks after stopping are frequently described as the period of strongest urges and highest relapse risk."
-supporting_experiences:
-  - cm-012
-  - synthetic-001
-  - synthetic-003
-  - cm-052
-  - cm-068
-  - cm-072
-  - cm-078
-  - cm-083
-  - cm-095
+supporting_experiences: ["cm-012", "cm-052", "cm-068", "cm-072", "cm-078", "cm-083", "cm-095"]
 possible_explanations:
   - "Habit loops still being strong before new routines form"
   - "Cues and triggers still present in daily life"

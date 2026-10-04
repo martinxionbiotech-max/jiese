@@ -3,13 +3,7 @@ pattern_id: urge-window
 title: "The Short Urge Window"
 content_type: pattern
 observed_pattern: "Community members often describe urges as intense but short-lived, passing within minutes if not acted upon."
-supporting_experiences:
-  - cm-005
-  - synthetic-001
-  - cm-033
-  - cm-050
-  - cm-076
-  - cm-109
+supporting_experiences: ["cm-005", "cm-033", "cm-050", "cm-076", "cm-109"]
 possible_explanations:
   - "Urges rising and falling like other momentary states"
   - "Attention moving on when not fed"
