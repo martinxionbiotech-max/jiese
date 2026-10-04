@@ -8,6 +8,7 @@ supporting_experiences:
   - synthetic-001
   - cm-033
   - cm-050
+  - cm-076
 possible_explanations:
   - "Urges rising and falling like other momentary states"
   - "Attention moving on when not fed"

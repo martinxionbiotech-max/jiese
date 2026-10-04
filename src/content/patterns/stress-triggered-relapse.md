@@ -11,6 +11,7 @@ supporting_experiences:
   - cm-035
   - cm-038
   - cm-059
+  - cm-082
 possible_explanations:
   - "Using pornography as an escape from uncomfortable feelings"
   - "Stress reducing the mental space for deliberate choices"
