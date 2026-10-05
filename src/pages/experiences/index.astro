@@ -9,6 +9,12 @@ const experiences = (await getCollection('experiences')).sort((a, b) =>
 const triggers = await getCollection('triggers');
 const triggerMap = new Map(triggers.map((t) => [t.data.trigger_id, t]));
 
+const communityCount = experiences.filter((e) => e.data.privacy_status !== "synthetic").length;
+const syntheticCount = experiences.length - communityCount;
+const languages = new Set(experiences.map((e) => e.data.source_language).filter(Boolean));
+const platforms = new Set(experiences.map((e) => e.data.source_platform).filter(Boolean));
+const dates = experiences.map((e) => e.data.date_collected).filter(Boolean).sort();
+
 const siteTitle = "Porn Recovery Knowledge Platform";
 const jsonLd = {
   "@context": "https://schema.org",
@@ -29,6 +35,14 @@ const jsonLd = {
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "Experiences", url: "/experiences/" }]}
 >
   <h1>Recovery Experiences</h1>
+
+  <dl class="dataset-meta">
+    <div><dt>Source</dt><dd>community posts ({platforms.size} platform{platforms.size === 1 ? "" : "s"})</dd></div>
+    <div><dt>Language</dt><dd>{languages.size ? [...languages].join(", ") : "—"}</dd></div>
+    <div><dt>Collection period</dt><dd>{dates.length ? `${dates[0]} to ${dates[dates.length - 1]}` : "—"}</dd></div>
+    <div><dt>Records</dt><dd>{communityCount} community reports</dd></div>
+    <div><dt>Synthetic records</dt><dd>{syntheticCount} (demonstration only)</dd></div>
+  </dl>
   <p>Structured, de-identified reports from people who have tried to reduce or stop
   problematic pornography use. Each record describes what triggered them, what they
   tried, and what happened.</p>
@@ -66,6 +80,9 @@ const jsonLd = {
   </div>
 
   <style>
+    .dataset-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--space-3); margin: var(--space-4) 0; padding: var(--space-4); background: var(--color-bg-soft, #f7f9fb); border-radius: var(--radius-md, 8px); }
+    .dataset-meta dt { font-size: 0.8rem; color: var(--color-text-soft); font-weight: 700; }
+    .dataset-meta dd { margin: 0; font-size: 0.95rem; }
     .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: var(--space-4); margin-top: var(--space-4); }
     .card { border: 1px solid var(--color-border); border-radius: var(--radius-md);

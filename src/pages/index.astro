@@ -5,6 +5,8 @@ import { getCollection } from 'astro:content';
 import { MAIN_SITE_URL, DATA_SITE_URL } from "../../shared/config/config";
 
 const experiences = await getCollection('experiences');
+const realCount = experiences.filter((e) => e.data.privacy_status !== "synthetic").length;
+const syntheticCount = experiences.length - realCount;
 const patterns = await getCollection('patterns');
 const questions = await getCollection('questions');
 const triggers = await getCollection('triggers');
@@ -78,7 +80,7 @@ const org = {
 
   <section>
     <h2>Featured Experiences</h2>
-    <p>{experiences.length} structured experience records · <a href="/experiences/">view all</a></p>
+    <p>{realCount} community reports + {syntheticCount} synthetic examples · <a href="/experiences/">view all</a></p>
   </section>
   <section>
     <h2>Community Patterns</h2>
