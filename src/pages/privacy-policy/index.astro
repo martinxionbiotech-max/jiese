@@ -1,6 +1,16 @@
 ---
 import BaseLayout from "../../../shared/components/BaseLayout.astro";
 import { MAIN_SITE_URL } from "../../../shared/config/config";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Privacy Policy",
+  url: MAIN_SITE_URL + "/privacy-policy/",
+  description: "This platform is static: no accounts, no tracking, no cookies. Your data stays yours.",
+  isPartOf: { "@type": "WebSite", "name": "Porn Recovery Knowledge Platform", "url": "https://selfcontrolatlas.com" },
+};
+
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
@@ -8,6 +18,7 @@ import { MAIN_SITE_URL } from "../../../shared/config/config";
   title="Privacy Policy"
   description="This platform is static: no accounts, no tracking, no cookies. Your data stays yours."
   canonical="/privacy-policy/"
+  jsonLd={jsonLd}
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "Privacy Policy", url: "/privacy-policy/" }]}
 >
 <h1>Privacy Policy</h1>

@@ -1,6 +1,16 @@
 ---
 import BaseLayout from "../../../shared/components/BaseLayout.astro";
 import { MAIN_SITE_URL } from "../../../shared/config/config";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Editorial Policy",
+  url: MAIN_SITE_URL + "/editorial-policy/",
+  description: "How content is produced, labeled, de-identified, and corrected.",
+  isPartOf: { "@type": "WebSite", "name": "Porn Recovery Knowledge Platform", "url": "https://selfcontrolatlas.com" },
+};
+
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
@@ -8,6 +18,7 @@ import { MAIN_SITE_URL } from "../../../shared/config/config";
   title="Editorial Policy"
   description="How content is produced, labeled, de-identified, and corrected."
   canonical="/editorial-policy/"
+  jsonLd={jsonLd}
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "Editorial Policy", url: "/editorial-policy/" }]}
 >
 <h1>Editorial Policy</h1>

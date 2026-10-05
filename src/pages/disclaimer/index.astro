@@ -1,6 +1,16 @@
 ---
 import BaseLayout from "../../../shared/components/BaseLayout.astro";
 import { MAIN_SITE_URL } from "../../../shared/config/config";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Health & Medical Disclaimer",
+  url: MAIN_SITE_URL + "/disclaimer/",
+  description: "This platform provides educational information about problematic pornography use. It is not medical advice, diagnosis, or treatment.",
+  isPartOf: { "@type": "WebSite", "name": "Porn Recovery Knowledge Platform", "url": "https://selfcontrolatlas.com" },
+};
+
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
@@ -8,6 +18,7 @@ import { MAIN_SITE_URL } from "../../../shared/config/config";
   title="Health & Medical Disclaimer"
   description="This platform provides educational information about problematic pornography use. It is not medical advice, diagnosis, or treatment."
   canonical="/disclaimer/"
+  jsonLd={jsonLd}
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "Disclaimer", url: "/disclaimer/" }]}
 >
   <h1>Health &amp; Medical Disclaimer</h1>

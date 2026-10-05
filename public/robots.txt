@@ -24,4 +24,7 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
+# Content signals — same policy as the Allow rules above
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+
 Sitemap: https://selfcontrolatlas.com/sitemap-index.xml

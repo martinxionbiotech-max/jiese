@@ -17,8 +17,19 @@ const related = experiences
   .filter((e) => (e.data.recovery_stage ?? "").includes(data.label.split(" ")[0]) || (e.data.duration ?? "").includes(data.label))
   .slice(0, 3);
 const allStages = STAGES;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: `${data.title} — Community-Reported Recovery Stage`,
+  url: MAIN_SITE_URL + `/recovery/${data.id}/`,
+  description: `Observational community-reported data for ${data.label}.`,
+  isPartOf: { "@type": "WebSite", "name": "Porn Recovery Knowledge Platform", "url": "https://selfcontrolatlas.com" },
+};
+
 ---
 <BaseLayout
+  jsonLd={jsonLd}
   siteTitle="Porn Recovery Knowledge Platform"
   siteUrl={MAIN_SITE_URL}
   title={`${data.title} — Community-Reported Recovery Stage`}

@@ -2,6 +2,16 @@
 import BaseLayout from "../../../shared/components/BaseLayout.astro";
 import TypeBadge from "../../../shared/components/TypeBadge.astro";
 import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../shared/config/config";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Methodology",
+  url: MAIN_SITE_URL + "/methodology/",
+  description: "How this platform produces content: the four-layer content system, de-identification rules, evidence standards, and quality gates.",
+  isPartOf: { "@type": "WebSite", "name": "Porn Recovery Knowledge Platform", "url": "https://selfcontrolatlas.com" },
+};
+
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
@@ -9,6 +19,7 @@ import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../shared/config/config";
   title="Methodology — How Content Is Produced and Labeled"
   description="How this platform produces content: the four-layer content system, de-identification rules, evidence standards, and quality gates."
   canonical="/methodology/"
+  jsonLd={jsonLd}
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "Methodology", url: "/methodology/" }]}
 >
   <h1>Methodology</h1>

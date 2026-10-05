@@ -7,6 +7,17 @@ const triggers = (await getCollection('triggers')).sort((a, b) =>
   a.data.title.localeCompare(b.data.title));
 
 const siteTitle = "Porn Recovery Knowledge Platform";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  name: "Common Relapse Triggers",
+  url: MAIN_SITE_URL + "/relapse/triggers/",
+  description: "The situations and feelings community members most often name before a relapse, described as observations rather than causes.",
+  author: { "@type": "Organization", name: "SelfControlAtlas Tech Team" },
+  isPartOf: { "@type": "WebSite", "name": "Porn Recovery Knowledge Platform", "url": "https://selfcontrolatlas.com" },
+};
+
 ---
 <BaseLayout
   siteTitle={siteTitle}
@@ -14,6 +25,7 @@ const siteTitle = "Porn Recovery Knowledge Platform";
   title="Common Relapse Triggers — Porn Recovery Knowledge Platform"
   description="The situations and feelings community members most often name before a relapse, described as observations rather than causes."
   canonical="/relapse/triggers/"
+  jsonLd={jsonLd}
   breadcrumbs={[
     { name: "Home", url: "/" },
     { name: "About Relapse", url: "/relapse/" },

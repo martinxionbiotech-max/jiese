@@ -18,6 +18,16 @@ const triggerCounts = count(experiences.flatMap((e) => e.data.triggers ?? []));
 const strategyCounts = count(experiences.flatMap((e) => e.data.strategies ?? []));
 const stageCounts = count(experiences.map((e) => e.data.recovery_stage).filter((x): x is string => !!x));
 const relapseCount = experiences.filter((e) => e.data.relapse === true).length;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  name: "Community Statistics",
+  url: MAIN_SITE_URL + "/statistics/",
+  description: "Aggregated statistics from de-identified community recovery experiences. Community sample — not representative of any general population.",
+  isPartOf: { "@type": "WebSite", "name": "Porn Recovery Knowledge Platform", "url": "https://selfcontrolatlas.com" },
+};
+
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
@@ -26,6 +36,7 @@ const relapseCount = experiences.filter((e) => e.data.relapse === true).length;
   description="Aggregated statistics from de-identified community recovery experiences. Community sample — not representative of any general population."
   canonical="/statistics/"
   ogImage={MAIN_SITE_URL + "/images/hero-statistics.webp"}
+  jsonLd={jsonLd}
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "Statistics", url: "/statistics/" }]}
 >
   <h1>Community Statistics</h1>
@@ -66,4 +77,29 @@ const relapseCount = experiences.filter((e) => e.data.relapse === true).length;
   <a href="/experiences/">Browse experiences</a> ·
   <a href={DATA_SITE_URL + "/claims/"}>Claims database</a> ·
   <a href={DATA_SITE_URL + "/references/"}>References</a></p>
+  <section class="sources-block">
+    <h2>Evidence &amp; sources</h2>
+    <ul>
+      <li>
+        <a href="https://icd.who.int/en" rel="noopener noreferrer" target="_blank">WHO — ICD-11</a>
+        (compulsive sexual behaviour disorder, 6C72) — the international diagnostic classification this platform
+        uses when it refers to clinical criteria.
+      </li>
+      <li>
+        <a href="https://data.selfcontrolatlas.com/research/">Research records</a> — the platform's evidence library:
+        each study is summarized with an explicit evidence tier, methodology and limitations.
+      </li>
+      <li>
+        <a href="https://data.selfcontrolatlas.com/evidence/">Evidence tiers &amp; strength labels</a> — how claims on
+        this site are graded, and what each grade does and does not mean.
+      </li>
+      <li>
+        <a href="https://data.selfcontrolatlas.com/claims/">Claim assessments</a> — common claims about pornography
+        and recovery, each rated (supported / mixed / not established).
+      </li>
+    </ul>
+    <p class="note">Individual studies, including DOIs and PubMed links, are listed per record in the research library.
+    Nothing on this page is medical advice.</p>
+  </section>
+
 </BaseLayout>

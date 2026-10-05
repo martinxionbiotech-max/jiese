@@ -1,6 +1,16 @@
 ---
 import BaseLayout from "../../../shared/components/BaseLayout.astro";
 import { MAIN_SITE_URL } from "../../../shared/config/config";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Start Here",
+  url: MAIN_SITE_URL + "/start/",
+  description: "A practical orientation for people who want to stop problematic pornography use: how to use this platform, what recovery involves, and honest expectations.",
+  isPartOf: { "@type": "WebSite", "name": "Porn Recovery Knowledge Platform", "url": "https://selfcontrolatlas.com" },
+};
+
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
@@ -9,6 +19,7 @@ import { MAIN_SITE_URL } from "../../../shared/config/config";
   description="A practical orientation for people who want to stop problematic pornography use: how to use this platform, what recovery involves, and honest expectations."
   canonical="/start/"
   ogImage={MAIN_SITE_URL + "/images/hero-start.webp"}
+  jsonLd={jsonLd}
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "Start Here", url: "/start/" }]}
 >
   <h1>Start Here</h1>

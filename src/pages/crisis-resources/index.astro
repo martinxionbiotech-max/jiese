@@ -1,6 +1,16 @@
 ---
 import BaseLayout from "../../../shared/components/BaseLayout.astro";
 import { MAIN_SITE_URL } from "../../../shared/config/config";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Crisis Resources",
+  url: MAIN_SITE_URL + "/crisis-resources/",
+  description: "If you are in crisis: emergency numbers and helplines, by country.",
+  isPartOf: { "@type": "WebSite", "name": "Porn Recovery Knowledge Platform", "url": "https://selfcontrolatlas.com" },
+};
+
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
@@ -8,6 +18,7 @@ import { MAIN_SITE_URL } from "../../../shared/config/config";
   title="Crisis Resources"
   description="If you are in crisis: emergency numbers and helplines, by country."
   canonical="/crisis-resources/"
+  jsonLd={jsonLd}
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "Crisis Resources", url: "/crisis-resources/" }]}
 >
 <h1>If You Are in Crisis</h1>

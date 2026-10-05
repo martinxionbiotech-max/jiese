@@ -1,6 +1,16 @@
 ---
 import BaseLayout from "../../../../shared/components/BaseLayout.astro";
 import { MAIN_SITE_URL } from "../../../../shared/config/config";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Trigger Journal",
+  url: MAIN_SITE_URL + "/tools/trigger-journal/",
+  description: "A private trigger journal that stores entries only in your browser. Nothing is sent to any server.",
+  isPartOf: { "@type": "WebSite", "name": "Porn Recovery Knowledge Platform", "url": "https://selfcontrolatlas.com" },
+};
+
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
@@ -8,6 +18,7 @@ import { MAIN_SITE_URL } from "../../../../shared/config/config";
   title="Trigger Journal — Private, Browser-Local Tool"
   description="A private trigger journal that stores entries only in your browser. Nothing is sent to any server."
   canonical="/tools/trigger-journal/"
+  jsonLd={jsonLd}
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "Tools", url: "/tools/" }, { name: "Trigger Journal", url: "/tools/trigger-journal/" }]}
 >
   <h1>Trigger Journal</h1>

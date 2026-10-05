@@ -1,6 +1,16 @@
 ---
 import BaseLayout from "../../../shared/components/BaseLayout.astro";
 import { MAIN_SITE_URL } from "../../../shared/config/config";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Advertising Disclosure",
+  url: MAIN_SITE_URL + "/advertising-disclosure/",
+  description: "No ads, no sponsors, no affiliate links, nothing for sale.",
+  isPartOf: { "@type": "WebSite", "name": "Porn Recovery Knowledge Platform", "url": "https://selfcontrolatlas.com" },
+};
+
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
@@ -8,6 +18,7 @@ import { MAIN_SITE_URL } from "../../../shared/config/config";
   title="Advertising Disclosure"
   description="No ads, no sponsors, no affiliate links, nothing for sale."
   canonical="/advertising-disclosure/"
+  jsonLd={jsonLd}
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "Advertising Disclosure", url: "/advertising-disclosure/" }]}
 >
 <h1>Advertising Disclosure</h1>

@@ -3,6 +3,17 @@ import BaseLayout from "../../../../shared/components/BaseLayout.astro";
 import { MAIN_SITE_URL } from "../../../../shared/config/config";
 
 const siteTitle = "Porn Recovery Knowledge Platform";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  name: "Relapse After 30 Days",
+  url: MAIN_SITE_URL + "/relapse/after-30-days/",
+  description: "What community members report about relapsing after about a month without pornography use.",
+  author: { "@type": "Organization", name: "SelfControlAtlas Tech Team" },
+  isPartOf: { "@type": "WebSite", "name": "Porn Recovery Knowledge Platform", "url": "https://selfcontrolatlas.com" },
+};
+
 ---
 <BaseLayout
   siteTitle={siteTitle}
@@ -10,6 +21,7 @@ const siteTitle = "Porn Recovery Knowledge Platform";
   title="Relapse After 30 Days — Porn Recovery Knowledge Platform"
   description="What community members report about relapsing after about a month without pornography use."
   canonical="/relapse/after-30-days/"
+  jsonLd={jsonLd}
   breadcrumbs={[
     { name: "Home", url: "/" },
     { name: "About Relapse", url: "/relapse/" },

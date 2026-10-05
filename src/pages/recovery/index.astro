@@ -3,6 +3,16 @@ import BaseLayout from "../../../shared/components/BaseLayout.astro";
 import { getCollection } from 'astro:content';
 import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../shared/config/config";
 const stages = ["Day 1", "Day 3", "Day 7", "Day 14", "Day 21", "Day 30", "Day 45", "Day 60", "Day 90", "6 Months", "1 Year"];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Recovery",
+  url: MAIN_SITE_URL + "/recovery/",
+  description: "What recovery from problematic pornography use involves: the urge-use-regret cycle, recovery stages as reported by community members, and what research can and cannot yet say.",
+  isPartOf: { "@type": "WebSite", "name": "Porn Recovery Knowledge Platform", "url": "https://selfcontrolatlas.com" },
+};
+
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
@@ -10,6 +20,7 @@ const stages = ["Day 1", "Day 3", "Day 7", "Day 14", "Day 21", "Day 30", "Day 45
   title="Recovery — What Problematic Pornography Use Recovery Involves"
   description="What recovery from problematic pornography use involves: the urge-use-regret cycle, recovery stages as reported by community members, and what research can and cannot yet say."
   canonical="/recovery/"
+  jsonLd={jsonLd}
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "Recovery", url: "/recovery/" }]}
 >
   <h1>Recovery</h1>

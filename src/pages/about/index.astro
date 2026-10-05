@@ -1,6 +1,16 @@
 ---
 import BaseLayout from "../../../shared/components/BaseLayout.astro";
 import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../shared/config/config";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: "About the Project",
+  url: MAIN_SITE_URL + "/about/",
+  description: "About the Porn Recovery Knowledge Platform: a structured knowledge and experience platform for people seeking to understand and recover from problematic pornography use.",
+  isPartOf: { "@type": "WebSite", "name": "Porn Recovery Knowledge Platform", "url": "https://selfcontrolatlas.com" },
+};
+
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
@@ -8,6 +18,7 @@ import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../shared/config/config";
   title="About the Project"
   description="About the Porn Recovery Knowledge Platform: a structured knowledge and experience platform for people seeking to understand and recover from problematic pornography use."
   canonical="/about/"
+  jsonLd={jsonLd}
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "About", url: "/about/" }]}
 >
   <h1>About the Project</h1>
