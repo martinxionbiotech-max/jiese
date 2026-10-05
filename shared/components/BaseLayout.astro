@@ -86,7 +86,7 @@ const canonicalUrl = canonical
         </nav>
         {siteUrl !== MAIN_SITE_URL && (
           <nav class="cross-nav" aria-label="Main site">
-            <span class="cross-label">Main site:</span>
+            <span class="cross-label">SelfControlAtlas main site:</span>
             {defaultNav.filter((i) => i.mainSite).map((item) => (
               <a href={MAIN_SITE_URL + item.href}>{item.label}</a>
             ))}
