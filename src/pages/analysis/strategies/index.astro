@@ -4,6 +4,17 @@ import TypeBadge from "../../../../shared/components/TypeBadge.astro";
 import { getCollection } from 'astro:content';
 import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../../shared/config/config";
 const n = (await getCollection('experiences')).filter((e) => e.data.privacy_status !== "synthetic").length;
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "What the Accounts Use",
+  description: "A strategy map from the recovery accounts with all the caveats, and why relapse rates are not computed here.",
+  url: `${MAIN_SITE_URL}/analysis/strategies/`,
+  dateModified: "2026-10-05",
+  author: { "@type": "Organization", name: "SelfControlAtlas", url: MAIN_SITE_URL },
+  publisher: { "@type": "Organization", name: "SelfControlAtlas", url: MAIN_SITE_URL },
+  about: ["problematic pornography use", "recovery", "community data analysis"]
+};
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
@@ -12,6 +23,7 @@ const n = (await getCollection('experiences')).filter((e) => e.data.privacy_stat
   description="Editorial analysis of strategy mentions across community accounts — what dominates, what clusters, and why no relapse rate can be computed here."
   canonical="/analysis/strategies/"
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "Analysis", url: "/analysis/" }, { name: "Strategies", url: "/analysis/strategies/" }]}
+  jsonLd={articleJsonLd}
 >
   <h1>What the Accounts Use: A Strategy Map With All the Caveats</h1>
   <TypeBadge type="pattern" />

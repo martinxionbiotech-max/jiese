@@ -2,6 +2,17 @@
 import BaseLayout from "../../../../shared/components/BaseLayout.astro";
 import TypeBadge from "../../../../shared/components/TypeBadge.astro";
 import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../../shared/config/config";
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Is the 90-Day Reboot Model Supported by Evidence?",
+  description: "Where the 90-day timeline comes from, what evidence does and does not say about it, and how to use it without treating a community convention as biology.",
+  url: `${MAIN_SITE_URL}/analysis/90-day-reboot/`,
+  dateModified: "2026-10-05",
+  author: { "@type": "Organization", name: "SelfControlAtlas", url: MAIN_SITE_URL },
+  publisher: { "@type": "Organization", name: "SelfControlAtlas", url: MAIN_SITE_URL },
+  about: ["problematic pornography use", "recovery", "community data analysis"]
+};
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
@@ -10,6 +21,7 @@ import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../../shared/config/config";
   description="Where the 90-day timeline comes from, what evidence does and does not say about it, and how to use it without treating a community convention as biology."
   canonical="/analysis/90-day-reboot/"
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "Analysis", url: "/analysis/" }, { name: "90-Day Reboot", url: "/analysis/90-day-reboot/" }]}
+  jsonLd={articleJsonLd}
 >
   <h1>Is the 90-Day Reboot Model Supported by Evidence?</h1>
   <TypeBadge type="question" />

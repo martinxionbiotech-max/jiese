@@ -4,6 +4,17 @@ import TypeBadge from "../../../../shared/components/TypeBadge.astro";
 import { getCollection } from 'astro:content';
 import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../../shared/config/config";
 const n = (await getCollection('experiences')).filter((e) => e.data.privacy_status !== "synthetic").length;
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Long-Term Success",
+  description: "What the accounts of people with the longest successful recovery share, and what cannot be concluded from them.",
+  url: `${MAIN_SITE_URL}/analysis/long-term-success/`,
+  dateModified: "2026-10-05",
+  author: { "@type": "Organization", name: "SelfControlAtlas", url: MAIN_SITE_URL },
+  publisher: { "@type": "Organization", name: "SelfControlAtlas", url: MAIN_SITE_URL },
+  about: ["problematic pornography use", "recovery", "community data analysis"]
+};
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
@@ -12,6 +23,7 @@ const n = (await getCollection('experiences')).filter((e) => e.data.privacy_stat
   description="Editorial analysis of the 13 community accounts that reached one year or more: the one thing they share, what they don't, and what to distrust."
   canonical="/analysis/long-term-success/"
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "Analysis", url: "/analysis/" }, { name: "Long-Term Success", url: "/analysis/long-term-success/" }]}
+  jsonLd={articleJsonLd}
 >
   <h1>What Long-Term Success Actually Looks Like</h1>
   <TypeBadge type="pattern" />

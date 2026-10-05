@@ -4,6 +4,17 @@ import TypeBadge from "../../../../shared/components/TypeBadge.astro";
 import { getCollection } from 'astro:content';
 import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../../shared/config/config";
 const n = (await getCollection('experiences')).filter((e) => e.data.privacy_status !== "synthetic").length;
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "What Recovery Reports Do Not Explain",
+  description: "A counter-evidence analysis: what the 124 recovery accounts do not show, who is missing from them, and why confirmation bias is a risk in every community dataset.",
+  url: `${MAIN_SITE_URL}/analysis/counter-patterns/`,
+  dateModified: "2026-10-05",
+  author: { "@type": "Organization", name: "SelfControlAtlas", url: MAIN_SITE_URL },
+  publisher: { "@type": "Organization", name: "SelfControlAtlas", url: MAIN_SITE_URL },
+  about: ["problematic pornography use", "recovery", "community data analysis"]
+};
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
@@ -12,6 +23,7 @@ const n = (await getCollection('experiences')).filter((e) => e.data.privacy_stat
   description="A counter-evidence analysis: what the 124 recovery accounts do not show, who is missing from them, and why confirmation bias is a risk in every community dataset."
   canonical="/analysis/counter-patterns/"
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "Analysis", url: "/analysis/" }, { name: "Counter-Patterns", url: "/analysis/counter-patterns/" }]}
+  jsonLd={articleJsonLd}
 >
   <h1>What Recovery Reports Do Not Explain</h1>
   <TypeBadge type="pattern" />
