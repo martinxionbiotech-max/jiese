@@ -16,6 +16,10 @@ related_experiences:
   - synthetic-005
 related_research:
   - "withdrawal-definition"
+evidence_status: "not-established"
+reasonable_conclusion: "The 90-day model is a community convention with motivational value, not an evidence-based timeline. No research establishes 90 days as the period required for 'rebooting,' and community reports of timelines vary enormously. It is best treated as a goal-setting tool rather than a biological schedule."
+what_evidence_does_not_show: "No evidence establishes that 90 days of abstinence produces specific neurological or behavioral changes, or that shorter or longer periods are insufficient."
+why_evidence_difficult: "The number originates from community culture, not from published research, and expectations shaped by the timeline can themselves affect how people interpret their progress."
 last_updated: "2026-10-04"
 ---
 

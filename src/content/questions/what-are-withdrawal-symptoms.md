@@ -15,6 +15,7 @@ related_experiences:
   - synthetic-001
 related_research:
   - "withdrawal-definition"
+  - "musetti-2022-insomnia-mediation"
 evidence_status: "limited"
 reasonable_conclusion: "People stopping pornography sometimes report irritability, urges, low mood, and restlessness in the first weeks. Whether this constitutes a clinical withdrawal syndrome is not established; the reports are real, the label is not."
 what_evidence_does_not_show: "Evidence does not establish a medically defined withdrawal syndrome for pornography use with predictable symptoms and timeline."

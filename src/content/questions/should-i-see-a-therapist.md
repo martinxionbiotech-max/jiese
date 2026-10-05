@@ -18,6 +18,12 @@ related_research:
   - "seeking-professional-help"
   - "cbt-for-csbd"
   - "cbt-for-csbd"
+  - "antons-2022-treatment-review"
+  - "roza-2024-treatment-approaches"
+evidence_status: "supported"
+reasonable_conclusion: "Professional help is worth considering when use causes persistent distress, interferes with daily life, or co-occurs with anxiety or depression. CSBD is a recognized condition with professional treatment options (including CBT), and research on therapy for compulsive sexual behavior, while limited in trials, supports structured professional approaches over self-help alone in severe cases."
+what_evidence_does_not_show: "Evidence does not establish which specific therapy works best for PPU, and does not imply that everyone with heavy use needs therapy."
+why_evidence_difficult: "Treatment trials for PPU specifically are scarce; much of the evidence base comes from CSB broadly defined and from related compulsive behaviors."
 last_updated: "2026-10-04"
 ---
 

@@ -20,6 +20,7 @@ related_questions:
   - why-do-i-keep-relapsing
 related_triggers: ["failure", "emotional-distress"]
 related_research: ["emotion-regulation"]
+observed_in: "1 of 124 de-identified reports mention this pattern"
 last_updated: "2026-10-04"
 ---
 

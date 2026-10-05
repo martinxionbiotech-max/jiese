@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../../../../shared/components/BaseLayout.astro";
+import TypeBadge from "../../../../shared/components/TypeBadge.astro";
+import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../../shared/config/config";
+---
+<BaseLayout
+  siteTitle="Porn Recovery Knowledge Platform"
+  siteUrl={MAIN_SITE_URL}
+  title="Is the 90-Day Reboot Model Supported by Evidence?"
+  description="Where the 90-day timeline comes from, what evidence does and does not say about it, and how to use it without treating a community convention as biology."
+  canonical="/analysis/90-day-reboot/"
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Analysis", url: "/analysis/" }, { name: "90-Day Reboot", url: "/analysis/90-day-reboot/" }]}
+>
+  <h1>Is the 90-Day Reboot Model Supported by Evidence?</h1>
+  <TypeBadge type="question" />
+  <p class="lede">The 90-day model is the most famous number in this field. This essay traces
+  where it comes from, what evidence does — and does not — say about it, and how to hold it
+  without letting it hold you. Analysis, not science; opinions are labeled as mine.</p>
+
+  <h2>Where the number comes from</h2>
+  <p>The 90-day timeline originated in community culture — popularized by the reboot movement's
+  forums and guides — not in a published study. No research protocol specified 90 days as the
+  duration required for neurological or behavioral change. It spread because it is concrete,
+  memorable, and motivating: a number you can count toward.</p>
+
+  <h2>What the evidence does and does not say</h2>
+  <ul>
+    <li><strong>Supported:</strong> behavior change takes sustained effort; relapse risk is
+    highest early on; some community accounts describe meaningful change by roughly three months.</li>
+    <li><strong>Not supported:</strong> that 90 days is the point at which "the brain rewires";
+    that shorter or longer timelines are insufficient; that reaching day 90 predicts lasting
+    recovery; that a relapse at day 89 "resets" anything measurable.</li>
+    <li><strong>Community data:</strong> this platform's accounts span day 1 to four years, with
+    reported change occurring at widely varying points — no clustering at day 90 is evident.</li>
+  </ul>
+
+  <h2>How to hold it without letting it hold you</h2>
+  <p>My opinion: <strong>use 90 days as a goal-setting device, not a biological schedule.</strong>
+  A concrete horizon helps people persist through the hardest weeks. The damage comes when the
+  timeline becomes a measure of worth — when day 45 without "results" reads as failure, or a
+  lapse at day 88 reads as losing everything. The accounts that treat timelines as tools write
+  steadier stories than those that treat them as physics.</p>
+
+  <p><a href="/problems/what-is-the-90-day-challenge/">The 90-day challenge question</a> ·
+  <a href="/problems/is-recovery-linear/">Is recovery linear?</a> ·
+  <a href="/analysis/">Main analysis</a> ·
+  <a href={DATA_SITE_URL + "/topics/withdrawal-definition/"}>Withdrawal, defined</a></p>
+</BaseLayout>

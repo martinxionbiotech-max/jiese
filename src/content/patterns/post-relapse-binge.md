@@ -20,6 +20,7 @@ related_questions:
   - what-counts-as-a-relapse
 related_triggers: ["frustration"]
 related_research: ["relapse", "craving"]
+observed_in: "4 of 124 de-identified reports mention this pattern"
 last_updated: "2026-10-04"
 ---
 

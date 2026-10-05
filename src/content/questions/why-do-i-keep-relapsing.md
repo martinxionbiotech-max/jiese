@@ -17,6 +17,10 @@ related_experiences:
   - synthetic-005
 related_research:
   - "relapse"
+evidence_status: "mixed"
+reasonable_conclusion: "Relapse is best understood as part of a non-linear process, not as failure. Community reports consistently tie relapses to specific situations — stress, boredom, solitude, late nights — and research on compulsive behaviors confirms that lapses are common during behavior change. The practical conclusion is to treat relapse as information about your own trigger patterns rather than as a verdict on your willpower."
+what_evidence_does_not_show: "Evidence does not establish that relapse means a strategy failed, that any specific number of lapses predicts final outcome, or that people who relapse are doing something wrong."
+why_evidence_difficult: "Relapse is defined inconsistently across studies, and community reports are self-selected — people are more likely to post after a relapse than during quiet success."
 last_updated: "2026-10-04"
 ---
 

@@ -20,6 +20,7 @@ related_questions:
   - how-do-i-handle-a-relapse-without-shame
 related_triggers: ["frustration", "failure"]
 related_research: ["relapse"]
+observed_in: "10 of 124 de-identified reports mention this pattern"
 last_updated: "2026-10-04"
 ---
 

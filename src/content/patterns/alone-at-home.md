@@ -20,6 +20,7 @@ related_questions:
   - what-should-i-do-instead-of-using-porn
 related_triggers: ["being-alone", "boredom"]
 related_research: ["boredom"]
+observed_in: "No directly matching de-identified report in the current dataset (the pattern is preserved because early community reports described it before the current dataset was assembled)"
 last_updated: "2026-10-04"
 ---
 

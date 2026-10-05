@@ -20,6 +20,7 @@ related_questions:
   - is-it-normal-to-have-strong-urges-at-first
 related_triggers: ["anxiety", "frustration"]
 related_research: ["withdrawal-definition"]
+observed_in: "7 of 124 de-identified reports mention this pattern"
 last_updated: "2026-10-04"
 ---
 

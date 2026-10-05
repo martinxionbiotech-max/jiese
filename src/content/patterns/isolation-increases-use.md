@@ -20,6 +20,7 @@ related_questions:
   - can-i-recover-alone
 related_triggers: ["loneliness", "being-alone"]
 related_research: ["loneliness"]
+observed_in: "1 of 124 de-identified reports mention this pattern"
 last_updated: "2026-10-04"
 ---
 

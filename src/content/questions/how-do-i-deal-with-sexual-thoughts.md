@@ -17,6 +17,10 @@ related_experiences:
 related_research:
   - "urge-vs-craving"
   - "emotion-regulation"
+evidence_status: "limited"
+reasonable_conclusion: "Urges are a normal part of the process, and both clinical practice and community reports converge on the same principle: thoughts themselves are not relapses. Strategies with some support include urge surfing (observing the urge without acting), distraction, and stimulus control. Fighting thoughts head-on is widely reported as counterproductive."
+what_evidence_does_not_show: "Evidence does not establish that any single technique eliminates urges, or that having strong urges indicates poor progress or failure."
+why_evidence_difficult: "Urge-related research comes mostly from substance use and general CBT; direct trials for pornography-specific thought management are limited."
 last_updated: "2026-10-04"
 ---
 

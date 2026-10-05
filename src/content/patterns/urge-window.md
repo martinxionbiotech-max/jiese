@@ -20,6 +20,7 @@ related_questions:
   - what-should-i-do-instead-of-using-porn
 related_triggers: ["stress"]
 related_research: ["urge-vs-craving", "craving"]
+observed_in: "5 of 124 de-identified reports mention this pattern"
 last_updated: "2026-10-04"
 ---
 

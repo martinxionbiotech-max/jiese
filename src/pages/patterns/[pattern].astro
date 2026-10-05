@@ -63,6 +63,10 @@ const jsonLd = {
   <h1>{p.data.title}</h1>
   <ExperienceDisclaimer kind="pattern" />
 
+  {p.data.observed_in && (
+    <p class="observed-in"><strong>Dataset frequency:</strong> {p.data.observed_in}.</p>
+  )}
+
   <h2>Observed Pattern</h2>
   <p>{p.data.observed_pattern}</p>
   <Content />

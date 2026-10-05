@@ -1,0 +1,67 @@
+---
+import BaseLayout from "../../../../shared/components/BaseLayout.astro";
+import TypeBadge from "../../../../shared/components/TypeBadge.astro";
+import { getCollection } from 'astro:content';
+import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../../shared/config/config";
+const n = (await getCollection('experiences')).filter((e) => e.data.privacy_status !== "synthetic").length;
+---
+<BaseLayout
+  siteTitle="Porn Recovery Knowledge Platform"
+  siteUrl={MAIN_SITE_URL}
+  title="What Recovery Reports Do Not Explain: Reading Against the Grain"
+  description="A counter-evidence analysis: what the 124 recovery accounts do not show, who is missing from them, and why confirmation bias is a risk in every community dataset."
+  canonical="/analysis/counter-patterns/"
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Analysis", url: "/analysis/" }, { name: "Counter-Patterns", url: "/analysis/counter-patterns/" }]}
+>
+  <h1>What Recovery Reports Do Not Explain</h1>
+  <TypeBadge type="pattern" />
+  <p class="lede">Every dataset has a shape, and the shape is partly made of what is missing.
+  This essay reads the {n} recovery accounts against the grain — asking not what they show, but
+  what they cannot show. Analysis, not science; opinions are labeled as mine.</p>
+
+  <h2>The people this dataset cannot contain</h2>
+  <p>People post when they relapse (to confess) or when they succeed (to share). The dataset
+  therefore structurally excludes at least four groups:</p>
+  <ul>
+    <li><strong>People who quit and left quietly.</strong> No milestone post, no relapse post —
+    simply absent. Their outcomes are unknown and unknowable from this data.</li>
+    <li><strong>People who reduced use without full abstinence.</strong> Moderation outcomes are
+    underrepresented in a dataset drawn from an abstinence-oriented community — an absence that
+    says nothing about how often moderation succeeds.</li>
+    <li><strong>People who never got better.</strong> Those who gave up entirely tend to stop
+    posting too, which means the dataset is biased toward the middle of the journey.</li>
+    <li><strong>People who never considered their use a problem.</strong> The entire sample is
+    self-selected for people who already believe they have a problem.</li>
+  </ul>
+  <p>My first opinion, stated plainly: <strong>this dataset can describe recovery attempts; it
+  cannot describe recovery rates.</strong> Any percentage computed from it describes the posts,
+  not the people.</p>
+
+  <h2>What the reports themselves contradict</h2>
+  <p>Even within the data, the narrative is messier than the genre suggests. Accounts that
+  contradict the standard recovery story appear repeatedly:</p>
+  <ul>
+    <li><strong>Relapse despite strong routines.</strong> The vigilance-decay account describes
+    a year of good structure followed by a rough patch — routine failed, or at least faltered.</li>
+    <li><strong>Recovery without streak obsession.</strong> The account that stopped counting
+    days reports better stability than some streak-obsessed accounts do.</li>
+    <li><strong>Symptoms that did not improve.</strong> The five-month account still managing
+    physical complaints; the seven-year insomnia question no one can answer.</li>
+    <li><strong>No flatline.</strong> Several accounts describe the first week as the hard part,
+    with steady improvement after — no reported flatline phase at all.</li>
+  </ul>
+  <p>My second opinion: <strong>the counter-examples are the most valuable records in the set,
+  because they inoculate against the community's most dangerous habit — treating the typical
+  story as a requirement.</strong></p>
+
+  <h2>Why this matters for readers</h2>
+  <p>If you read only success posts, you absorb a template: quit, endure, improve on schedule.
+  When your own experience deviates — no flatline, or a flatline that lasts, or improvement
+  without streaks — the natural conclusion is that something is wrong with you. The data
+  suggests the opposite: the template is a sampling artifact, and deviation is ordinary.</p>
+
+  <p><a href="/analysis/">Main analysis</a> ·
+  <a href="/methodology/">Data interpretation framework</a> ·
+  <a href={DATA_SITE_URL + "/evidence/"}>Evidence standards</a> ·
+  <a href="/experiences/">Underlying accounts</a></p>
+</BaseLayout>

@@ -20,6 +20,7 @@ related_questions:
   - what-should-i-do-instead-of-using-porn
 related_triggers: ["boredom", "weekend", "idle-time"]
 related_research: ["boredom", "impulse-control"]
+observed_in: "4 of 124 de-identified reports mention this pattern"
 last_updated: "2026-10-04"
 ---
 

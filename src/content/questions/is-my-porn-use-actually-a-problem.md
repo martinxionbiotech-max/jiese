@@ -16,6 +16,8 @@ related_experiences:
   - synthetic-002
 related_research:
   - "ppu"
+  - "chen-jiang-2020-pipus"
+  - "bothe-2024-cross-country"
 evidence_status: "supported"
 reasonable_conclusion: "A useful rule: use becomes a problem when it causes distress, interferes with life, or persists despite wanting to stop — not merely when it is frequent. Frequency alone is a weak predictor of problems, and the PPCS research shows perceived problems track distress and loss of control more than amount of use."
 what_evidence_does_not_show: "Evidence does not support judging use as problematic by frequency alone, or universal thresholds that apply to everyone."

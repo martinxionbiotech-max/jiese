@@ -21,6 +21,7 @@ related_questions:
   - why-do-relapses-happen-after-a-long-streak
 related_triggers: ["stress", "work-pressure", "academic-pressure"]
 related_research: ["stress"]
+observed_in: "7 of 124 de-identified reports mention this pattern"
 last_updated: "2026-10-04"
 ---
 

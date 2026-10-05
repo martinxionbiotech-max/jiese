@@ -16,6 +16,10 @@ related_experiences:
   - synthetic-003
 related_research:
   - "ppu-definition"
+evidence_status: "mixed"
+reasonable_conclusion: "Complete abstinence is a choice, not an evidence-based requirement. The PPU framework is defined by distress and impaired control, not by any use at all, and some people report sustainable moderation while others find total abstinence simpler. There is no research establishing that one approach works better for everyone."
+what_evidence_does_not_show: "Evidence does not show that complete abstinence is necessary for recovery, nor that moderation is safe for everyone — individual trajectories vary and are not predictable from current data."
+why_evidence_difficult: "Most community narratives and many studies are built around abstinence-based models, so moderation outcomes are under-represented in the evidence base (a selection problem, not proof of failure)."
 last_updated: "2026-10-04"
 ---
 

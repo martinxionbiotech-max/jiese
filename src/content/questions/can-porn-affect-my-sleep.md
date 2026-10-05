@@ -15,6 +15,11 @@ related_experiences:
   - synthetic-001
 related_research:
   - "brand-2016-ipace"
+  - "musetti-2022-insomnia-mediation"
+evidence_status: "limited"
+reasonable_conclusion: "Late-night use can displace sleep, and community reports frequently describe insomnia alongside heavy use. But direct research on pornography specifically harming sleep quality is scarce, and screen use, anxiety, and arousal before bed are all plausible confounds. The defensible claim is narrow: use that delays bedtime or occurs in bed is a sleep-hygiene problem; a specific pornographic effect on sleep is unestablished."
+what_evidence_does_not_show: "No reliable evidence shows pornography use directly impairs sleep architecture or causes insomnia independent of screen time and timing effects."
+why_evidence_difficult: "Sleep research rarely isolates pornography use from general screen use, and self-reports of sleep quality are subjective."
 last_updated: "2026-10-04"
 ---
 

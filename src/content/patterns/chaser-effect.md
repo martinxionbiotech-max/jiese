@@ -20,6 +20,7 @@ related_questions:
   - why-do-urges-come-back
 related_triggers: ["stress"]
 related_research: ["craving", "urge-vs-craving"]
+observed_in: "2 of 124 de-identified reports mention this pattern"
 last_updated: "2026-10-04"
 ---
 

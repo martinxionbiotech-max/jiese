@@ -20,6 +20,7 @@ related_questions:
   - how-do-i-deal-with-sexual-thoughts
 related_triggers: ["social-media", "internet-use"]
 related_research: ["cue-reactivity"]
+observed_in: "1 of 124 de-identified reports mention this pattern"
 last_updated: "2026-10-04"
 ---
 

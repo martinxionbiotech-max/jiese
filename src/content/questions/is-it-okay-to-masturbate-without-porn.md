@@ -16,6 +16,10 @@ related_experiences:
 related_research:
   - "ppu-definition"
   - "sexual-dysfunction-overview"
+evidence_status: "supported"
+reasonable_conclusion: "Masturbation without pornography is generally not considered problematic in itself — the PPU construct targets pornography use that causes distress or loss of control. Many people who quit pornography continue masturbating without issue, and for some it is part of a realistic reduction plan. The relevant question is whether the behavior causes problems, not whether it occurs."
+what_evidence_does_not_show: "Evidence does not support treating masturbation per se as harmful, or abstinence from all sexual activity as necessary for recovery."
+why_evidence_difficult: "Moral beliefs strongly color self-reports about masturbation, and community views range from total abstinence to 'no-porn' approaches with conflicting anecdotal support."
 last_updated: "2026-10-04"
 ---
 

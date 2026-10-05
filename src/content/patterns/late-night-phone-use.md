@@ -20,6 +20,7 @@ related_questions:
   - can-porn-affect-my-sleep
 related_triggers: ["nighttime", "phone-use", "insomnia"]
 related_research: ["stress", "habit-formation"]
+observed_in: "8 of 124 de-identified reports mention this pattern"
 last_updated: "2026-10-04"
 ---
 

@@ -15,6 +15,7 @@ related_experiences:
   - synthetic-002
 related_research:
   - "dopamine"
+  - "stormezand-2021-d2-receptors"
 evidence_status: "limited"
 reasonable_conclusion: "Dopamine is involved in sexual arousal and reward, but popular claims that pornography 'depletes,' 'fries,' or 'destroys' dopamine are not supported by evidence. Neuroimaging findings in compulsive users are small, mixed, and cannot be translated into everyday claims about brain damage."
 what_evidence_does_not_show: "No evidence shows pornography use causes lasting dopamine system damage in humans, or that a 'dopamine reset' or 'reboot' has a measurable biological basis."

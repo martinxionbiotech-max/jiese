@@ -109,6 +109,7 @@ const patterns = defineCollection({
     title: z.string(),
     content_type: z.literal('pattern'),
     observed_pattern: z.string(),
+    observed_in: z.string().optional(),
     supporting_experiences: z.array(z.string()).default([]),
     possible_explanations: z.array(z.string()).default([]),
     scientific_evidence: z.string().optional(),
@@ -126,7 +127,6 @@ const patterns = defineCollection({
     related_experiences: z.array(z.string()).default([]),
     frequency_status: z.string().optional(),
     scientific_interpretation: z.string().optional(),
-    related_research: z.array(z.string()).default([]),
     last_updated: z.string(),
   }),
 });
