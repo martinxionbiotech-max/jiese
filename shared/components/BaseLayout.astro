@@ -1,6 +1,7 @@
 ---
 import "../styles/design-tokens.css";
 import { MAIN_SITE_URL, DATA_SITE_URL } from "../config/config";
+const OPERATOR_INFO = "{OPERATOR-INFO}";
 interface Props {
   siteTitle: string;
   siteUrl: string;
@@ -12,6 +13,7 @@ interface Props {
   lastUpdated?: string;
   ogType?: string;
   noindex?: boolean;
+  noCanonical?: boolean;
   nav?: { label: string; href: string }[];
   /** hreflang alternates: [{lang, href}] — 未来多语言时启用 */
   alternates?: { lang: string; href: string }[];
@@ -30,6 +32,7 @@ const defaultNav = [
 ];
 const { siteTitle, siteUrl, title, description = "", canonical, jsonLd,
   breadcrumbs = [], lastUpdated, ogType = "website", noindex = false,
+  noCanonical = false,
   alternates = [],
   nav = defaultNav,
   ogImage } = Astro.props;
@@ -44,7 +47,7 @@ const canonicalUrl = canonical
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
-    <link rel="canonical" href={canonicalUrl} />
+    {!noCanonical && <link rel="canonical" href={canonicalUrl} />}
     <meta name="robots" content={noindex ? "noindex,follow" : "index,follow"} />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta property="og:title" content={title} />
@@ -108,16 +111,16 @@ const canonicalUrl = canonical
         pornography use and recovery. It is not medical advice, diagnosis, or treatment.
         If you are in crisis or concerned about your mental health, contact a qualified
         professional. See the <a href="/disclaimer/">full disclaimer</a>.</p>
-        <p class="footer-byline">Maintained by <strong>SelfControlAtlas Tech Team</strong> · content reviewed against the evidence tiers in the knowledge base.</p>
+        <p class="footer-byline">Maintained by <strong>{OPERATOR_INFO}</strong> · content reviewed against the evidence tiers in the knowledge base.</p>
         <nav class="footer-nav" aria-label="Footer">
-          <a href={MAIN_SITE_URL + "/about/"}>About</a> ·
-          <a href={MAIN_SITE_URL + "/contact/"}>Contact</a> ·
-          <a href={MAIN_SITE_URL + "/methodology/"}>Methodology</a> ·
-          <a href={MAIN_SITE_URL + "/tools/"}>Tools</a> ·
+          <a href="/about/">About</a> ·
+          <a href="/contact/">Contact</a> ·
+          <a href="/methodology/">Methodology</a> ·
+          <a href="/tools/">Tools</a> ·
           <a href="/editorial-policy/">Editorial Policy</a> ·
-          <a href="/privacy-policy/">Privacy</a> ·
+          <a href="/privacy-policy/">Privacy Policy</a> ·
           <a href="/terms/">Terms</a> ·
-          <a href="/cookie-policy/">Cookies</a> ·
+          <a href="/cookie-policy/">Cookie Policy</a> ·
           <a href="/advertising-disclosure/">Advertising Disclosure</a> ·
           <a href="/crisis-resources/">Crisis Resources</a>
         </nav>
