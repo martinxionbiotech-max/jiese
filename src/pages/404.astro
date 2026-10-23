@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../../shared/components/BaseLayout.astro";
+import { MAIN_SITE_URL } from "../../shared/config/config";
+---
+<BaseLayout
+  siteTitle="Porn Recovery Knowledge Platform"
+  siteUrl={MAIN_SITE_URL}
+  title="Page Not Found"
+  description="The page you requested could not be found. Return home or visit the crisis resources if you need help."
+  noindex={true}
+  noCanonical={true}
+>
+  <h1>Page not found</h1>
+  <p>The page you requested does not exist or may have been moved.</p>
+  <p><a href="/">Return to the home page</a>.</p>
+  <p class="note">This site provides educational information only. If you are in crisis or
+  thinking about harming yourself, please see the
+  <a href="/crisis-resources/">crisis resources</a> page — it lists real, currently
+  operating helplines. This site is not monitored in real time and cannot provide crisis
+  support.</p>
+</BaseLayout>
