@@ -2,6 +2,8 @@
 import BaseLayout from "../../../shared/components/BaseLayout.astro";
 import { MAIN_SITE_URL } from "../../../shared/config/config";
 
+const OPERATOR_INFO = "{OPERATOR-INFO}";
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -10,7 +12,6 @@ const jsonLd = {
   description: "This platform provides educational information about problematic pornography use. It is not medical advice, diagnosis, or treatment.",
   isPartOf: { "@type": "WebSite", "name": "Porn Recovery Knowledge Platform", "url": "https://selfcontrolatlas.com" },
 };
-
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
@@ -21,28 +22,114 @@ const jsonLd = {
   jsonLd={jsonLd}
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "Disclaimer", url: "/disclaimer/" }]}
 >
-  <h1>Health &amp; Medical Disclaimer</h1>
-  <p>This website provides general educational information about problematic pornography
-  use (PPU), compulsive sexual behavior, and related recovery experiences. By using this
-  site, you acknowledge the following:</p>
-  <ul>
-    <li><strong>Not medical advice.</strong> Nothing on this site is medical advice,
-    diagnosis, treatment, or a substitute for consultation with a qualified healthcare
-    professional.</li>
-    <li><strong>Not individualized.</strong> Content is general information. It does not
-    take into account your personal circumstances, health history, or situation.</li>
-    <li><strong>Experiences are not evidence.</strong> Personal experiences and community
-    patterns describe what some people reported. They do not establish that a strategy,
-    timeline, or outcome applies to you.</li>
-    <li><strong>Evidence is summarized, not complete.</strong> Research summaries reflect
-    sources available at the time of writing and may be superseded.</li>
-    <li><strong>Seek professional help when needed.</strong> If you experience significant
-    distress, depression, anxiety, or thoughts of self-harm, contact a qualified
-    professional or local emergency services.</li>
-  </ul>
-  <h2>If you are in crisis</h2>
-  <p>If you are in immediate danger or thinking about harming yourself, contact local
-  emergency services right now. See the <a href="/crisis-resources/">crisis resources page</a>
-  for helplines by country.</p>
+<h1>Health &amp; Medical Disclaimer</h1>
+<p>This website provides general educational information about problematic pornography use
+(PPU), compulsive sexual behavior, and related recovery experiences. By using this site,
+you acknowledge and agree to the following. This disclaimer is important — please read it.</p>
+<p><strong>Last updated: 2026-10-23</strong> · <strong>Last reviewed: 2026-10-23</strong></p>
 
+<h2>1. Not medical advice</h2>
+<p>Nothing on this site is medical advice, diagnosis, treatment, or a substitute for
+consultation with a qualified healthcare professional. The site does not establish a
+doctor–patient or therapist–client relationship, and no page on this site should be read as
+a diagnosis or a treatment plan.</p>
+<p>If you have a medical or mental-health concern, consult a qualified professional — a
+doctor, psychiatrist, psychologist, licensed therapist, or counselor. Do not delay or
+forego professional care because of anything you read here.</p>
+
+<h2>2. Not individualized</h2>
+<p>The content is general information. It does <strong>not</strong> take into account your
+personal circumstances, health history, situation, or needs. What is true "on average" or
+"for some people" may not be true or safe for you. General information cannot account for
+co-occurring conditions, medications, or your specific context.</p>
+
+<h2>3. Not psychological or therapeutic advice</h2>
+<p>Recovery from compulsive sexual behavior can involve psychological factors. This site is
+not psychotherapy, coaching, or counseling. It does not provide therapeutic guidance, and
+it does not monitor your progress. If you are working with a therapist, follow their
+guidance over anything you read here.</p>
+<p>The site may describe techniques discussed in recovery communities (for example,
+cognitive-behavioral strategies, mindfulness, or accountability practices). Describing a
+technique is not the same as recommending or administering it.</p>
+
+<h2>4. Experiences are not evidence</h2>
+<p>Personal experiences and community patterns describe what some people reported. They do
+<strong>not</strong> establish that a strategy, timeline, or outcome applies to you. An
+experience is one person's account, not a scientific finding — and not a promise about your
+situation. A pattern is a recurring observation, not a proven effect.</p>
+
+<h2>5. Evidence is summarized, not complete</h2>
+<p>Research summaries reflect the sources available at the time of writing and may be
+superseded by newer studies. The site's evidence tiers (see the <a href="/methodology/">Methodology</a>)
+indicate how much weight a given source carries, but no summary here is a comprehensive
+literature review or a clinical guideline.</p>
+<p>Research on problematic pornography use is evolving, and findings can be mixed or
+contested. Where evidence is uncertain, the site says so — but you should still verify
+important health information with a professional or a primary source.</p>
+
+<h2>6. No guarantee of results</h2>
+<p>The site does not promise that any strategy, timeline, or outcome — including the "90-day"
+framing common in recovery communities — will work for you. Recovery is individual. No
+outcome is guaranteed. Any improvement, setback, or timeline reported by one person is not
+a prediction of yours.</p>
+
+<h2>7. Seek professional help when needed</h2>
+<p>If you experience significant distress, depression, anxiety, intrusive thoughts, or
+thoughts of self-harm, contact a qualified professional or local emergency services.
+Reaching out is a reasonable, common, and serious step — not a failure.</p>
+<p>You do not need to wait until things are "bad enough" to seek help. Early, professional
+support is often the most effective.</p>
+
+<h2>8. If you are in crisis</h2>
+<p>If you are in immediate danger or thinking about harming yourself, contact local
+emergency services right now, or use a helpline listed on the <a href="/crisis-resources/">Crisis Resources</a>
+page. This site is not monitored in real time and cannot provide crisis support. Do not
+wait for a reply from this site.</p>
+
+<h2>9. Adult content notice</h2>
+<p>This site discusses adult topics, including pornography, compulsive sexual behavior, and
+sexual health. It is intended for adults (18+). The site itself contains no adult media, but
+the subject matter is mature and may not be appropriate for minors.</p>
+
+<h2>10. No endorsement of linked resources</h2>
+<p>Links to external resources (research, classifications, crisis services) are provided for
+reference. A link is not an endorsement, and we do not control the content or practices of
+linked sites. Mention of a product, approach, or service does not constitute a
+recommendation.</p>
+
+<h2>11. Operator and liability</h2>
+<p>This site is operated by <strong>{OPERATOR_INFO}</strong>. To the maximum extent
+permitted by law, the operator and its editors are not liable for decisions made based on
+this site's content. Use is at your own discretion. See the <a href="/terms/">Terms of Use</a>
+for the full liability statement.</p>
+
+<h2>12. No professional relationship</h2>
+<p>Using this site does not create a professional relationship of any kind — medical,
+psychological, therapeutic, or legal — between you and the operator or its editors.</p>
+
+<h2>13. Scope of this disclaimer</h2>
+<p>This disclaimer applies to all content on this site, including experience records,
+community patterns, problem answers, strategy pages, research summaries, and the knowledge
+base. It also applies to any content you access through links from this site only to the
+extent such linked content is under the operator's control; third-party sites have their own
+terms and disclaimers.</p>
+
+<h2>14. Not a diagnostic tool</h2>
+<p>No questionnaire, checklist, or self-assessment on this site is a diagnostic tool. The
+site does not diagnose compulsive sexual behavior disorder (CSBD) or any other condition.
+If you are concerned about whether your behavior constitutes a problem, consult a qualified
+professional.</p>
+
+<h2>15. Frequently asked questions</h2>
+<p><strong>Is this site written by doctors?</strong> No. Content is not authored or reviewed by named medical professionals, and we do not claim it is.</p>
+<p><strong>Can I rely on this site for treatment?</strong> No. It is educational information, not treatment.</p>
+<p><strong>Does the site guarantee recovery?</strong> No. No outcome is guaranteed.</p>
+<p><strong>What if I'm in crisis?</strong> Contact local emergency services or a helpline on the <a href="/crisis-resources/">Crisis Resources</a> page.</p>
+<p><strong>Does this site contain adult content?</strong> It discusses adult topics but contains no adult media. It is intended for adults.</p>
+
+<h2>16. If you disagree</h2>
+<p>If you do not agree with this disclaimer, do not use the site. Continuing to use the site
+means you accept it.</p>
+
+<p><em>Last updated: 2026-10-23.</em></p>
 </BaseLayout>

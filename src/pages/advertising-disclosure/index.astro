@@ -2,6 +2,8 @@
 import BaseLayout from "../../../shared/components/BaseLayout.astro";
 import { MAIN_SITE_URL } from "../../../shared/config/config";
 
+const OPERATOR_INFO = "{OPERATOR-INFO}";
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -10,11 +12,10 @@ const jsonLd = {
   description: "No ads, no sponsors, no affiliate links, nothing for sale.",
   isPartOf: { "@type": "WebSite", "name": "Porn Recovery Knowledge Platform", "url": "https://selfcontrolatlas.com" },
 };
-
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
-  siteUrl={ MAIN_SITE_URL }
+  siteUrl={MAIN_SITE_URL}
   title="Advertising Disclosure"
   description="No ads, no sponsors, no affiliate links, nothing for sale."
   canonical="/advertising-disclosure/"
@@ -22,14 +23,99 @@ const jsonLd = {
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "Advertising Disclosure", url: "/advertising-disclosure/" }]}
 >
 <h1>Advertising Disclosure</h1>
-<p>This platform carries <strong>no advertising</strong> and has <strong>no sponsors</strong>.</p>
-<ul>
-  <li>No banner ads, no native ads, no sponsored posts.</li>
-  <li>No affiliate links and no paid product placements.</li>
-  <li>No content is paid for by any third party.</li>
-</ul>
-<p>Nothing on this site exists to sell you anything. If this ever changes, this disclosure
-will be updated before any advertising appears.</p>
-<p>Last updated: 2026-10-04.</p>
+<p>This platform carries no advertising and has no sponsors. This disclosure explains the
+site's commercial posture in plain terms, so you know exactly what — if anything — is being
+monetized.</p>
+<p><strong>Last updated: 2026-10-23</strong></p>
 
+<h2>1. No advertising</h2>
+<p>The site runs no advertising of any kind:</p>
+<ul>
+  <li>No banner ads.</li>
+  <li>No native advertising.</li>
+  <li>No sponsored posts or sponsored content.</li>
+  <li>No paid product placements.</li>
+  <li>No ad networks or programmatic ads.</li>
+  <li>No interstitial or pop-up ads.</li>
+</ul>
+
+<h2>2. No affiliate links</h2>
+<p>The site uses no affiliate links and no affiliate marketing. No page earns a commission
+if you click a link or buy something. External links (to research, classifications, or
+crisis services) are provided purely for reference, and none of them are monetized.</p>
+<p>When the site links to a resource — a research paper, an official classification, or a
+helpline — the link exists because the resource is relevant to the educational content, not
+because the site earns anything from it.</p>
+
+<h2>3. No paid content</h2>
+<p>No content on this site is paid for by any third party. No company, product, or service
+has paid to be mentioned, reviewed, or recommended. When a product, approach, or service is
+mentioned, it is mentioned because it is relevant to the educational content — not because
+anyone paid for the mention.</p>
+<p>If content were ever sponsored, it would be clearly and prominently labeled as such. It
+is not, because there is none.</p>
+
+<h2>4. Nothing for sale</h2>
+<p>Nothing on this site exists to sell you anything. There are:</p>
+<ul>
+  <li>No products.</li>
+  <li>No courses or coaching.</li>
+  <li>No subscriptions or "premium" tiers.</li>
+  <li>No donations solicited.</li>
+  <li>No paid consultations or services.</li>
+  <li>No "recovery programs" or apps being sold.</li>
+</ul>
+<p>The site's only purpose is educational: to organize and explain information about
+problematic pornography use and recovery.</p>
+
+<h2>5. How content is funded</h2>
+<p>The site is an independent project maintained by <strong>{OPERATOR_INFO}</strong>,
+without advertising or sponsorship revenue. (If the operator chooses to describe funding —
+for example, self-funded, donations, or grants — that detail belongs in this section.)</p>
+
+<h2>6. Editorial independence</h2>
+<p>Because there is no advertising and no sponsorship, there is no advertiser influence over
+content. Editorial decisions are made independently, following the <a href="/editorial-policy/">Editorial Policy</a>
+and <a href="/methodology/">Methodology</a>. No third party reviews, approves, or alters
+content. No payment changes what the site says.</p>
+<p>This independence is a deliberate part of the site's trust model: a recovery resource
+should not be steering readers toward purchases.</p>
+
+<h2>7. Why disclosure still matters</h2>
+<p>Even with no advertising, a clear disclosure matters for two reasons:</p>
+<ol>
+  <li><strong>Trust</strong> — readers on a sensitive, health-adjacent topic should know the site has no commercial motive.</li>
+  <li><strong>Transparency</strong> — if the posture ever changes, readers should be able to see that it changed, and when.</li>
+</ol>
+
+<h2>8. How to verify this</h2>
+<p>You can verify this disclosure against the site itself:</p>
+<ul>
+  <li>The site runs no ad scripts (see the <a href="/cookie-policy/">Cookie Policy</a> and <a href="/privacy-policy/">Privacy Policy</a>).</li>
+  <li>There are no "sponsored" or "partner" labels anywhere.</li>
+  <li>There are no products, prices, or checkout pages.</li>
+</ul>
+
+<h2>9. If this changes</h2>
+<p>If this site ever introduces advertising, sponsorships, affiliate links, or paid content,
+this disclosure will be updated <strong>before</strong> any such content appears, and
+affected pages will be clearly labeled. This commitment is part of the site's transparency
+standard.</p>
+
+<h2>10. Frequently asked questions</h2>
+<p><strong>Does the site make money from links?</strong> No. There are no affiliate links.</p>
+<p><strong>Are any posts sponsored?</strong> No. There is no sponsored content.</p>
+<p><strong>Is anything for sale?</strong> No. Nothing is sold on this site.</p>
+<p><strong>Who funds the site?</strong> The operator, <strong>{OPERATOR_INFO}</strong>, without advertising or sponsorship revenue.</p>
+<p><strong>Will this ever change?</strong> If it does, this disclosure will be updated first, and affected content will be labeled.</p>
+
+<h2>11. Related documents</h2>
+<ul>
+  <li><a href="/privacy-policy/">Privacy Policy</a> — how the site handles (and does not handle) data.</li>
+  <li><a href="/cookie-policy/">Cookie Policy</a> — this site sets no cookies.</li>
+  <li><a href="/editorial-policy/">Editorial Policy</a> — how content is produced and corrected.</li>
+  <li><a href="/disclaimer/">Disclaimer</a> — the full medical and psychological disclaimer.</li>
+</ul>
+
+<p><em>Last updated: 2026-10-23.</em></p>
 </BaseLayout>

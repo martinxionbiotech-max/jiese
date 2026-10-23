@@ -2,6 +2,9 @@
 import BaseLayout from "../../../shared/components/BaseLayout.astro";
 import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../shared/config/config";
 
+const OPERATOR_INFO = "{OPERATOR-INFO}";
+const OPERATOR_EMAIL = "{OPERATOR-EMAIL}";
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
@@ -10,7 +13,6 @@ const jsonLd = {
   description: "How to contact the SelfControlAtlas project: corrections, questions, and content requests.",
   isPartOf: { "@type": "WebSite", "name": "Porn Recovery Knowledge Platform", "url": "https://selfcontrolatlas.com" },
 };
-
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
@@ -22,28 +24,101 @@ const jsonLd = {
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "Contact", url: "/contact/" }]}
 >
   <h1>Contact</h1>
-  <p>This project is an independent research / educational knowledge platform
-  (see <a href="/about/">About</a>). Contact is handled through the project repository.</p>
+  <p>SelfControlAtlas is an independent research and educational knowledge platform.
+  Contact is handled through the channels below. Please read the descriptions carefully —
+  some requests cannot be handled here.</p>
+  <p><strong>Last updated: 2026-10-23</strong></p>
 
   <h2>Corrections</h2>
-  <p>Found a factual error? Please open an issue in the
-  <a href="https://github.com/martinxionbiotech-max/jiese/issues" rel="noopener">project repository</a>
-  with the page URL and a short description. Corrections are handled as described in the
-  <a href="/editorial-policy/">editorial policy</a>.</p>
+  <p>Found a factual error, a broken link, or outdated information? Please report it so we
+  can fix it. Include:</p>
+  <ul>
+    <li>The page URL.</li>
+    <li>A short description of the problem.</li>
+    <li>(Optional) A source or link that supports the correction.</li>
+  </ul>
+  <p>Corrections are handled as described in the <a href="/editorial-policy/">Editorial Policy</a>.
+  Send correction reports to:</p>
+  <p><strong>{OPERATOR_EMAIL}</strong></p>
+  <p>You may also open an issue in the project repository:
+  <code>https://github.com/martinxionbiotech-max/jiese/issues</code>.</p>
 
-  <h2>Questions about content</h2>
-  <p>For questions about methodology, evidence handling, or specific pages, use the
-  repository issues as well. Please note: this platform cannot provide personal advice,
-  diagnosis, or crisis support.</p>
+  <h2>Questions about content or methodology</h2>
+  <p>For questions about methodology, evidence handling, de-identification, or specific
+  pages, use the same contact channels above.</p>
+  <p>Please note: <strong>this platform cannot provide personal advice, diagnosis, or crisis
+  support.</strong> Questions asking "what should I do about my specific situation" cannot
+  and will not be answered with individualized guidance. We can point you to published
+  evidence and to qualified professionals, but we cannot treat, coach, or counsel.</p>
+
+  <h2>Copyright and takedown requests</h2>
+  <p>If you believe material on this site infringes your copyright, contact:</p>
+  <p><strong>{OPERATOR_EMAIL}</strong></p>
+  <p>Please include:</p>
+  <ul>
+    <li>Identification of the copyrighted work.</li>
+    <li>The URL(s) of the allegedly infringing material.</li>
+    <li>Your contact information.</li>
+    <li>A statement of good-faith belief that the use is not authorized.</li>
+  </ul>
+  <p>We respond to complete notices as required by applicable law. See the
+  <a href="/terms/">Terms of Use</a> for the full takedown procedure.</p>
+
+  <h2>Privacy questions</h2>
+  <p>Questions about data handling or privacy can be sent to <strong>{OPERATOR_EMAIL}</strong>.
+  Note that this site collects no personal data (see the <a href="/privacy-policy/">Privacy Policy</a>),
+  so most privacy questions are answered there already.</p>
+
+  <h2>Response expectations</h2>
+  <p>This is an independent project with a small team. We aim to respond to legitimate
+  messages, but:</p>
+  <ul>
+    <li>Response time may vary.</li>
+    <li>We may not respond to messages that are abusive, spam, or that request personal advice or diagnosis.</li>
+    <li>We cannot provide crisis support, and we do not monitor messages in real time.</li>
+  </ul>
+  <p>If you need a response, please be specific about the page or issue you are contacting
+  us about.</p>
 
   <h2>If you need help</h2>
-  <p class="note">This site is educational content only. If you are in crisis, please see
-  <a href="/crisis-resources/">crisis resources</a>. For personal health concerns, consult a
-  qualified professional.</p>
+  <p>This site is educational content only.</p>
+  <ul>
+    <li><strong>If you are in crisis</strong> — thinking about harming yourself, or in immediate danger — see the <a href="/crisis-resources/">Crisis Resources</a> page. It lists real, currently-operating helplines. Do not wait for a reply from this site; it is not monitored in real time.</li>
+    <li><strong>For personal health concerns</strong> — consult a qualified professional (a doctor, psychologist, counselor, or therapist). This site explains the evidence; it does not treat.</li>
+  </ul>
+
+  <h2>What we cannot do</h2>
+  <p>To set expectations clearly, this site cannot:</p>
+  <ul>
+    <li>Provide personal medical, psychological, or crisis advice.</li>
+    <li>Diagnose or treat any condition.</li>
+    <li>Respond to messages in real time.</li>
+    <li>Offer coaching, counseling, or therapy.</li>
+    <li>Advise on your specific situation or circumstances.</li>
+  </ul>
 
   <h2>About the sites</h2>
   <ul>
-    <li>Main site: <a href={MAIN_SITE_URL}>{MAIN_SITE_URL.replace("https://", "")}</a></li>
-    <li>Knowledge base: <a href={DATA_SITE_URL}>{DATA_SITE_URL.replace("https://", "")}</a></li>
+    <li><strong>Main site:</strong> <code>selfcontrolatlas.com</code></li>
+    <li><strong>Knowledge base:</strong> <code>data.selfcontrolatlas.com</code></li>
   </ul>
+  <p>The knowledge base is a companion research library; it is part of the same project and
+  follows the same editorial and privacy practices.</p>
+
+  <h2>Operator information</h2>
+  <p>This site is maintained by:</p>
+  <p><strong>{OPERATOR_INFO}</strong></p>
+  <p>Contact email: <strong>{OPERATOR_EMAIL}</strong></p>
+
+  <h2>Frequently asked questions</h2>
+  <p><strong>How do I report a factual error?</strong> Email <strong>{OPERATOR_EMAIL}</strong>
+  with the page URL and a short description, or open an issue in the project repository.</p>
+  <p><strong>Can I ask for personal advice?</strong> No. This site provides educational
+  content, not individual advice or diagnosis.</p>
+  <p><strong>Is the site monitored in real time?</strong> No. If you are in crisis, use the
+  <a href="/crisis-resources/">Crisis Resources</a> page.</p>
+  <p><strong>How do I make a copyright complaint?</strong> Email <strong>{OPERATOR_EMAIL}</strong>
+  with the details listed above.</p>
+
+  <p><em>Last updated: 2026-10-23.</em></p>
 </BaseLayout>

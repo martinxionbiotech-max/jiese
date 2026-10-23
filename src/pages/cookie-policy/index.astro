@@ -2,6 +2,8 @@
 import BaseLayout from "../../../shared/components/BaseLayout.astro";
 import { MAIN_SITE_URL } from "../../../shared/config/config";
 
+const OPERATOR_EMAIL = "{OPERATOR-EMAIL}";
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -10,11 +12,10 @@ const jsonLd = {
   description: "This site sets no cookies. Browser-local tools are explained.",
   isPartOf: { "@type": "WebSite", "name": "Porn Recovery Knowledge Platform", "url": "https://selfcontrolatlas.com" },
 };
-
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
-  siteUrl={ MAIN_SITE_URL }
+  siteUrl={MAIN_SITE_URL}
   title="Cookie Policy"
   description="This site sets no cookies. Browser-local tools are explained."
   canonical="/cookie-policy/"
@@ -22,18 +23,121 @@ const jsonLd = {
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "Cookie Policy", url: "/cookie-policy/" }]}
 >
 <h1>Cookie Policy</h1>
-<p>This website <strong>does not use cookies</strong>.</p>
-<ul>
-  <li>No session cookies, no preference cookies, no tracking cookies.</li>
-  <li>No third-party services that set cookies (no analytics, no ad networks, no
-  embedded social widgets).</li>
-</ul>
-<h2>Local storage</h2>
-<p>The Trigger Journal tool uses browser <strong>local storage</strong> — data that stays
-on your device and is never sent to any server. Clearing your browser data removes it.</p>
-<h2>External links</h2>
-<p>Linked third-party sites (for example, publishers or crisis services) may set their own
-cookies according to their policies, which we do not control.</p>
-<p>Last updated: 2026-10-04.</p>
+<p>This policy explains how this website uses cookies and similar browser storage. The
+short version: <strong>this site does not use cookies.</strong> If you want to understand
+what that means and why, read on.</p>
+<p><strong>Last updated: 2026-10-23</strong></p>
 
+<h2>1. What a cookie is</h2>
+<p>A cookie is a small piece of data that a website can ask your browser to store and send
+back on later visits. Cookies are commonly used for several purposes:</p>
+<ul>
+  <li><strong>Session management</strong> — keeping you logged in or tracking a session.</li>
+  <li><strong>Preferences</strong> — remembering settings like language or layout.</li>
+  <li><strong>Analytics</strong> — measuring how visitors use a site.</li>
+  <li><strong>Advertising</strong> — targeting ads and measuring their performance.</li>
+</ul>
+<p>Cookies can be <strong>first-party</strong> (set by the site you are visiting) or
+<strong>third-party</strong> (set by another domain, often for advertising or analytics
+across sites).</p>
+
+<h2>2. This site sets no cookies</h2>
+<p>This website does <strong>not</strong> set cookies of any kind:</p>
+<ul>
+  <li><strong>No session cookies</strong> — there is no login or session to maintain.</li>
+  <li><strong>No preference cookies</strong> — the site has no settings that persist across visits.</li>
+  <li><strong>No tracking cookies</strong> — there is no analytics or tracking.</li>
+  <li><strong>No advertising cookies</strong> — there is no ad network (see the <a href="/advertising-disclosure/">Advertising Disclosure</a>).</li>
+  <li><strong>No third-party cookies</strong> — no embedded widgets, social buttons, or ad pixels from other domains.</li>
+</ul>
+<p>Because the site sets no cookies, there is no cookie consent banner, and none is needed.</p>
+
+<h2>3. Why the site is cookie-free</h2>
+<p>This is a deliberate design choice, and it follows directly from the site's privacy
+posture:</p>
+<ul>
+  <li>The site has <strong>no accounts</strong>, so there is nothing to keep a session for.</li>
+  <li>The site has <strong>no analytics</strong>, so there is nothing to track.</li>
+  <li>The site has <strong>no advertising</strong>, so there is nothing to target.</li>
+  <li>The site collects <strong>no personal data</strong> (see the <a href="/privacy-policy/">Privacy Policy</a>).</li>
+</ul>
+<p>When a site does not need to remember you, it does not need cookies.</p>
+
+<h2>4. Local storage (browser-local tools)</h2>
+<p>The optional <a href="/tools/trigger-journal/">Trigger Journal</a> tool uses
+<strong>browser local storage</strong>, which is similar to a cookie but stays on your device:</p>
+<ul>
+  <li>Your entries are stored only in <strong>your own browser</strong>.</li>
+  <li>They are <strong>never sent to any server</strong>.</li>
+  <li>They are deleted when you clear your browser data.</li>
+  <li>We have no access to them.</li>
+</ul>
+<p>Local storage used this way is a privacy-preserving alternative to storing your data on a
+server. No local-storage data leaves your device.</p>
+
+<h2>5. Cookies vs. local storage</h2>
+<p>"Cookies" and "local storage" are both forms of browser storage, but they serve different
+roles here:</p>
+<table class="data-table">
+  <thead><tr><th>Feature</th><th>Cookies on this site</th><th>Local storage (Trigger Journal)</th></tr></thead>
+  <tbody>
+    <tr><td>Who can read it</td><td>— (none exist)</td><td>Only your browser</td></tr>
+    <tr><td>Sent to server?</td><td>—</td><td><strong>No</strong></td></tr>
+    <tr><td>Persists after clearing?</td><td>—</td><td>No (cleared with browser data)</td></tr>
+    <tr><td>Used for tracking?</td><td>—</td><td><strong>No</strong></td></tr>
+    <tr><td>Purpose</td><td>—</td><td>Keeping your own journal entries on your device</td></tr>
+  </tbody>
+</table>
+<p>The distinction matters: the site uses local storage only to keep your own data on your
+own device, not to track you or remember anything about you.</p>
+
+<h2>6. Third-party links</h2>
+<p>Pages may link to external websites — research publishers, official classifications, or
+crisis services. Those sites may set their own cookies according to their own policies,
+which we do not control. When you leave this site, you are subject to the cookie policy of
+the site you visit.</p>
+<p>We link to external resources for reference; we do not cause them to set cookies on your
+device, because we do not embed their content or run their scripts.</p>
+
+<h2>7. How to control cookies and browser storage</h2>
+<p>Because this site sets no cookies, there is nothing to manage here. But you can control
+storage in your own browser generally:</p>
+<ul>
+  <li><strong>Clear site data</strong> — your browser's "clear browsing data" removes local storage, including Trigger Journal entries.</li>
+  <li><strong>Private/incognito mode</strong> — prevents storage from persisting beyond the session.</li>
+  <li><strong>Browser settings</strong> — you can block cookies and site data globally, though some sites (not this one) depend on cookies to function.</li>
+</ul>
+<p>If you clear your browser data, any Trigger Journal entries you created will be removed.
+This is expected behavior, and it means your entries are gone from your device — which is
+also how the tool stays private.</p>
+
+<h2>8. What happens if you block storage</h2>
+<p>Nothing on this site depends on cookies or local storage to function. If you block
+cookies or disable local storage:</p>
+<ul>
+  <li>Every page still loads and reads normally.</li>
+  <li>The only effect is that the Trigger Journal tool will not persist entries between sessions.</li>
+</ul>
+
+<h2>9. Do Not Track (DNT)</h2>
+<p>This site respects the Do Not Track signal by virtue of not tracking at all. There is
+nothing for a Do Not Track preference to disable, because no tracking exists.</p>
+
+<h2>10. Frequently asked questions</h2>
+<p><strong>Do I need to accept cookies to use this site?</strong> No. There are no cookies and no consent banner.</p>
+<p><strong>Does the Trigger Journal use cookies?</strong> No, it uses local storage on your own device.</p>
+<p><strong>Will external links set cookies?</strong> Possibly — linked third-party sites set their own cookies under their own policies.</p>
+<p><strong>How do I delete my Trigger Journal data?</strong> Clear your browser's site data or browsing data.</p>
+
+<h2>11. Changes to this policy</h2>
+<p>If this policy changes, the updated version will be posted on this page, and the "Last
+updated" date above will be revised. Because the site sets no cookies and has no accounts,
+we cannot notify you individually.</p>
+
+<h2>12. Contact</h2>
+<p>Questions about this policy: <strong>{OPERATOR_EMAIL}</strong>, or the project repository
+<code>https://github.com/martinxionbiotech-max/jiese/issues</code>.</p>
+<p>Related documents: <a href="/privacy-policy/">Privacy Policy</a>,
+<a href="/advertising-disclosure/">Advertising Disclosure</a>,
+<a href="/disclaimer/">Disclaimer</a>.</p>
 </BaseLayout>

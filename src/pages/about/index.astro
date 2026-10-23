@@ -2,6 +2,8 @@
 import BaseLayout from "../../../shared/components/BaseLayout.astro";
 import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../shared/config/config";
 
+const OPERATOR_INFO = "{OPERATOR-INFO}";
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
@@ -10,7 +12,6 @@ const jsonLd = {
   description: "About the Porn Recovery Knowledge Platform: a structured knowledge and experience platform for people seeking to understand and recover from problematic pornography use.",
   isPartOf: { "@type": "WebSite", "name": "Porn Recovery Knowledge Platform", "url": "https://selfcontrolatlas.com" },
 };
-
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
@@ -22,37 +23,138 @@ const jsonLd = {
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "About", url: "/about/" }]}
 >
   <h1>About the Project</h1>
-  <p>This project is a structured knowledge and experience platform for people seeking
-  to understand and recover from problematic pornography use and compulsive sexual
-  behaviors.</p>
-  <p>Its core assets are:</p>
+  <p>SelfControlAtlas is a structured knowledge and experience platform for people who
+  want to understand and recover from problematic pornography use (PPU) and related
+  compulsive sexual behaviors. This page explains what the project is, who makes it, how
+  it is governed, and — just as importantly — what it does not claim to be.</p>
+
+  <h2>What this project is</h2>
+  <p>The project is built around four linked assets, each with a distinct role:</p>
   <ul>
-    <li><strong>Real recovery experiences</strong> — de-identified and structured</li>
-    <li><strong>Community patterns</strong> — recurring observations across experiences</li>
-    <li><strong>Scientific evidence</strong> — sourced independently from community data</li>
-    <li><strong>A growing knowledge graph</strong> — connecting experiences, triggers,
-    strategies, questions, and research</li>
+    <li><strong>Real recovery experiences</strong> — de-identified and structured into comparable records.</li>
+    <li><strong>Community patterns</strong> — recurring observations drawn across many experiences, not anecdotes presented as fact.</li>
+    <li><strong>Scientific evidence</strong> — summarized independently from published research, kept strictly separate from community data.</li>
+    <li><strong>A knowledge graph</strong> — connecting experiences, triggers, strategies, questions, and research so readers can trace how a claim is supported.</li>
   </ul>
-  <h2>Who makes this</h2>
-  <p>This is an <strong>independent research / educational knowledge project</strong>.
-  It is maintained as a structured knowledge base rather than a commercial platform:
-  no advertising, no sponsors, no paid placements, and nothing for sale.</p>
+  <p>The purpose is to make information about PPU and recovery more organized, more
+  transparent, and easier to verify than scattered forum posts. Instead of reading dozens
+  of disconnected threads, a reader can find a structured account, see which patterns
+  recur, and check what the evidence actually says.</p>
+
+  <h3>Why this matters</h3>
+  <p>Problematic pornography use is widely discussed online but poorly organized. Two
+  problems are common: personal anecdotes get treated as scientific fact, and scientific
+  findings get buried or misrepresented. This project addresses both by separating the
+  layers explicitly — you can always tell whether you are reading one person's experience,
+  an aggregate pattern, or a research summary.</p>
+
+  <h2>What this project is not</h2>
+  <p>The project is deliberately clear about its limits:</p>
   <ul>
-    <li><strong>No fabricated experts.</strong> Content is not authored or reviewed by
-    named medical professionals, and we do not claim that it is. Where clinical matters
-    are involved, content directs readers to qualified professionals.</li>
-    <li><strong>Methodology responsibility.</strong> Data processing (de-identification,
-    structuring, editorial rewriting) and evidence synthesis are performed by the project's
-    editors following the <a href="/methodology/">published methodology</a> and
-    <a href="/editorial-policy/">editorial policy</a>.</li>
-    <li><strong>Corrections.</strong> Factual errors are corrected when identified; the
-    current version of any page is authoritative. See the
-    <a href="/editorial-policy/">editorial policy</a>.</li>
+    <li><strong>Not medical advice.</strong> Nothing here is a diagnosis, treatment plan, or substitute for a qualified professional. See the <a href="/disclaimer/">Disclaimer</a>.</li>
+    <li><strong>Not a crisis service.</strong> Messages are not monitored in real time. If you are in crisis, see the <a href="/crisis-resources/">Crisis Resources</a> page.</li>
+    <li><strong>Not therapy or coaching.</strong> The site explains evidence; it does not treat, coach, or counsel.</li>
+    <li><strong>Not a commercial product.</strong> There is no advertising, no sponsors, no affiliate links, and nothing for sale. See the <a href="/advertising-disclosure/">Advertising Disclosure</a>.</li>
   </ul>
 
-  <h2>Read how content is produced</h2>
-  <p><a href="/methodology/">Methodology</a> ·
-  <a href="/editorial-policy/">Editorial policy</a> ·
-  <a href={DATA_SITE_URL + "/evidence/"}>Evidence standards</a> ·
-  <a href={DATA_SITE_URL + "/references/"}>References</a></p>
+  <h2>Who makes this</h2>
+  <p>This project is maintained by:</p>
+  <p><strong>{OPERATOR_INFO}</strong></p>
+  <p>The operator is responsible for the day-to-day maintenance of the site, the
+  de-identification and structuring of community-derived content, and the editorial
+  standards described in the <a href="/editorial-policy/">Editorial Policy</a>.</p>
+
+  <h3>No fabricated experts</h3>
+  <p>This site does not claim authority it does not have. Specifically:</p>
+  <ul>
+    <li>Content is <strong>not authored or reviewed by named medical or mental-health professionals</strong>, and we do not claim that it is.</li>
+    <li>We do not invent expert credentials, author bios, or advisory boards.</li>
+    <li>We do not fabricate statistics, studies, or sources.</li>
+  </ul>
+  <p>This honesty is deliberate and central to the project. A recovery resource should
+  tell you exactly what it is and what it is not, so you can judge its content
+  appropriately.</p>
+
+  <h3>Editorial responsibility</h3>
+  <p>Data processing — de-identification, structuring, and editorial rewriting — and
+  evidence synthesis are performed by the project's editors, following the published
+  <a href="/methodology/">Methodology</a> and <a href="/editorial-policy/">Editorial Policy</a>.
+  Editors work from the evidence tiers described in the methodology; they do not invent
+  sources, and they label uncertainty when the evidence is weak.</p>
+
+  <h3>Corrections</h3>
+  <p>Factual errors are corrected when identified. The current version of any page is
+  authoritative. If you find an error, see the <a href="/contact/">Contact</a> page for how
+  to report it.</p>
+
+  <h2>How the content is structured</h2>
+  <p>The site uses a four-layer content system, described fully in the
+  <a href="/methodology/">Methodology</a>:</p>
+  <ol>
+    <li><strong>Experiences</strong> — de-identified first-person recovery accounts.</li>
+    <li><strong>Patterns</strong> — recurring observations aggregated across experiences.</li>
+    <li><strong>Problems</strong> — common questions answered with reference to the evidence.</li>
+    <li><strong>Evidence</strong> — research summaries tied to published sources and evidence tiers.</li>
+  </ol>
+  <p>Every layer is labeled, and the de-identification rules are published so readers can
+  see exactly what is removed before anything is published.</p>
+
+  <h3>What the knowledge graph does</h3>
+  <p>The knowledge graph links entities across the site — a trigger page connects to the
+  strategies that address it, a problem page connects to the evidence that bears on it, and
+  an experience connects to the patterns it illustrates. This lets readers move from "what
+  is this?" to "what does the evidence say?" to "what have others experienced?" without
+  losing track of which is which.</p>
+
+  <h2>How the site handles your information</h2>
+  <p>This site is static and deliberately minimal about data:</p>
+  <ul>
+    <li>No accounts and no sign-ups.</li>
+    <li>No collection of names, email addresses, or other personally identifying information.</li>
+    <li>No analytics or tracking scripts.</li>
+    <li>No cookies.</li>
+  </ul>
+  <p>The only browser-side persistence is the optional <a href="/tools/trigger-journal/">Trigger Journal</a>
+  tool, which stores entries in <strong>your own browser's local storage</strong> — data that
+  never leaves your device. Full details are in the <a href="/privacy-policy/">Privacy Policy</a>
+  and <a href="/cookie-policy/">Cookie Policy</a>.</p>
+
+  <h2>Intended audience</h2>
+  <p>This site discusses adult topics, including pornography and compulsive sexual
+  behavior. It is intended for adults. There is no adult media on the site itself, but the
+  subject matter is mature. If you are under 18, this content is not intended for you.</p>
+
+  <h2>Scope and limitations</h2>
+  <p>We aim for accuracy and label uncertainty honestly, but information may be incomplete
+  or outdated. Research summaries reflect the sources available at the time of writing and
+  may be superseded by newer studies. Community-reported content reflects individual
+  experiences, not established facts. No page on this site should be read as the final word
+  on your situation.</p>
+
+  <h2>Governing principles</h2>
+  <p>Three principles shape everything here:</p>
+  <ol>
+    <li><strong>Transparency</strong> — you can see how content is made, labeled, and corrected.</li>
+    <li><strong>Honesty about limits</strong> — the site distinguishes evidence from experience and never inflates either.</li>
+    <li><strong>Safety</strong> — crisis resources and professional-help signposts are prioritized over any recovery claim.</li>
+  </ol>
+
+  <h2>How to use this site responsibly</h2>
+  <ul>
+    <li>Read the <a href="/methodology/">Methodology</a> to understand what kind of content you are reading.</li>
+    <li>Distinguish experiences from evidence — the site labels them separately.</li>
+    <li>For personal concerns, consult a qualified professional rather than relying on the site alone.</li>
+    <li>If you are in crisis, use the <a href="/crisis-resources/">Crisis Resources</a> page.</li>
+  </ul>
+
+  <h2>Related pages</h2>
+  <ul>
+    <li><a href="/methodology/">Methodology</a> — how content is produced and labeled.</li>
+    <li><a href="/editorial-policy/">Editorial Policy</a> — production, de-identification, and correction rules.</li>
+    <li><a href="/disclaimer/">Disclaimer</a> — the full medical and psychological disclaimer.</li>
+    <li><a href="/privacy-policy/">Privacy Policy</a> — how your information is handled.</li>
+    <li><a href="/contact/">Contact</a> — corrections, questions, and how to reach the operator.</li>
+  </ul>
+
+  <p><em>Last updated: 2026-10-23.</em></p>
 </BaseLayout>

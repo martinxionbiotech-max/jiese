@@ -2,6 +2,9 @@
 import BaseLayout from "../../../shared/components/BaseLayout.astro";
 import { MAIN_SITE_URL } from "../../../shared/config/config";
 
+const OPERATOR_INFO = "{OPERATOR-INFO}";
+const OPERATOR_EMAIL = "{OPERATOR-EMAIL}";
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -10,11 +13,10 @@ const jsonLd = {
   description: "Plain-language terms: educational use, no medical reliance, acceptable use.",
   isPartOf: { "@type": "WebSite", "name": "Porn Recovery Knowledge Platform", "url": "https://selfcontrolatlas.com" },
 };
-
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
-  siteUrl={ MAIN_SITE_URL }
+  siteUrl={MAIN_SITE_URL}
   title="Terms of Use"
   description="Plain-language terms: educational use, no medical reliance, acceptable use."
   canonical="/terms/"
@@ -22,34 +24,147 @@ const jsonLd = {
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "Terms of Use", url: "/terms/" }]}
 >
 <h1>Terms of Use</h1>
-<p>By using this website, you agree to these terms. They are intentionally short and
-written in plain language.</p>
-<h2>Educational purpose only</h2>
-<p>This site provides general educational information about problematic pornography use,
-recovery experiences, and related research. It is <strong>not</strong> medical advice,
-diagnosis, or treatment, and no professional relationship is formed by using it.</p>
-<h2>No professional reliance</h2>
-<p>Do not make health decisions based on this site alone. For medical, psychological, or
-crisis concerns, consult qualified professionals or local emergency services.</p>
-<h2>Content accuracy</h2>
-<p>We aim for accuracy and label uncertainty honestly, but information may be incomplete
-or outdated. Community-reported content reflects individual experiences, not established
-facts. See the Editorial Policy and Disclaimer.</p>
-<h2>Acceptable use</h2>
-<ul>
-  <li>Use the site for personal, non-commercial, educational purposes.</li>
-  <li>Do not attempt to re-identify de-identified community content.</li>
-  <li>Do not misuse content to harass, diagnose, or target any person or group.</li>
-</ul>
-<h2>Intellectual property</h2>
-<p>Site text and structure are original works. Research summaries paraphrase published
-sources and cite them where possible. Do not republish site content wholesale without
-permission.</p>
-<h2>Liability</h2>
-<p>To the maximum extent permitted by law, the site and its maintainers are not liable
-for decisions made based on its content. Use is at your own discretion.</p>
-<h2>Changes</h2>
-<p>These terms may be updated; the current version is always on this page.</p>
-<p>Last updated: 2026-10-04.</p>
+<p>By using this website, you agree to these terms. They are written in plain language on
+purpose — you should be able to read and understand them without a lawyer. If you do not
+agree, please do not use the site.</p>
+<p><strong>Last updated: 2026-10-23</strong></p>
 
+<h2>1. What this site is</h2>
+<p>This website provides general educational information about problematic pornography use
+(PPU), compulsive sexual behavior, recovery experiences, and related research. It is a
+knowledge resource, not a service. It does not provide individualized advice of any kind.</p>
+
+<h2>2. Definitions</h2>
+<ul>
+  <li><strong>"Site"</strong> means this website and its pages, tools, and content.</li>
+  <li><strong>"Content"</strong> means all text, structure, research summaries, and community-derived material on the site.</li>
+  <li><strong>"Operator"</strong> means <strong>{OPERATOR_INFO}</strong>, the party responsible for the site.</li>
+  <li><strong>"You"</strong> means any person who accesses or uses the site.</li>
+  <li><strong>"Community-derived content"</strong> means material drawn from public community discussions and de-identified before publication.</li>
+</ul>
+
+<h2>3. Educational purpose only</h2>
+<p>The site exists to educate. It is <strong>not</strong>:</p>
+<ul>
+  <li>Medical advice, diagnosis, or treatment.</li>
+  <li>Psychological or therapeutic advice.</li>
+  <li>A crisis or emergency service.</li>
+  <li>A substitute for consultation with a qualified professional.</li>
+</ul>
+<p>No professional relationship is formed by using this site. Reading a page does not make
+the operator or its editors your doctor, therapist, or counselor.</p>
+
+<h2>4. No professional reliance</h2>
+<p>Do not make health decisions based on this site alone. For medical, psychological, or
+crisis concerns, consult qualified professionals or local emergency services. Specifically:</p>
+<ul>
+  <li>If you are in crisis, see the <a href="/crisis-resources/">Crisis Resources</a> page.</li>
+  <li>If you are considering changing, starting, or stopping any treatment or medication, talk to a licensed professional first.</li>
+  <li>If you are experiencing significant distress, depression, or anxiety, seek professional help.</li>
+</ul>
+<p>The site's role is to explain evidence and shared experience — not to replace professional
+judgment.</p>
+
+<h2>5. Content accuracy and uncertainty</h2>
+<p>We aim for accuracy and label uncertainty honestly, but:</p>
+<ul>
+  <li>Information may be incomplete, outdated, or superseded by newer research.</li>
+  <li>Community-reported content reflects individual experiences, not established facts.</li>
+  <li>Evidence is summarized, not exhaustive.</li>
+</ul>
+<p>The site makes no warranty that its content is complete, current, or error-free. See the
+<a href="/editorial-policy/">Editorial Policy</a> and <a href="/disclaimer/">Disclaimer</a>.</p>
+
+<h2>6. Acceptable use</h2>
+<p>You agree to use the site only for lawful, personal, non-commercial, educational purposes.
+Specifically, you agree <strong>not</strong> to:</p>
+<ul>
+  <li>Attempt to re-identify de-identified community content.</li>
+  <li>Use content to harass, diagnose, or target any person or group.</li>
+  <li>Republish site content wholesale without permission.</li>
+  <li>Misrepresent the site's content as medical or professional advice.</li>
+  <li>Scrape or reproduce the site at scale in a way that misattributes or distorts it.</li>
+  <li>Use the site to distribute spam, malware, or unlawful material.</li>
+  <li>Interfere with the site's operation or attempt to gain unauthorized access.</li>
+</ul>
+
+<h2>7. Intellectual property</h2>
+<p>Site text and structure are original works. Research summaries paraphrase published
+sources and cite them where possible. You may quote brief excerpts for non-commercial,
+educational purposes with attribution. You may not:</p>
+<ul>
+  <li>Republish substantial portions of the site without permission.</li>
+  <li>Present site content as your own.</li>
+  <li>Sell or license site content.</li>
+</ul>
+<p>Community-derived material is de-identified; the underlying personal expression of third
+parties is not reproduced in identifiable form.</p>
+
+<h2>8. No guarantee of results</h2>
+<p>The site describes strategies, timelines, and outcomes that some people reported. It does
+<strong>not</strong> promise that any strategy, timeline, or outcome will apply to you.
+Recovery is individual; no outcome on this site is guaranteed. Any "timeline" or "challenge"
+framing (such as the "90-day" framing common in recovery communities) is descriptive of
+community practice, not a promise.</p>
+
+<h2>9. Disclaimer of warranties</h2>
+<p>The site is provided "as is" and "as available," without warranties of any kind, express
+or implied, including warranties of accuracy, completeness, fitness for a particular
+purpose, or non-infringement. We do not warrant that the site will be uninterrupted,
+error-free, or free of harmful components.</p>
+
+<h2>10. Limitation of liability</h2>
+<p>To the maximum extent permitted by law, the site, its operator, and its editors are not
+liable for any loss, damage, or claim arising from:</p>
+<ul>
+  <li>Your use of, or reliance on, the site's content.</li>
+  <li>Decisions you make based on the site's content.</li>
+  <li>The content of linked third-party sites.</li>
+  <li>Any interruption, error, or omission on the site.</li>
+</ul>
+<p>Your use of the site is at your own discretion and risk. Some jurisdictions do not allow
+certain limitations of liability, so some of the above may not apply to you.</p>
+
+<h2>11. Copyright complaints (DMCA)</h2>
+<p>If you believe material on this site infringes your copyright, send a notice to
+<strong>{OPERATOR_EMAIL}</strong> with:</p>
+<ul>
+  <li>Identification of the copyrighted work.</li>
+  <li>The URL(s) of the allegedly infringing material.</li>
+  <li>Your contact information.</li>
+  <li>A statement of good-faith belief that the use is not authorized.</li>
+  <li>A statement, under penalty of perjury, that the information is accurate and you are the owner or authorized to act.</li>
+</ul>
+<p>We respond to complete notices as required by applicable law, including the Digital
+Millennium Copyright Act where applicable.</p>
+
+<h2>12. Governing law and jurisdiction</h2>
+<p>These terms are governed by the laws of the jurisdiction of the operator stated in the
+<a href="/privacy-policy/">Privacy Policy</a> (the operator is <strong>{OPERATOR_INFO}</strong>).
+Any dispute arising from these terms or your use of the site is subject to the exclusive
+jurisdiction of the courts of that jurisdiction, unless mandatory consumer-protection law
+requires otherwise.</p>
+
+<h2>13. Severability and entire agreement</h2>
+<p>If any provision of these terms is found unenforceable, the remaining provisions remain
+in effect. These terms, together with the <a href="/privacy-policy/">Privacy Policy</a> and
+<a href="/disclaimer/">Disclaimer</a>, form the entire agreement between you and the operator
+regarding use of the site.</p>
+
+<h2>14. Changes to these terms</h2>
+<p>These terms may be updated. The current version is always on this page, with the "Last
+updated" date above revised accordingly. Because the site has no accounts, we cannot notify
+you individually — check back if it matters to you. Continued use after a change means you
+accept the updated terms.</p>
+
+<h2>15. Frequently asked questions</h2>
+<p><strong>Can I quote the site?</strong> Yes, brief excerpts for non-commercial, educational purposes with attribution.</p>
+<p><strong>Can I republish a whole page?</strong> No, not without permission.</p>
+<p><strong>Does using the site create a doctor–patient relationship?</strong> No. The site is educational, not medical care.</p>
+<p><strong>Can I use the site for research?</strong> Yes, for lawful, non-commercial, educational purposes, with appropriate attribution.</p>
+<p><strong>What if I disagree with these terms?</strong> Stop using the site.</p>
+
+<h2>16. Contact</h2>
+<p>Questions about these terms: <strong>{OPERATOR_EMAIL}</strong>, or the project repository
+<code>https://github.com/martinxionbiotech-max/jiese/issues</code>.</p>
 </BaseLayout>

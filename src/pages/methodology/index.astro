@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../../../shared/components/BaseLayout.astro";
-import TypeBadge from "../../../shared/components/TypeBadge.astro";
 import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../shared/config/config";
 
 const jsonLd = {
@@ -11,7 +10,6 @@ const jsonLd = {
   description: "How this platform produces content: the four-layer content system, de-identification rules, evidence standards, and quality gates.",
   isPartOf: { "@type": "WebSite", "name": "Porn Recovery Knowledge Platform", "url": "https://selfcontrolatlas.com" },
 };
-
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
@@ -22,77 +20,144 @@ const jsonLd = {
   jsonLd={jsonLd}
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "Methodology", url: "/methodology/" }]}
 >
-  <h1>Methodology</h1>
-  <p>This platform combines two different kinds of information that must never be
-  confused: what people report experiencing, and what scientific research has found.</p>
+<h1>Methodology</h1>
+<p>This page explains how SelfControlAtlas produces content: the four-layer content system,
+the de-identification rules, the evidence standards, and the quality checks applied before
+publication. It is the reference for anyone who wants to understand how much to trust a
+given page.</p>
+<p><strong>Last updated: 2026-10-23</strong> · <strong>Last reviewed: 2026-10-23</strong></p>
 
-  <h2>The four content layers</h2>
-  <table class="data-table">
-    <thead><tr><th>Layer</th><th>Label</th><th>What it contains</th></tr></thead>
-    <tbody>
-      <tr><td>1. Personal Experience</td><td><TypeBadge type="experience" /></td>
-        <td>De-identified, structured reports from community members</td></tr>
-      <tr><td>2. Community Pattern</td><td><TypeBadge type="pattern" /></td>
-        <td>Observations that recur across many independent experiences</td></tr>
-      <tr><td>3. Scientific Evidence</td><td><TypeBadge type="research" /></td>
-        <td>Peer-reviewed research, systematic reviews, clinical guidelines</td></tr>
-      <tr><td>4. Clinical / Professional Info</td><td><TypeBadge type="clinical" /></td>
-        <td>Information from professional and clinical sources</td></tr>
-      <tr><td>Uncertain</td><td><TypeBadge type="uncertain" /></td>
-        <td>Topics where evidence is missing, mixed, or debated</td></tr>
-    </tbody>
-  </table>
+<h2>1. The four-layer content system</h2>
+<p>Content is organized into four layers, each with a distinct epistemic status. The layers
+are kept separate so that a research finding is never confused with a community observation,
+and a single person's story is never presented as a universal fact.</p>
 
-  <h2>Where community experiences come from</h2>
-  <p>Experiences are extracted from publicly accessible community discussions (for
-  example, Chinese-language recovery communities such as Jiese Ba). Extraction follows
-  strict rules:</p>
-  <ul>
-    <li><strong>De-identification</strong> — no usernames, IDs, avatars, contact info, or locations</li>
-    <li><strong>Redaction</strong> — sexual details are reduced to what is necessary to understand the experience</li>
-    <li><strong>Rewrite</strong> — long posts are condensed into structured records, never copied verbatim</li>
-    <li><strong>Labeling</strong> — every record is labeled as community-reported personal experience</li>
-  </ul>
+<h3>Layer 1 — Experiences</h3>
+<p>De-identified first-person accounts of recovery. An experience is <strong>one person's
+report</strong>, not a fact about everyone. It is structured (trigger, strategy, outcome,
+timeline) so it can be compared with others, but it is never generalized beyond itself.</p>
 
-  <h2>Evidence standards</h2>
-  <p>Scientific content is sourced independently from community experience, using
-  authoritative tiers: WHO / ICD-11, systematic reviews and meta-analyses,
-  peer-reviewed journals, and professional organizations. Community material is never
-  used as scientific evidence. When evidence is missing or mixed, the site says so.</p>
+<h3>Layer 2 — Patterns</h3>
+<p>Recurring observations aggregated across many experiences. A pattern says "this appears
+frequently across accounts," not "this is universally true." Patterns are supported by
+counts or clear recurrence, never by a single anecdote.</p>
 
-  <h2>Data interpretation framework</h2>
-  <p>All statistics and pattern analyses built on this platform's experience dataset are
-  interpreted under explicit constraints:</p>
-  <ul>
-    <li><strong>Sample size and source population.</strong> Statistics report the number of
-    processed records; counts are stated plainly (for example, "62 of 124 records").</li>
-    <li><strong>Selection bias.</strong> People post when they relapse or reach milestones;
-    the dataset is self-selected and cannot represent any general population.</li>
-    <li><strong>Reporting bias.</strong> Posts reflect what people choose to share, not a
-    complete account of their experience.</li>
-    <li><strong>Survivorship bias.</strong> Success stories are more visible than quiet
-    non-posters; absence from the dataset is not evidence of absence.</li>
-    <li><strong>Coding methodology.</strong> Records are manually structured from source
-    posts with de-identification; counts reflect records mentioning each item, not
-    prevalence in any population.</li>
-    <li><strong>What frequency means.</strong> A frequency count means "this was mentioned
-    often," nothing more.</li>
-    <li><strong>What frequency does NOT mean.</strong> It does not mean the item is common,
-    effective, causal, or important.</li>
-  </ul>
-  <p>In short: <strong>community dataset ≠ general population</strong>, and
-  <strong>community experience ≠ clinical evidence</strong>. Analysis pieces repeat these
-  constraints and label opinions as opinions.</p>
+<h3>Layer 3 — Problems</h3>
+<p>Common questions (e.g., "What is a flatline?", "Should I track my streak?") answered by
+synthesizing patterns and evidence. Answers state what is known, what is uncertain, and
+where to get professional help.</p>
 
-  <h2>Research process</h2>
-  <p>The evidence layer is built by locating published studies through academic databases,
-  recording source identifiers (DOI/PMID where verified), and summarizing them with
-  explicit evidence-strength ratings. Where a source identifier cannot be verified, it is
-  left unstated rather than guessed. Summaries are paraphrases, not reproductions of
-  publisher text. See the <a href={DATA_SITE_URL + "/evidence/"}>evidence standards</a>.</p>
+<h3>Layer 4 — Evidence</h3>
+<p>Research summaries tied to published sources and graded by the evidence tiers below.
+Evidence is kept separate from community data so that a research finding is never confused
+with a community observation.</p>
 
-  <h2>What this platform is not</h2>
-  <p>This is not a medical site, not a diagnosis tool, and not a treatment program.
-  Content does not establish that any specific strategy "works" — it reports what
-  people tried and what evidence exists.</p>
+<h2>2. Why four layers?</h2>
+<p>The four-layer structure addresses two common errors in this space:</p>
+<ol>
+  <li><strong>Treating anecdotes as evidence.</strong> An experience is one person's report. Without a separate "evidence" layer, it is easy to mistake a vivid story for a proven effect.</li>
+  <li><strong>Treating findings as guarantees.</strong> A research finding is an average or an association, not a promise about any individual. Without a separate "patterns" layer, it is easy to overstate what a study means for a given person.</li>
+</ol>
+<p>By keeping the layers separate, the site can be both honest about its sources and useful
+to readers.</p>
+
+<h2>3. De-identification rules</h2>
+<p>Before any community-derived content is published, editors apply these rules:</p>
+<ul>
+  <li>Remove usernames, real names, and aliases.</li>
+  <li>Remove contact details (email, phone, social handles).</li>
+  <li>Generalize or remove specific locations.</li>
+  <li>Remove dates that could identify a person or event.</li>
+  <li>Remove any detail that, in combination, could re-identify an individual.</li>
+</ul>
+<p>The objective is that no reader can identify the person behind an experience, and no
+personal information about community members is published.</p>
+
+<h2>4. Evidence standards and tiers</h2>
+<p>Research summaries are graded using evidence tiers, from strongest to weakest:</p>
+<ol>
+  <li><strong>Official classifications</strong> — e.g., WHO/ICD-11 definitions of compulsive sexual behavior disorder.</li>
+  <li><strong>Systematic reviews and meta-analyses</strong> — the highest-quality syntheses of primary research.</li>
+  <li><strong>Primary studies</strong> — individual peer-reviewed studies, with their limitations noted.</li>
+  <li><strong>Expert opinion and case reports</strong> — labeled as such and given less weight.</li>
+  <li><strong>Community consensus</strong> — useful for describing shared experience, but never presented as scientific evidence.</li>
+</ol>
+<p>Editors state the tier a claim rests on, and say so explicitly when evidence is mixed or
+absent.</p>
+
+<h2>5. Separation of evidence and experience</h2>
+<p>A core rule: <strong>evidence and experience are never merged into a single
+undifferentiated claim.</strong> A research summary cites sources; a pattern cites recurrence
+across accounts. The site does not dress a community anecdote up as a study, and does not
+dress a study up as a universal truth.</p>
+<p>This separation is the single most important methodological commitment, because it
+prevents the two most common errors in this space: treating anecdotes as evidence, and
+treating findings as guarantees.</p>
+
+<h2>6. Quality checks before publication</h2>
+<p>Before a page is published or updated, editors check:</p>
+<ul>
+  <li>The content layer is stated on the page.</li>
+  <li>De-identification rules have been applied (for community-derived content).</li>
+  <li>Sources are cited where a factual or research claim is made.</li>
+  <li>Uncertainty is labeled where evidence is weak.</li>
+  <li>Crisis and professional-help signposts are present where a page touches on distress or self-harm.</li>
+  <li>The page is consistent with the <a href="/disclaimer/">Disclaimer</a> and <a href="/terms/">Terms of Use</a>.</li>
+</ul>
+
+<h2>7. How problems are answered</h2>
+<p>Problem pages follow a consistent structure:</p>
+<ol>
+  <li><strong>What is being asked</strong> — restated plainly.</li>
+  <li><strong>What the evidence says</strong> — with the tier stated.</li>
+  <li><strong>What the community reports</strong> — clearly separated from evidence.</li>
+  <li><strong>What is uncertain</strong> — stated honestly.</li>
+  <li><strong>When to seek professional help</strong> — signposted.</li>
+</ol>
+<p>This structure prevents a problem page from becoming disguised medical advice.</p>
+
+<h2>8. How the knowledge graph is built</h2>
+<p>The knowledge graph links entities across the site so readers can trace connections:</p>
+<ul>
+  <li>A trigger page connects to the strategies that address it.</li>
+  <li>A problem page connects to the evidence that bears on it.</li>
+  <li>An experience connects to the patterns it illustrates.</li>
+</ul>
+<p>Links are directional and labeled, so readers move from "what is this?" to "what does the
+evidence say?" to "what have others experienced?" without losing track of which is which.</p>
+
+<h2>9. Corrections and versioning</h2>
+<p>The current version of any page is authoritative. When an error is corrected:</p>
+<ul>
+  <li>The correction is made on the page.</li>
+  <li>Material corrections may be noted.</li>
+  <li>Readers can report errors via the <a href="/contact/">Contact</a> page.</li>
+</ul>
+
+<h2>10. Sourcing practice</h2>
+<p>When the site cites research, it prefers primary and secondary sources that readers can
+locate:</p>
+<ul>
+  <li>Official classifications and clinical references (e.g., WHO/ICD-11).</li>
+  <li>Peer-reviewed systematic reviews and meta-analyses.</li>
+  <li>Individual peer-reviewed studies, with limitations noted.</li>
+</ul>
+<p>Where a source is behind a paywall or not publicly linkable, the site still names the
+source so readers can find it. The site does not cite sources it cannot verify, and does not
+fabricate citations.</p>
+
+<h2>11. Honesty about uncertainty</h2>
+<p>Uncertainty is a normal part of research on problematic pornography use. The site labels
+it rather than hiding it. Where evidence is mixed, weak, or absent, the page says so in
+plain terms, rather than presenting a confident-sounding but unsupported conclusion.</p>
+
+<h2>12. Limitations</h2>
+<ul>
+  <li>Research summaries reflect sources available at the time of writing and may be superseded.</li>
+  <li>Community patterns are observational, not experimental.</li>
+  <li>No content on this site constitutes medical, psychological, or therapeutic advice.</li>
+</ul>
+<p>See the <a href="/disclaimer/">Disclaimer</a> for the full statement of limitations.</p>
+
+<p><em>Last updated: 2026-10-23.</em></p>
 </BaseLayout>

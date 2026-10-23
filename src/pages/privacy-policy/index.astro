@@ -2,6 +2,9 @@
 import BaseLayout from "../../../shared/components/BaseLayout.astro";
 import { MAIN_SITE_URL } from "../../../shared/config/config";
 
+const OPERATOR_INFO = "{OPERATOR-INFO}";
+const OPERATOR_EMAIL = "{OPERATOR-EMAIL}";
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -10,11 +13,10 @@ const jsonLd = {
   description: "This platform is static: no accounts, no tracking, no cookies. Your data stays yours.",
   isPartOf: { "@type": "WebSite", "name": "Porn Recovery Knowledge Platform", "url": "https://selfcontrolatlas.com" },
 };
-
 ---
 <BaseLayout
   siteTitle="Porn Recovery Knowledge Platform"
-  siteUrl={ MAIN_SITE_URL }
+  siteUrl={MAIN_SITE_URL}
   title="Privacy Policy"
   description="This platform is static: no accounts, no tracking, no cookies. Your data stays yours."
   canonical="/privacy-policy/"
@@ -23,34 +25,154 @@ const jsonLd = {
 >
 <h1>Privacy Policy</h1>
 <p>This website is a static educational platform. This policy explains, in plain terms,
-how information is (and is not) handled here.</p>
-<h2>What this site does not do</h2>
-<ul>
-  <li><strong>No accounts, no sign-ups.</strong> You cannot create an account here; there is
-  no login system.</li>
-  <li><strong>No personal data collection.</strong> We do not collect names, email addresses,
-  or any other personally identifying information.</li>
-  <li><strong>No tracking or analytics.</strong> The site runs no analytics scripts and no
-  third-party trackers.</li>
-  <li><strong>No advertising.</strong> There is no ad network and no ad-related data processing.</li>
-  <li><strong>No cookies.</strong> This site does not set cookies. (See the Cookie Policy.)</li>
-</ul>
-<h2>Browser-local tools</h2>
-<p>The Trigger Journal tool stores your entries <strong>only in your own browser's local
-storage</strong>. Entries never leave your device, are never transmitted, and are deleted
-when you clear your browser data. We have no access to them.</p>
-<h2>Content sources</h2>
-<p>Community-derived content on this site is de-identified before publication. Original
-source material (usernames, identifiers, contact details, locations) is never published
-and is kept out of the public site entirely. See the Editorial Policy for details.</p>
-<h2>Third-party links</h2>
-<p>Pages may link to external websites (research publishers, official classifications,
-crisis services). Those sites have their own privacy practices, which we do not control.</p>
-<h2>Changes</h2>
-<p>If this policy changes, the updated version will be posted on this page.</p>
-<h2>Contact</h2>
-<p>Questions about privacy can be directed to the platform maintainer via the project
-repository contact channels.</p>
-<p>Last updated: 2026-10-04.</p>
+how information is — and is not — handled here. It is written to be read by a person, not
+just a lawyer. If you have questions after reading it, contact <strong>{OPERATOR_EMAIL}</strong>.</p>
+<p><strong>Last updated: 2026-10-23</strong></p>
 
+<h2>1. Who operates this site</h2>
+<p>This site is operated by:</p>
+<p><strong>{OPERATOR_INFO}</strong></p>
+<p>Contact: <strong>{OPERATOR_EMAIL}</strong></p>
+
+<h2>2. The short version</h2>
+<p>This site collects <strong>no personal data</strong>. There are no accounts, no sign-ups,
+no analytics, no trackers, and no cookies. The only browser-side persistence is an optional
+journal tool that keeps your entries on your own device. If you want the details, read on;
+if you want the summary, that is it.</p>
+
+<h2>3. What this site does not do</h2>
+<p>This site is deliberately minimal about data. It does <strong>not</strong>:</p>
+<ul>
+  <li><strong>Create accounts.</strong> There is no sign-up, no login, and no user profile system.</li>
+  <li><strong>Collect personal data.</strong> We do not collect names, email addresses, phone numbers, or any other personally identifying information.</li>
+  <li><strong>Run analytics or tracking.</strong> The site runs no analytics scripts, no third-party trackers, and no fingerprinting.</li>
+  <li><strong>Serve advertising.</strong> There is no ad network and no ad-related data processing. See the <a href="/advertising-disclosure/">Advertising Disclosure</a>.</li>
+  <li><strong>Set cookies.</strong> This site does not set cookies. See the <a href="/cookie-policy/">Cookie Policy</a>.</li>
+</ul>
+<p>Because none of these are present, there is no personal data for us to store, sell,
+share, or process.</p>
+
+<h2>4. Data we do not have — by category</h2>
+<p>For clarity, here is how the site treats the most common categories of data:</p>
+<table class="data-table">
+  <thead><tr><th>Category</th><th>Collected?</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>Names / email / phone</td><td><strong>No</strong></td><td>No forms collect identifying contact details.</td></tr>
+    <tr><td>Account / login</td><td><strong>No</strong></td><td>No account system exists.</td></tr>
+    <tr><td>Location</td><td><strong>No</strong></td><td>No geolocation and no IP-based profiling.</td></tr>
+    <tr><td>Device / browser data</td><td><strong>No</strong></td><td>No fingerprinting or device profiling.</td></tr>
+    <tr><td>Behavioral / browsing history</td><td><strong>No</strong></td><td>No tracking scripts or analytics.</td></tr>
+    <tr><td>Payment / financial</td><td><strong>No</strong></td><td>Nothing is sold; no payment data is processed.</td></tr>
+    <tr><td>Health or sensitive data</td><td><strong>No</strong></td><td>No intake forms or questionnaires.</td></tr>
+    <tr><td>Communications</td><td><strong>No</strong></td><td>No on-site messaging, comments, or forms.</td></tr>
+  </tbody>
+</table>
+
+<h2>5. Browser-local tools</h2>
+<p>The optional <a href="/tools/trigger-journal/">Trigger Journal</a> tool stores your entries
+<strong>only in your own browser's local storage</strong>:</p>
+<ul>
+  <li>Entries never leave your device.</li>
+  <li>Entries are never transmitted to any server.</li>
+  <li>Entries are deleted when you clear your browser data.</li>
+  <li>We have no access to them, ever.</li>
+</ul>
+<p>This is a privacy-preserving design choice: the tool is useful without any data leaving
+your machine. Local storage is similar to a cookie in that it lives in your browser, but it
+is used here only to keep your own entries on your own device.</p>
+
+<h2>6. Server logs and hosting</h2>
+<p>Like most websites, the hosting infrastructure may keep minimal, transient server logs
+(for example, to prevent abuse, maintain security, or diagnose outages). These logs may
+include technical information such as an IP address, user agent, or timestamp. These logs
+are:</p>
+<ul>
+  <li>Not used to build profiles of individual visitors.</li>
+  <li>Not combined with any other data about you.</li>
+  <li>Not sold or shared for advertising.</li>
+  <li>Retained only as long as operationally necessary.</li>
+</ul>
+<p>We do not use server logs to identify individual users or to track their reading.</p>
+
+<h2>7. Content sources and de-identification</h2>
+<p>Community-derived content on this site is <strong>de-identified before publication</strong>:</p>
+<ul>
+  <li>Original usernames, identifiers, contact details, and locations are never published.</li>
+  <li>De-identification is performed following the rules in the <a href="/editorial-policy/">Editorial Policy</a>.</li>
+</ul>
+<p>This means the site does not republish personal information about the people whose
+experiences inform its content. The goal is that no reader can identify the person behind
+an experience.</p>
+
+<h2>8. Third-party links</h2>
+<p>Pages may link to external websites — research publishers, official classifications, or
+crisis services. Those sites have their own privacy practices, which we do not control.
+When you leave this site, you are subject to the privacy policy of the site you visit. We
+link to external resources for reference; we do not transmit data to them on your behalf,
+and we do not embed their trackers or scripts.</p>
+
+<h2>9. Children's privacy</h2>
+<p>This site is intended for adults and is not directed to children under 13. We do not
+knowingly collect personal information from children of any age, because we do not collect
+personal information at all. If you are a parent or guardian and believe your child has
+submitted information to this site, contact <strong>{OPERATOR_EMAIL}</strong> — although,
+given the site's design, no such information would be stored.</p>
+
+<h2>10. Legal bases and jurisdiction</h2>
+<p>Because the site does not collect or process personal data, most data-protection
+obligations (such as GDPR data-subject rights or CCPA/CPRA access and deletion requests)
+have no personal data to act on. To the extent any data processing occurs — for example,
+transient server logs — it is:</p>
+<ul>
+  <li>Governed by the law of the jurisdiction of the operator stated in section 1.</li>
+  <li>Processed on the basis of legitimate operational necessity (security, stability, and abuse prevention).</li>
+</ul>
+
+<h2>11. Your rights</h2>
+<p>Even though the site collects no personal data, you retain the rights available under
+your local law, which may include the right to access, correct, or delete personal data,
+and the right to object to or restrict processing. If you believe any personal data about
+you appears on the site, contact <strong>{OPERATOR_EMAIL}</strong> and we will investigate
+and, where applicable, correct or remove it.</p>
+<p>Because there are no accounts and no data collection, there is no automated way to
+exercise these rights; they are handled by contacting us directly.</p>
+
+<h2>12. Data retention</h2>
+<ul>
+  <li><strong>Personal data:</strong> none is collected, so none is retained.</li>
+  <li><strong>Server logs:</strong> retained only as long as operationally necessary, then deleted.</li>
+  <li><strong>Trigger Journal entries:</strong> stored only in your browser; deleted when you clear your browser data. We never see or retain them.</li>
+</ul>
+
+<h2>13. International users</h2>
+<p>The site is accessible worldwide, but it collects no personal data from any location.
+Where transient server logs exist, they are processed in accordance with this policy
+regardless of where you access the site from.</p>
+
+<h2>14. Security</h2>
+<p>Because the site collects no personal data, there is no database of user data to breach.
+We still take reasonable measures to keep the site itself secure and stable. The most
+important privacy protection here is architectural: the less data the site collects, the
+less there is to protect.</p>
+
+<h2>15. Changes to this policy</h2>
+<p>If this policy changes, the updated version will be posted on this page, and the "Last
+updated" date above will be revised. Material changes will be highlighted. Because the site
+collects no data and has no accounts, we cannot email you about changes — the current
+version is always the one published here.</p>
+
+<h2>16. Frequently asked questions</h2>
+<p><strong>Does this site use cookies?</strong> No. See the <a href="/cookie-policy/">Cookie Policy</a>.</p>
+<p><strong>Can I delete my data?</strong> There is no account and no stored personal data to delete. If you use the Trigger Journal, clearing your browser data removes your entries from your own device.</p>
+<p><strong>Does this site sell my data?</strong> No. It collects no data and sells nothing. See the <a href="/advertising-disclosure/">Advertising Disclosure</a>.</p>
+<p><strong>Does this site track me?</strong> No. There are no analytics or tracking scripts.</p>
+<p><strong>What if I see my personal information on the site?</strong> Contact <strong>{OPERATOR_EMAIL}</strong> and we will investigate and remove it.</p>
+
+<h2>17. Contact</h2>
+<p>Questions about privacy can be directed to:</p>
+<p><strong>{OPERATOR_EMAIL}</strong></p>
+<p>or via the project repository: <code>https://github.com/martinxionbiotech-max/jiese/issues</code>.</p>
+<p>Related documents: <a href="/cookie-policy/">Cookie Policy</a>,
+<a href="/advertising-disclosure/">Advertising Disclosure</a>,
+<a href="/editorial-policy/">Editorial Policy</a>.</p>
 </BaseLayout>
