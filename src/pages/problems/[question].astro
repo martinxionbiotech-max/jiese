@@ -4,6 +4,8 @@ import TypeBadge from "../../../shared/components/TypeBadge.astro";
 import EvidenceSummary from "../../../shared/components/EvidenceSummary.astro";
 import { getCollection, render } from 'astro:content';
 import { MAIN_SITE_URL, DATA_SITE_URL } from "../../../shared/config/config";
+import researchIndex from "../../../shared/data/research-index.json";
+const researchIndexMap: Record<string, any> = researchIndex;
 
 export async function getStaticPaths() {
   const questions = await getCollection('questions');
@@ -157,6 +159,9 @@ const faqLd = {
             r.startsWith("park-") || r.startsWith("prause-") || r.startsWith("stark-") ||
             r.startsWith("steele-") || r.startsWith("voon-") || r.startsWith("walton-");
           const href = isResearch ? `${DATA_SITE_URL}/research/${r}/` : `${DATA_SITE_URL}/topics/${r}/`;
+          const idx = researchIndexMap[r];
+          if (idx?.doi) return <li><a href={`https://doi.org/${idx.doi}`} rel="noopener">{idx.title ?? r.replaceAll("-", " ")}</a> — DOI {idx.doi}</li>;
+          if (idx?.pmid) return <li><a href={`https://pubmed.ncbi.nlm.nih.gov/${idx.pmid}/`} rel="noopener">{idx.title ?? r.replaceAll("-", " ")}</a> — PMID {idx.pmid}</li>;
           return <li><a href={href}>{r.replaceAll("-", " ")}</a></li>;
         })}
       </ul>

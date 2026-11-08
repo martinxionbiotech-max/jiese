@@ -41,6 +41,10 @@ const similar = experiences
   .slice(0, 3)
   .map((x) => x.other);
 
+const expDescription = exp.data.reported_problem
+  ? `${exp.data.title}: ${exp.data.reported_problem}`
+  : `${exp.data.title} — a de-identified community recovery experience.`;
+
 const { Content } = await render(exp);
 
 const siteTitle = "Porn Recovery Knowledge Platform";
@@ -49,7 +53,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: exp.data.title,
-  description: exp.data.reported_problem ?? "A structured community recovery experience.",
+  description: expDescription,
   datePublished: exp.data.last_updated,
   dateModified: exp.data.last_updated,
   mainEntityOfPage: url,
@@ -59,7 +63,7 @@ const jsonLd = {
   siteTitle={siteTitle}
   siteUrl={MAIN_SITE_URL}
   title={`${exp.data.title} — Porn Recovery Knowledge Platform`}
-  description={exp.data.reported_problem ?? "A structured, de-identified community recovery experience."}
+  description={expDescription}
   canonical={`/experiences/${exp.data.experience_id}/`}
   jsonLd={jsonLd}
   lastUpdated={exp.data.last_updated}

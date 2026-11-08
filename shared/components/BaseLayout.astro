@@ -62,6 +62,16 @@ const canonicalUrl = canonical
     {alternates.map((a) => (
       <link rel="alternate" hreflang={a.lang} href={a.href} />
     ))}
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      "name": "SelfControlAtlas",
+      "url": siteUrl,
+      "logo": `${siteUrl}/logo-header.png`,
+      "description": "An educational platform about problematic pornography use and recovery. Community records are de-identified and labeled; content is not medical advice.",
+      "contactPoint": { "@type": "ContactPoint", "contactType": "editorial", "url": `${siteUrl}/contact/` }
+    })} />
     {breadcrumbs.length > 0 && (
       <script type="application/ld+json" set:html={JSON.stringify({
         "@context": "https://schema.org",
